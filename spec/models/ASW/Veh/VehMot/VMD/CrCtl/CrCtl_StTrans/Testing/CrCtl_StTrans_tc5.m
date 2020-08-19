@@ -1,0 +1,1 @@
+MoFCCtl_vCrCtlMin_C.Value = 50;

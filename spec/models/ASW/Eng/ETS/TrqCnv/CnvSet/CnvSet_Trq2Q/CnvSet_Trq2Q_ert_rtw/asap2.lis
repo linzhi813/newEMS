@@ -1,0 +1,22 @@
+    CnvSet_facRmpVal_CUR    
+        CnvSet_facRmpVal_CURX
+    PhyMod_trq2qBas_MAP    
+      PhyMod_trq2qBas_MAPY
+      PhyMod_trq2qBas_MAPX
+CnvSet_eta0_C 
+
+CnvSet_etaMax_C 
+
+CnvSet_etaMin_C 
+
+PthSet_trqInrSetAct
+CnvSet_facRmpVal
+CnvSet_qSetOpt_mp
+CnvSet_qSetPrs
+CnvSet_qSetOptNxt_mp
+CnvSet_qSet
+CnvSet_qSetNxt
+CnvSet_qStrt
+CnvSet_etaCurrRmp
+CnvSet_etaCurr
+CnvSet_etaCurrNxt

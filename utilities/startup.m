@@ -7,9 +7,11 @@ function startup()
 %   Copyright 2011-2014 The MathWorks, Inc.
 
 % Use Simulink Project API to get the current project:
-project = simulinkproject;
-projectRoot = project.RootFolder;
-disp(projectRoot);
+% project = simulinkproject;
+% projectRoot = project.RootFolder;
+% disp(projectRoot);
+run getProjectPath;
+
 % % Set the location of slprj to be the "work" folder of the current project:
 myCacheFolder = fullfile(projectRoot, 'cache');
 if ~exist(myCacheFolder, 'dir')

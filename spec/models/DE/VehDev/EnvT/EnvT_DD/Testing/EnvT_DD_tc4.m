@@ -1,0 +1,9 @@
+EnvT_uSRCMax_C.Value=4700;
+EnvT_tiMaxDefDeb_C.Value=2000;
+EnvT_tiMaxOKDeb_C.Value=2000;
+EnvT_tiMinDefDeb_C.Value=2000;
+EnvT_tiMinOKDeb_C.Value=2000;
+EnvT_tiPhysRngHiDefDeb_C.Value=2000;
+EnvT_tiPhysRngHiOKDeb_C.Value=2000;
+EnvT_tiPhysRngLoDefDeb_C.Value=2000;
+EnvT_tiPhysRngLoOKDeb_C.Value=2000;

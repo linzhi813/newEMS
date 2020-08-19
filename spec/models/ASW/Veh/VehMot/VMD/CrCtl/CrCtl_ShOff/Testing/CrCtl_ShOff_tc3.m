@@ -1,0 +1,11 @@
+CrCtl_stShOffIrvrs_C.Value=1023;
+CrCtl_stShOffRvrs_C.Value=2096128;
+CrCtl_stShOffRvrsDelVel_C.Value=4292870144;
+CrCtl_stShOffSlpCnstRmp_C.Value=4160749599;
+CrCtl_stShOffTimeCnstRmp_C.Value=134152192;
+CrCtl_stShOffCut_C.Value=65504;
+CrCtl_vMaxShOff_C.Value=120;
+CrCtl_vMinShOff_C.Value=10;
+CrCtl_rTraV2NDvtAbsShOff_C.Value=-0.1;
+CrCtl_vDvtPosShOff_C.Value=100;
+CrCtl_vDvtNegShOff_C.Value=0;

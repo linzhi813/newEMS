@@ -1,0 +1,1028 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     PthSet_TrqCalc.a2l
+ *
+ * Code generation for model "PthSet_TrqCalc".
+ *
+ * Model version              : 1.11
+ * Simulink Coder version : 8.11 (R2016b) 25-Aug-2016
+ * C source code generated on : Thu Jul 09 15:54:07 2020
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Freescale->32-bit PowerPC
+ * Code generation objective: Execution efficiency
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 51   /* Version 1.51 */
+
+/begin PROJECT DCRS_Wolffu_NoRoadT4 "Design by Zhejiang University"
+  
+  /begin HEADER ""
+    /***********Version of ECU "DCRS ECU5-4YA"***********/
+    /*****Copyright of "Zhejiang University"*****/
+  /end HEADER
+  
+  
+  /begin MODULE CCP  "Module Comment Goes Here"
+    /begin A2ML
+      
+      block "IF_DATA" taggedunion if_data {
+      
+      
+      "CANAPE_EXT" struct {
+      int;             /* version number */
+      taggedstruct {
+      "LINK_MAP" struct {
+      char[256];   /* segment name */
+      long;        /* base address of the segment */
+      uint;        /* address extension of the segment */
+      uint;        /* flag: address is relative to DS */
+      long;        /* offset of the segment address */
+      uint;        /* datatypValid */
+      uint;        /* enum datatyp */
+      uint;        /* bit offset of the segment */
+      };
+      "DISPLAY" struct {
+      long;        /* display color */
+      double;      /* minimal display value (phys)*/
+      double;      /* maximal display value (phys)*/
+      };
+      "VIRTUAL_CONVERSION" struct {
+      char[256];   /* name of the conversion formula */
+      };
+      };
+      };
+      "CANAPE_MODULE" struct {
+      taggedstruct {
+      ("RECORD_LAYOUT_STEPSIZE" struct {
+      char[256];   /* name of record layout*/
+      uint;        /* stepsize for FNC_VALUES */
+      uint;        /* stepsize for AXIS_PTS_X */
+      uint;        /* stepsize for AXIS_PTS_Y */
+      uint;        /* stepsize for AXIS_PTS_Z */
+      uint;        /* stepsize for AXIS_PTS_4 */
+      uint;        /* stepsize for AXIS_PTS_5 */
+      })*;
+      };
+      };
+      
+      "ASAP1B_CCP" taggedstruct {
+      (block "SOURCE" struct {
+      struct {
+      char[101];
+      int;
+      long;
+      };
+      taggedstruct {
+      "DISPLAY_IDENTIFIER" char[32];
+      block "QP_BLOB" struct {
+      uint;
+      taggedstruct {
+      "LENGTH" uint;
+      "CAN_ID_VARIABLE" ;
+      "CAN_ID_FIXED" ulong;
+      ("RASTER" uchar)*;
+      ("EXCLUSIVE" int)*;
+      "REDUCTION_ALLOWED" ;
+      "FIRST_PID" uchar;
+      };
+      };
+      };
+      })*;
+      (block "RASTER" struct {
+      char[101];
+      char[9];
+      uchar;
+      int;
+      long;
+      taggedstruct {
+      ("EXCLUSIVE" uchar)*;
+      };
+      })*;
+      (block "EVENT_GROUP" struct {
+      char[101];
+      char[9];
+      taggedstruct {
+      ("RASTER" uchar)*;
+      };
+      })*;
+      block "SEED_KEY" struct {
+      char[256];
+      char[256];
+      char[256];
+      };
+      block "CHECKSUM" struct {
+      char[256];
+      };
+      block "TP_BLOB" struct {
+      uint;
+      uint;
+      ulong;
+      ulong;
+      uint;
+      uint;
+      taggedstruct {
+      block "CAN_PARAM" struct {
+      uint;
+      uchar;
+      uchar;
+      };
+      "BAUDRATE" ulong;
+      "SAMPLE_POINT" uchar;
+      "SAMPLE_RATE" uchar;
+      "BTL_CYCLES" uchar;
+      "SJW" uchar;
+      "SYNC_EDGE" enum {
+      "SINGLE" = 0,
+      "DUAL" = 1
+      };
+      "DAQ_MODE" enum {
+      "ALTERNATING" = 0,
+      "BURST" = 1
+      };
+      "BYTES_ONLY" ;
+      "RESUME_SUPPORTED" ;
+      "STORE_SUPPORTED" ;
+      "CONSISTENCY" enum {
+      "DAQ" = 0,
+      "ODT" = 1
+      };
+      "ADDRESS_EXTENSION" enum {
+      "DAQ" = 0,
+      "ODT" = 1
+      };
+      block "CHECKSUM_PARAM" struct {
+      uint;
+      ulong;
+      taggedstruct {
+      "CHECKSUM_CALCULATION" enum {
+      "ACTIVE_PAGE" = 0,
+      "BIT_OR_WITH_OPT_PAGE" = 1
+      };
+      };
+      };
+      (block "DEFINED_PAGES" struct {
+      struct {
+      uint;
+      char[101];
+      uint;
+      ulong;
+      ulong;
+      };
+      taggedstruct {
+      "RAM" ;
+      "ROM" ;
+      "FLASH" ;
+      "EEPROM" ;
+      "RAM_INIT_BY_ECU" ;
+      "RAM_INIT_BY_TOOL" ;
+      "AUTO_FLASH_BACK" ;
+      "FLASH_BACK" ;
+      "DEFAULT" ;
+      };
+      })*;
+      ("OPTIONAL_CMD" uint)*;
+      };
+      };
+      ("ADDR_MAPPING" struct {
+      ulong;
+      ulong;
+      ulong;
+      })*;
+      "DP_BLOB" struct {
+      uint;
+      ulong;
+      ulong;
+      };
+      "KP_BLOB" struct {
+      uint;
+      ulong;
+      ulong;
+      taggedstruct {
+      ("RASTER" uchar)*;
+      };
+      };
+      };
+      };
+      
+    /end A2ML
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_FIRST
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+    /end MOD_COMMON
+    
+    /begin IF_DATA ASAP1B_CCP 
+      /begin SOURCE 
+        "segment synchronous" 0x67 0x1 
+        /begin QP_BLOB 
+          0x0 
+          LENGTH 0x10 
+          CAN_ID_FIXED 0x330 
+          RASTER 0x0 
+          FIRST_PID 0x0 
+        /end QP_BLOB
+      /end SOURCE
+      /begin SOURCE 
+        "10ms time synchronous" 0x4 0x1 
+        /begin QP_BLOB 
+          0x1 
+          LENGTH 0x1E 
+          CAN_ID_FIXED 0x340 
+          RASTER 0x1 
+          FIRST_PID 0x10 
+        /end QP_BLOB
+      /end SOURCE
+      /begin SOURCE 
+        "100ms time synchronous" 0x4 0xA 
+        /begin QP_BLOB 
+          0x2 
+          LENGTH 0x28 
+          CAN_ID_FIXED 0x350 
+          RASTER 0x2 
+          FIRST_PID 0x2E 
+        /end QP_BLOB
+      /end SOURCE
+      /begin RASTER 
+        "segment synchronous" "seg_sync" 0x0 0x67 0x1 
+      /end RASTER
+      /begin RASTER 
+        "10ms time synchronous" "10_ms" 0x1 0x4 0x1 
+      /end RASTER
+      /begin RASTER 
+        "100ms time synchronous" "100_ms" 0x2 0x4 0xA 
+      /end RASTER
+      /begin SEED_KEY 
+        "" "" "" 
+      /end SEED_KEY
+      /begin TP_BLOB 
+        0x201 0x204 0x311 0x321 0xFFFFAD01 0x2 
+        BAUDRATE 0x7A120 
+        SAMPLE_POINT 0x53 
+        SAMPLE_RATE 0x3 
+        BTL_CYCLES 0xA 
+        SJW 0x1 
+        SYNC_EDGE SINGLE 
+        DAQ_MODE BURST 
+        CONSISTENCY DAQ 
+        /begin CHECKSUM_PARAM 
+          0xFFFFC001 0xFFFFFFFF 
+          CHECKSUM_CALCULATION ACTIVE_PAGE 
+        /end CHECKSUM_PARAM
+        /begin DEFINED_PAGES 
+          0x1 "reference page" 0x0 0x80240000 0x31000 
+          ROM 
+        /end DEFINED_PAGES
+        /begin DEFINED_PAGES 
+          0x2 "working page" 0x0 0x240000 0x31000 
+          RAM 
+          RAM_INIT_BY_ECU 
+        /end DEFINED_PAGES
+        OPTIONAL_CMD 0x5 
+        OPTIONAL_CMD 0x8 
+        OPTIONAL_CMD 0x9 
+        OPTIONAL_CMD 0xC 
+        OPTIONAL_CMD 0xD 
+        OPTIONAL_CMD 0xE 
+        OPTIONAL_CMD 0xF 
+        OPTIONAL_CMD 0x10 
+        OPTIONAL_CMD 0x11 
+        OPTIONAL_CMD 0x12 
+        OPTIONAL_CMD 0x13 
+        OPTIONAL_CMD 0x18 
+        OPTIONAL_CMD 0x19 
+        OPTIONAL_CMD 0x21 
+        OPTIONAL_CMD 0x22 
+        OPTIONAL_CMD 0x23 
+      /end TP_BLOB
+    /end IF_DATA
+    /begin IF_DATA CANAPE_MODULE
+    /end IF_DATA
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      /begin MEMORY_SEGMENT
+        Pst80000000 "" RESERVED FLASH INTERN 0x80000000 0xC000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        Pst8000C000 "" CODE FLASH INTERN 0x8000C000 0x234000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        Dst80240000 "" DATA FLASH INTERN 0x80240000 0x31000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        RamAFF00000 "" VARIABLES RAM INTERN 0xAFF00000 0x2000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        RamAFF02000 "" CALIBRATION_VARIABLES RAM INTERN 0xAFF02000 0x2000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        RamAFE70000 "" VARIABLES RAM INTERN 0xAFE70000 0x8000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        RamAFE80000 "" VARIABLES RAM INTERN 0xAFE80000 0x2000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        RamC0000000 "" VARIABLES RAM INTERN 0xC0000000 0x6000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+      /begin MEMORY_SEGMENT
+        RamD0000000 "" VARIABLES RAM INTERN 0xD0000000 0x20000 -1 -1 -1 -1 -1 
+      /end MEMORY_SEGMENT
+    /end MOD_PAR
+    
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      PthSet_dtrqRmpDwn_CUR
+      /* Long Identifier        */      "curve of ramp slope"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_dtrqRmpDwn_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      Trq_Nm_s
+      /* Lower Limit            */      -3000.0
+      /* Upper Limit            */      3276.7
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      NO_INPUT_QUANTITY
+        /* Conversion Method    */      TransRatio
+        /* Number of Axis Pts   */      6
+        /* Lower Limit          */      -327.0
+        /* Upper Limit          */      327.0
+        AXIS_PTS_REF                    PthSet_dtrqRmpDwn_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      PthSet_dtrqRmpDwn_CURX
+      /* Long Identifier        */      "axis of ramp slope"
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_dtrqRmpDwn_CURX@ */
+      /* Input Quantity         */      NO_INPUT_QUANTITY
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      TransRatio
+      /* Number of Axis Pts     */      6
+      /* Lower Limit            */      -327.0
+      /* Upper Limit            */      327.0
+    /end AXIS_PTS
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      PthSet_tiRmpStrt_CUR
+      /* Long Identifier        */      "curve of time before start ramp"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_tiRmpStrt_CUR@ */
+      /* Record Layout          */      Lookup1D_ULONG
+      /* Maxdiff                */      0
+      /* Conversion Method      */      Debounce_ms
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      65535.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      NO_INPUT_QUANTITY
+        /* Conversion Method    */      TransRatio
+        /* Number of Axis Pts   */      6
+        /* Lower Limit          */      -327.0
+        /* Upper Limit          */      327.0
+        AXIS_PTS_REF                    PthSet_tiRmpStrt_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      PthSet_tiRmpStrt_CURX
+      /* Long Identifier        */      "axis of time before start ramp"
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_tiRmpStrt_CURX@ */
+      /* Input Quantity         */      NO_INPUT_QUANTITY
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      TransRatio
+      /* Number of Axis Pts     */      6
+      /* Lower Limit            */      -327.0
+      /* Upper Limit            */      327.0
+    /end AXIS_PTS
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      PthSet_tiSwtOff_CUR
+      /* Long Identifier        */      "curve of time before switchoff"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_tiSwtOff_CUR@ */
+      /* Record Layout          */      Lookup1D_ULONG
+      /* Maxdiff                */      0
+      /* Conversion Method      */      Debounce_ms
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      65535.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      NO_INPUT_QUANTITY
+        /* Conversion Method    */      TransRatio
+        /* Number of Axis Pts   */      6
+        /* Lower Limit          */      -327.0
+        /* Upper Limit          */      327.0
+        AXIS_PTS_REF                    PthSet_tiSwtOff_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      PthSet_tiSwtOff_CURX
+      /* Long Identifier        */      "axis of time before switchoff"
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_tiSwtOff_CURX@ */
+      /* Input Quantity         */      NO_INPUT_QUANTITY
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      TransRatio
+      /* Number of Axis Pts     */      6
+      /* Lower Limit            */      -327.0
+      /* Upper Limit            */      327.0
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      PthSet_tiRmpStrtDfl_C  
+      /* Long Identifier        */      "Default time after overrun detection until ramp starts"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_tiRmpStrtDfl_C@ */ 
+      /* Record Layout          */      Scalar_ULONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      Debounce_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      65535.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      PthSet_tiSwtOffDfl_C  
+      /* Long Identifier        */      "Default time after overrun detection until switch off"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_tiSwtOffDfl_C@ */ 
+      /* Record Layout          */      Scalar_ULONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      Debounce_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      65535.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      PthSet_dtrqRmpDwnDfl_C  
+      /* Long Identifier        */      "Torque ramp negative slope"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_dtrqRmpDwnDfl_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      Trq_Nm_s 
+      /* Lower Limit            */      -3000.0 
+      /* Upper Limit            */      3276.7
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC 
+      /* Name                   */      PthSet_trqOffs_C  
+      /* Long Identifier        */      "Offset on limitation torque value to allow ASDdc to work"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@PthSet_trqOffs_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      Trq_Nm 
+      /* Lower Limit            */      -3000.0 
+      /* Upper Limit            */      3276.7
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_tiSwtOff_mp
+      /* Long identifier        */      "Time for switch off after overrun detection"
+      /* Data type              */      ULONG
+      /* Conversion method      */      Debounce_ms
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      65535.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_tiSwtOff_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_tiRmpStrt_mp
+      /* Long identifier        */      "Time after overrun detection for ramp start"
+      /* Data type              */      ULONG
+      /* Conversion method      */      Debounce_ms
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      65535.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_tiRmpStrt_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_dtrqRmpDwn_mp
+      /* Long identifier        */      "Value for ramp negative slope"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm_s
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_dtrqRmpDwn_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqLimOffs_mp
+      /* Long identifier        */      "Limitation torque value with offset"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqLimOffs_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqSetASDdc
+      /* Long identifier        */      "Inner torque set value after first limitation"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqSetASDdc@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqBefPeakLim_mp
+      /* Long identifier        */      "Maximum torque value before railpressure peak limiter"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqBefPeakLim_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqBefRmp_mp
+      /* Long identifier        */      "Set torque after second limitation, before overrun shut off"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqBefRmp_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqRmp_mp
+      /* Long identifier        */      "Ramp output torque of overrun shut off"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqRmp_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqInrSetNoMo
+      /* Long identifier        */      "Inner torque set value before monitoring limitation"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqInrSetNoMo@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqInrSetSum
+      /* Long identifier        */      "Sum of inner set torque"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqInrSetSum@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqInrSet_mp
+      /* Long identifier        */      "PthSet: inner torque set value measure point"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqInrSet_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqInrSet
+      /* Long identifier        */      "Inner torque set value after monitoring limitation"
+      /* Data type              */      SWORD
+      /* Conversion method      */      Trq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqInrSet@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_stActvMonLim
+      /* Long identifier        */      "State of monitoring limitation"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      State_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      255.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_stActvMonLim@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_stDisable
+      /* Long identifier        */      "Condition: overrun fuel cut-off"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_stDisable@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_stRmp_mp
+      /* Long identifier        */      "Ramp state for overrun shut off (0: inactive; 1: active)"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_stRmp_mp@ */
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      Trq_Nm_s
+      /* Long identifier        */      "f(x)=(c1*X*X+c2*X+c3)/(c4*X*X+c5*X+c6)"  
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.3"
+      /* Units                  */      "Nm/s"
+      /* Coefficients           */      COEFFS 0 10.000 0.000 0 0 1.000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      TransRatio
+      /* Long identifier        */      "f(x)=(c1*X*X+c2*X+c3)/(c4*X*X+c5*X+c6)"  
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.3"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 100.000 0.000 0 0 1.000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      Debounce_ms
+      /* Long identifier        */      "f(x)=(c1*X*X+c2*X+c3)/(c4*X*X+c5*X+c6)"  
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.0"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      Trq_Nm
+      /* Long identifier        */      "f(x)=(c1*X*X+c2*X+c3)/(c4*X*X+c5*X+c6)"  
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.3"
+      /* Units                  */      "Nm"
+      /* Coefficients           */      COEFFS 0 10.000 0.000 0 0 1.000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      State_uint8
+      /* Long identifier        */      "f(x)=(c1*X*X+c2*X+c3)/(c4*X*X+c5*X+c6)"  
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      boolean
+      /* Long identifier        */      "f(x)=(c1*X*X+c2*X+c3)/(c4*X*X+c5*X+c6)"  
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       PthSet_TrqCalc
+      /* Long identifier        */       "PthSet_TrqCalc"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Monitoring_Level
+        Root_inner_torque_limited_before_rail_pressure_limitation
+        Root_overrun_shut_off
+        Root_setpoint_inner_torque_out
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Monitoring_Level
+      /* Long identifier        */       "PthSet_TrqCalc/Monitoring_Level"
+      /begin REF_MEASUREMENT
+        PthSet_stActvMonLim
+        PthSet_trqInrSetSum
+        PthSet_trqInrSet_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_inner_torque_limited_before_rail_pressure_limitation
+      /* Long identifier        */       "PthSet_TrqCalc/inner torque limited before rail pressure limitation"
+      /begin REF_CHARACTERISTIC
+        PthSet_trqOffs_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        PthSet_trqBefPeakLim_mp
+        PthSet_trqLimOffs_mp
+        PthSet_trqSetASDdc
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_overrun_shut_off
+      /* Long identifier        */       "PthSet_TrqCalc/overrun_shut_off"
+      /begin SUB_GROUP
+        S3_OvrRun_Ramp
+        S3_OvrRun_Swt_Off
+        S3_Parameter_selection
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        PthSet_trqBefRmp_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_setpoint_inner_torque_out
+      /* Long identifier        */       "PthSet_TrqCalc/setpoint inner torque out"
+      /begin REF_MEASUREMENT
+        PthSet_trqInrSet
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_OvrRun_Ramp
+      /* Long identifier        */       "PthSet_TrqCalc/overrun_shut_off/OvrRun_Ramp"
+      /begin REF_MEASUREMENT
+        PthSet_stRmp_mp
+        PthSet_trqInrSetNoMo
+        PthSet_trqRmp_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_OvrRun_Swt_Off
+      /* Long identifier        */       "PthSet_TrqCalc/overrun_shut_off/OvrRun_Swt_Off"
+      /begin REF_MEASUREMENT
+        PthSet_stDisable
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_Parameter_selection
+      /* Long identifier        */       "PthSet_TrqCalc/overrun_shut_off/Parameter_selection"
+      /begin REF_CHARACTERISTIC
+        PthSet_dtrqRmpDwnDfl_C
+        PthSet_dtrqRmpDwn_CUR
+        PthSet_tiRmpStrtDfl_C
+        PthSet_tiRmpStrt_CUR
+        PthSet_tiSwtOffDfl_C
+        PthSet_tiSwtOff_CUR
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        PthSet_dtrqRmpDwn_mp
+        PthSet_tiRmpStrt_mp
+        PthSet_tiSwtOff_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF PthSet_TrqCalc.a2l */

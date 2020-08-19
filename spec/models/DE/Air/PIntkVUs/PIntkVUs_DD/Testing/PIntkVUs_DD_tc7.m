@@ -1,0 +1,12 @@
+Air_tiPIntkVUsMaxDefDeb_C.Value=50;
+Air_tiPIntkVUsMaxOKDeb_C.Value=50;
+Air_tiPIntkVUsMinDefDeb_C.Value=50;
+Air_tiPIntkVUsMinOKDeb_C.Value=50;
+Air_tiPhysRngHiIntkVUsDefDeb_C.Value=50;
+Air_tiPhysRngHiIntkVUsOKDeb_C.Value=50;
+Air_tiPhysRngLoIntkVUsDefDeb_C.Value=50;
+Air_tiPhysRngLoIntkVUsOKDeb_C.Value=50;
+Air_tiPlsMaxIntkVUsDefDeb_C.Value=50;
+Air_tiPlsMaxIntkVUsOKDeb_C.Value=50;
+Air_tiPlsMinIntkVUsDefDeb_C.Value=50;
+Air_tiPlsMinIntkVUsOKDeb_C.Value=50;

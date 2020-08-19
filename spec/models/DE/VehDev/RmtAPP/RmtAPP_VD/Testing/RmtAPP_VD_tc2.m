@@ -1,0 +1,1 @@
+SigTst_swtRmtAPP_C.Value=Switch_conv.ON;

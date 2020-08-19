@@ -1,0 +1,1 @@
+TClntDspl_PwmOut_swtBattCor_C.Value=Switch_conv.ON;

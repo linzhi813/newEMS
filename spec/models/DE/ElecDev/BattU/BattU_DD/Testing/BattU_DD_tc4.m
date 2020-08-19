@@ -1,0 +1,10 @@
+BattU_tiPhysRngHiDefDeb_C.Value=500;
+BattU_tiPhysRngHiOKDeb_C.Value=500;
+BattU_tiPhysRngLoDefDeb_C.Value=500;
+BattU_tiPhysRngLoOKDeb_C.Value=500;
+BattU_tiMaxDefDeb_C.Value=500;
+BattU_tiMaxOKDeb_C.Value=500;
+BattU_tiMinDefDeb_C.Value=500;
+BattU_tiMinOKDeb_C.Value=500;
+BattU_uSRCMin_C.Value=2200;
+BattU_uSRCMax_C.Value=3900;

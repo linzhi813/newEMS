@@ -1,0 +1,12 @@
+FuelT_uSRCMax_C.Value = 2000;
+FuelT_uSRCMin_C.Value = 1000;
+FuelT_tiMaxDefDeb_C.Value = 400;
+FuelT_tiMaxOKDeb_C.Value = 400;
+FuelT_tiMinDefDeb_C.Value = 400;
+FuelT_tiMinOKDeb_C.Value = 400;
+FuelT_tDiffMaxHi_C.Value = 100;
+FuelT_tDiffMaxLo_C.Value = 40;
+FuelT_tiPlausHiDefDeb_C.Value = 400;
+FuelT_tiPlausHiOKDeb_C.Value = 400;
+FuelT_tiPlausLoDefDeb_C.Value = 400;
+FuelT_tiPlausLoOKDeb_C.Value = 400;

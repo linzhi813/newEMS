@@ -1,0 +1,1 @@
+AirCtl_swtTypCor_C.Value=1;
