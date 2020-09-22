@@ -13,7 +13,13 @@ disp('testing requirement 001');
 % initialize the sample time
 sampleTime = 0.01;
 % initialize the simulation time
-simTime = 9;
+simTime = 6;
 
 % set variables for test input
 load testcase_Rail_SetPoint_001.mat;
+
+% add changed cal variables for this test case from 
+
+% TODO!
+
+% add changed cal variables done!

@@ -424,7 +424,7 @@ Rail_pSetPointErrLoLim_CUR.DocUnits = 'bar';
 
 
 Rail_dpSetPointDec_CURX = Simulink.Parameter;
-Rail_dpSetPointDec_CURX.Value = [10 70 120 180 260 350 800 1400];
+Rail_dpSetPointDec_CURX.Value = [ 400         600         800        1000        1200        1400        1600        1800];
 Rail_dpSetPointDec_CURX.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointDec_CURX.Description = 'Rail_pSetPoint';
 Rail_dpSetPointDec_CURX.DataType = 'RailPressure_bar';
@@ -434,7 +434,7 @@ Rail_dpSetPointDec_CURX.DocUnits = 'bar';
 
 
 Rail_dpSetPointDec_CUR = Simulink.Parameter;
-Rail_dpSetPointDec_CUR.Value = [102 150 198 252 282 348 498 600];
+Rail_dpSetPointDec_CUR.Value = [ 300   400   500   550   600   600   600   600];
 Rail_dpSetPointDec_CUR.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointDec_CUR.Description = 'Curve for maximum rail pressure setpoint decrease per second';
 Rail_dpSetPointDec_CUR.DataType = 'RailPressure_bar_s';
@@ -444,7 +444,7 @@ Rail_dpSetPointDec_CUR.DocUnits = 'bar/s';
 
 
 Rail_dpSetPointDec_MAPX = Simulink.Parameter;
-Rail_dpSetPointDec_MAPX.Value = [100 400 1200 1600 2000 2800 3200 4000 4350 4360 4380 4400];
+Rail_dpSetPointDec_MAPX.Value = [0         400         800        1000        1200        1400        1600        2000        2400        2800        3000        3200];
 Rail_dpSetPointDec_MAPX.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointDec_MAPX.Description = 'Epm_nEng';
 Rail_dpSetPointDec_MAPX.DataType = 'EngSpeed_rpm';
@@ -454,7 +454,7 @@ Rail_dpSetPointDec_MAPX.DocUnits = 'rpm';
 
 
 Rail_dpSetPointDec_MAPY = Simulink.Parameter;
-Rail_dpSetPointDec_MAPY.Value = [0 4 8 12 18 22 26 30];
+Rail_dpSetPointDec_MAPY.Value = [ 0     5    10    20    40    60    80   100];
 Rail_dpSetPointDec_MAPY.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointDec_MAPY.Description = 'InjCtl_qCurr';
 Rail_dpSetPointDec_MAPY.DataType = 'FuelMass_mg_hub';
@@ -464,7 +464,14 @@ Rail_dpSetPointDec_MAPY.DocUnits = 'mg/hub';
 
 
 Rail_dpSetPointDec_MAP = Simulink.Parameter;
-Rail_dpSetPointDec_MAP.Value = [1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002;1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002 1002];
+Rail_dpSetPointDec_MAP.Value = [600   600   600   600   600   600   600   600   600   600   600   600
+   600   600   600   600   600   600   600   600   600   600   600   600
+   600   600   600   600   600   600   600   600   600   600   600   600
+   600   600   600   600   600   600   600   600   600   600   600   600
+   600   600   600   600   600   600   600   600   600   600   600   600
+   570   570   570   570   570   570   570   550   550   550   550   550
+   570   570   570   570   570   570   570   550   550   550   550   550
+   570   570   570   570   570   570   570   550   550   550   550   550];
 Rail_dpSetPointDec_MAP.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointDec_MAP.Description = 'map for Maximum rail pressure setpoint decrease per second';
 Rail_dpSetPointDec_MAP.DataType = 'RailPressure_bar_s';
@@ -484,7 +491,7 @@ Rail_swtIncLim_C.DocUnits = '';
 
 
 Rail_dpSetPointIncLim_MAPX = Simulink.Parameter;
-Rail_dpSetPointIncLim_MAPX.Value = [250 500 750 1000 1250 1500 1750 2000 2250 2300 2350 2400];
+Rail_dpSetPointIncLim_MAPX.Value = [200 400 600 700 800 900 1000 1200 1400 1600 1800 2000];
 Rail_dpSetPointIncLim_MAPX.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointIncLim_MAPX.Description = 'Rail_pFlt or Rail_pSetPoint';
 Rail_dpSetPointIncLim_MAPX.DataType = 'RailPressure_bar';
@@ -504,7 +511,14 @@ Rail_dpSetPointIncLim_MAPY.DocUnits = '';
 
 
 Rail_dpSetPointIncLim_MAP = Simulink.Parameter;
-Rail_dpSetPointIncLim_MAP.Value = [1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100;1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100];
+Rail_dpSetPointIncLim_MAP.Value = [  719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   703   703   672   672   648   648   648   648
+   719   719   719   719   703   703   672   672   648   648   648   648
+   719   719   719   719   703   703   672   672   648   648   648   648
+   719   719   719   719   703   703   672   672   648   648   648   648];
 Rail_dpSetPointIncLim_MAP.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointIncLim_MAP.Description = 'Map for Rail set point Increment Limitation';
 Rail_dpSetPointIncLim_MAP.DataType = 'RailPressure_bar_s';
@@ -524,7 +538,7 @@ Rail_swtqIncSel_C.DocUnits = '';
 
 
 Rail_dpSetPointInc_MAPX = Simulink.Parameter;
-Rail_dpSetPointInc_MAPX.Value = [100 400 1200 1600 2000 2800 3200 4000 4350 4360 4380 4400];
+Rail_dpSetPointInc_MAPX.Value = [0         400         800        1000        1200        1400        1600        2000        2400        2800        3000        3200];
 Rail_dpSetPointInc_MAPX.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointInc_MAPX.Description = 'Epm_nEng';
 Rail_dpSetPointInc_MAPX.DataType = 'EngSpeed_rpm';
@@ -534,7 +548,7 @@ Rail_dpSetPointInc_MAPX.DocUnits = 'rpm';
 
 
 Rail_dpSetPointInc_MAPY = Simulink.Parameter;
-Rail_dpSetPointInc_MAPY.Value = [0 4 8 12 18 22 26 30];
+Rail_dpSetPointInc_MAPY.Value = [ 0     5    10    20    40    60    80   100];
 Rail_dpSetPointInc_MAPY.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointInc_MAPY.Description = 'InjSys_qTol or InjCtl_qSetUnBal';
 Rail_dpSetPointInc_MAPY.DataType = 'FuelMass_mg_hub';
@@ -544,7 +558,14 @@ Rail_dpSetPointInc_MAPY.DocUnits = 'mg/hub';
 
 
 Rail_dpSetPointInc_MAP = Simulink.Parameter;
-Rail_dpSetPointInc_MAP.Value = [1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000;1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000];
+Rail_dpSetPointInc_MAP.Value = [  719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   719   719   703   672   672   672   672   672
+   719   719   719   719   703   703   672   672   648   648   648   648
+   719   719   719   719   703   703   672   672   648   648   648   648
+   719   719   719   719   703   703   672   672   648   648   648   648
+   719   719   719   719   703   703   672   672   648   648   648   648];
 Rail_dpSetPointInc_MAP.CoderInfo.StorageClass = 'ImportedExtern';
 Rail_dpSetPointInc_MAP.Description = 'Maximum rail pressure setpoint increase per second based upon the engine speed and injected fuel quantity';
 Rail_dpSetPointInc_MAP.DataType = 'RailPressure_bar_s';

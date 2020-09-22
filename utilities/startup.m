@@ -10,7 +10,13 @@ function startup()
 % project = simulinkproject;
 % projectRoot = project.RootFolder;
 % disp(projectRoot);
+
+%删除基本工作空间的内容;
+evalin('base','clear');
+%restoredefaultpath;不能在此调用这条语句
+clc;
 run getProjectPath;
+run IniProjectEnv;
 
 % % Set the location of slprj to be the "work" folder of the current project:
 myCacheFolder = fullfile(projectRoot, 'cache');

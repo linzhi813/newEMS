@@ -565,6 +565,81 @@ TSC_nAEGpsLimOUT_mp.SamplingMode = 'Sample based';
 TSC_nAEGpsLimOUT_mp.InitialValue = '0';
 
 
+CoETS_tiEngLockTime_mp= Calibration.Signal;
+CoETS_tiEngLockTime_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+CoETS_tiEngLockTime_mp.Description = 'Measuring point for Time threshold to act  EngSp limit';
+CoETS_tiEngLockTime_mp.DataType = 'TimeEngOn_s';
+CoETS_tiEngLockTime_mp.Min = 0;
+CoETS_tiEngLockTime_mp.Max = 2147480000;
+CoETS_tiEngLockTime_mp.DocUnits = 's';
+CoETS_tiEngLockTime_mp.Dimensions = -1;
+CoETS_tiEngLockTime_mp.DimensionsMode = 'fixed';
+CoETS_tiEngLockTime_mp.Complexity = 'real';
+CoETS_tiEngLockTime_mp.SampleTime = -1;
+CoETS_tiEngLockTime_mp.SamplingMode = 'Sample based';
+CoETS_tiEngLockTime_mp.InitialValue = '0';
+
+
+CoETS_stEngEmgcyRunTi_mp= Calibration.Signal;
+CoETS_stEngEmgcyRunTi_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+CoETS_stEngEmgcyRunTi_mp.Description = 'Measuring point for the active state of Engine emergency running time';
+CoETS_stEngEmgcyRunTi_mp.DataType = 'boolean';
+CoETS_stEngEmgcyRunTi_mp.Min = 0;
+CoETS_stEngEmgcyRunTi_mp.Max = 1;
+CoETS_stEngEmgcyRunTi_mp.DocUnits = '';
+CoETS_stEngEmgcyRunTi_mp.Dimensions = -1;
+CoETS_stEngEmgcyRunTi_mp.DimensionsMode = 'fixed';
+CoETS_stEngEmgcyRunTi_mp.Complexity = 'real';
+CoETS_stEngEmgcyRunTi_mp.SampleTime = -1;
+CoETS_stEngEmgcyRunTi_mp.SamplingMode = 'Sample based';
+CoETS_stEngEmgcyRunTi_mp.InitialValue = '0';
+
+
+CoETS_stEngEmgcyRunCt_mp= Calibration.Signal;
+CoETS_stEngEmgcyRunCt_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+CoETS_stEngEmgcyRunCt_mp.Description = 'Measuring point for   the active state of Engine emergency start request count';
+CoETS_stEngEmgcyRunCt_mp.DataType = 'boolean';
+CoETS_stEngEmgcyRunCt_mp.Min = 0;
+CoETS_stEngEmgcyRunCt_mp.Max = 1;
+CoETS_stEngEmgcyRunCt_mp.DocUnits = '';
+CoETS_stEngEmgcyRunCt_mp.Dimensions = -1;
+CoETS_stEngEmgcyRunCt_mp.DimensionsMode = 'fixed';
+CoETS_stEngEmgcyRunCt_mp.Complexity = 'real';
+CoETS_stEngEmgcyRunCt_mp.SampleTime = -1;
+CoETS_stEngEmgcyRunCt_mp.SamplingMode = 'Sample based';
+CoETS_stEngEmgcyRunCt_mp.InitialValue = '0';
+
+
+CoETS_tiEngEmgcySt_mp= Calibration.Signal;
+CoETS_tiEngEmgcySt_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+CoETS_tiEngEmgcySt_mp.Description = 'Measuring point for Time threshold to act  Engine emergency start';
+CoETS_tiEngEmgcySt_mp.DataType = 'TimeEngOn_s';
+CoETS_tiEngEmgcySt_mp.Min = 0;
+CoETS_tiEngEmgcySt_mp.Max = 2147480000;
+CoETS_tiEngEmgcySt_mp.DocUnits = 's';
+CoETS_tiEngEmgcySt_mp.Dimensions = -1;
+CoETS_tiEngEmgcySt_mp.DimensionsMode = 'fixed';
+CoETS_tiEngEmgcySt_mp.Complexity = 'real';
+CoETS_tiEngEmgcySt_mp.SampleTime = -1;
+CoETS_tiEngEmgcySt_mp.SamplingMode = 'Sample based';
+CoETS_tiEngEmgcySt_mp.InitialValue = '0';
+
+
+CoETS_stGpsLimActive_mp= Calibration.Signal;
+CoETS_stGpsLimActive_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+CoETS_stGpsLimActive_mp.Description = 'Measuring point for Tbox limit  active state';
+CoETS_stGpsLimActive_mp.DataType = 'boolean';
+CoETS_stGpsLimActive_mp.Min = 0;
+CoETS_stGpsLimActive_mp.Max = 1;
+CoETS_stGpsLimActive_mp.DocUnits = '';
+CoETS_stGpsLimActive_mp.Dimensions = -1;
+CoETS_stGpsLimActive_mp.DimensionsMode = 'fixed';
+CoETS_stGpsLimActive_mp.Complexity = 'real';
+CoETS_stGpsLimActive_mp.SampleTime = -1;
+CoETS_stGpsLimActive_mp.SamplingMode = 'Sample based';
+CoETS_stGpsLimActive_mp.InitialValue = '0';
+
+
 %% Calibration value define
 
 CoETS_trqTSEAEngMax_C = Calibration.Parameter;

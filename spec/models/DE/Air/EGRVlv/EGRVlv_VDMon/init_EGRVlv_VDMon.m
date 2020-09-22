@@ -98,6 +98,36 @@ EGRVlv_bGovDvtMinDeb_DSM.SamplingMode = 'Sample based';
 EGRVlv_bGovDvtMinDeb_DSM.InitialValue = '0';
 
 
+EGRVlv_stJamVlv= Calibration.Signal;
+EGRVlv_stJamVlv.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_stJamVlv.Description = 'Status indicates that the valve is jammed';
+EGRVlv_stJamVlv.DataType = 'boolean';
+EGRVlv_stJamVlv.Min = 0;
+EGRVlv_stJamVlv.Max = 1;
+EGRVlv_stJamVlv.DocUnits = '';
+EGRVlv_stJamVlv.Dimensions = -1;
+EGRVlv_stJamVlv.DimensionsMode = 'fixed';
+EGRVlv_stJamVlv.Complexity = 'real';
+EGRVlv_stJamVlv.SampleTime = -1;
+EGRVlv_stJamVlv.SamplingMode = 'Sample based';
+EGRVlv_stJamVlv.InitialValue = '0';
+
+
+EGRVlv_drRawFlt= Calibration.Signal;
+EGRVlv_drRawFlt.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_drRawFlt.Description = 'EGR rate gradient calculated over current position after PT1-filtering';
+EGRVlv_drRawFlt.DataType = 'EGR_rate_s';
+EGRVlv_drRawFlt.Min = -1000;
+EGRVlv_drRawFlt.Max = 1000;
+EGRVlv_drRawFlt.DocUnits = 'r/s';
+EGRVlv_drRawFlt.Dimensions = -1;
+EGRVlv_drRawFlt.DimensionsMode = 'fixed';
+EGRVlv_drRawFlt.Complexity = 'real';
+EGRVlv_drRawFlt.SampleTime = -1;
+EGRVlv_drRawFlt.SamplingMode = 'Sample based';
+EGRVlv_drRawFlt.InitialValue = '0';
+
+
 %% Meansurement signal define
 
 EGRVlv_stEnaMon= Calibration.Signal;
@@ -115,19 +145,19 @@ EGRVlv_stEnaMon.SamplingMode = 'Sample based';
 EGRVlv_stEnaMon.InitialValue = '0';
 
 
-EGRVlv_stJamVlv= Calibration.Signal;
-EGRVlv_stJamVlv.CoderInfo.StorageClass = 'ExportedGlobal';
-EGRVlv_stJamVlv.Description = 'Status indicates that the valve is jammed';
-EGRVlv_stJamVlv.DataType = 'boolean';
-EGRVlv_stJamVlv.Min = 0;
-EGRVlv_stJamVlv.Max = 1;
-EGRVlv_stJamVlv.DocUnits = '';
-EGRVlv_stJamVlv.Dimensions = -1;
-EGRVlv_stJamVlv.DimensionsMode = 'fixed';
-EGRVlv_stJamVlv.Complexity = 'real';
-EGRVlv_stJamVlv.SampleTime = -1;
-EGRVlv_stJamVlv.SamplingMode = 'Sample based';
-EGRVlv_stJamVlv.InitialValue = '0';
+EGRVlv_stJamVlv_mp= Calibration.Signal;
+EGRVlv_stJamVlv_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_stJamVlv_mp.Description = 'Status indicates that the valve is jammed';
+EGRVlv_stJamVlv_mp.DataType = 'boolean';
+EGRVlv_stJamVlv_mp.Min = 0;
+EGRVlv_stJamVlv_mp.Max = 1;
+EGRVlv_stJamVlv_mp.DocUnits = '';
+EGRVlv_stJamVlv_mp.Dimensions = -1;
+EGRVlv_stJamVlv_mp.DimensionsMode = 'fixed';
+EGRVlv_stJamVlv_mp.Complexity = 'real';
+EGRVlv_stJamVlv_mp.SampleTime = -1;
+EGRVlv_stJamVlv_mp.SamplingMode = 'Sample based';
+EGRVlv_stJamVlv_mp.InitialValue = '0';
 
 
 EGRVlv_tEngMon_mp= Calibration.Signal;
@@ -188,6 +218,51 @@ EGRVlv_stStepDet.Complexity = 'real';
 EGRVlv_stStepDet.SampleTime = -1;
 EGRVlv_stStepDet.SamplingMode = 'Sample based';
 EGRVlv_stStepDet.InitialValue = '0';
+
+
+EGRVlv_bJamVlvRlsCheck_mp= Calibration.Signal;
+EGRVlv_bJamVlvRlsCheck_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_bJamVlvRlsCheck_mp.Description = 'Set bit 10 of EGRVlv_stMon';
+EGRVlv_bJamVlvRlsCheck_mp.DataType = 'boolean';
+EGRVlv_bJamVlvRlsCheck_mp.Min = 0;
+EGRVlv_bJamVlvRlsCheck_mp.Max = 1;
+EGRVlv_bJamVlvRlsCheck_mp.DocUnits = '';
+EGRVlv_bJamVlvRlsCheck_mp.Dimensions = -1;
+EGRVlv_bJamVlvRlsCheck_mp.DimensionsMode = 'fixed';
+EGRVlv_bJamVlvRlsCheck_mp.Complexity = 'real';
+EGRVlv_bJamVlvRlsCheck_mp.SampleTime = -1;
+EGRVlv_bJamVlvRlsCheck_mp.SamplingMode = 'Sample based';
+EGRVlv_bJamVlvRlsCheck_mp.InitialValue = '0';
+
+
+EGRVlv_numJamVlv_mp= Calibration.Signal;
+EGRVlv_numJamVlv_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_numJamVlv_mp.Description = 'The number of jammed valve releasing';
+EGRVlv_numJamVlv_mp.DataType = 'State_uint8';
+EGRVlv_numJamVlv_mp.Min = 0;
+EGRVlv_numJamVlv_mp.Max = 255;
+EGRVlv_numJamVlv_mp.DocUnits = '';
+EGRVlv_numJamVlv_mp.Dimensions = -1;
+EGRVlv_numJamVlv_mp.DimensionsMode = 'fixed';
+EGRVlv_numJamVlv_mp.Complexity = 'real';
+EGRVlv_numJamVlv_mp.SampleTime = -1;
+EGRVlv_numJamVlv_mp.SamplingMode = 'Sample based';
+EGRVlv_numJamVlv_mp.InitialValue = '0';
+
+
+EGRVlv_drRaw_mp= Calibration.Signal;
+EGRVlv_drRaw_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_drRaw_mp.Description = 'EGR rate gradient calculated over current position';
+EGRVlv_drRaw_mp.DataType = 'EGR_rate_s';
+EGRVlv_drRaw_mp.Min = -1000;
+EGRVlv_drRaw_mp.Max = 1000;
+EGRVlv_drRaw_mp.DocUnits = 'r/s';
+EGRVlv_drRaw_mp.Dimensions = -1;
+EGRVlv_drRaw_mp.DimensionsMode = 'fixed';
+EGRVlv_drRaw_mp.Complexity = 'real';
+EGRVlv_drRaw_mp.SampleTime = -1;
+EGRVlv_drRaw_mp.SamplingMode = 'Sample based';
+EGRVlv_drRaw_mp.InitialValue = '0';
 
 
 %% Calibration value define
@@ -476,3 +551,36 @@ EGRVlv_numJamVlv_C.DataType = 'State_uint8';
 EGRVlv_numJamVlv_C.Min = 0;
 EGRVlv_numJamVlv_C.Max = 100;
 EGRVlv_numJamVlv_C.DocUnits = '';
+
+
+EGRVlv_drActDvt_C = Calibration.Parameter;
+EGRVlv_drActDvt_C.Value = 2;
+EGRVlv_drActDvt_C.CoderInfo.StorageClass = 'Custom';
+EGRVlv_drActDvt_C.CoderInfo.CustomStorageClass = 'ConstVolatile';
+EGRVlv_drActDvt_C.Description = 'EGR position gradient to detect deviation fault';
+EGRVlv_drActDvt_C.DataType = 'EGR_rate_s';
+EGRVlv_drActDvt_C.Min = -1000;
+EGRVlv_drActDvt_C.Max = 1000;
+EGRVlv_drActDvt_C.DocUnits = 'r/s';
+
+
+EGRVlv_drActDvtHi_C = Calibration.Parameter;
+EGRVlv_drActDvtHi_C.Value = 4;
+EGRVlv_drActDvtHi_C.CoderInfo.StorageClass = 'Custom';
+EGRVlv_drActDvtHi_C.CoderInfo.CustomStorageClass = 'ConstVolatile';
+EGRVlv_drActDvtHi_C.Description = 'EGR position gradient to undetect deviation fault';
+EGRVlv_drActDvtHi_C.DataType = 'EGR_rate_s';
+EGRVlv_drActDvtHi_C.Min = -1000;
+EGRVlv_drActDvtHi_C.Max = 1000;
+EGRVlv_drActDvtHi_C.DocUnits = 'r/s';
+
+
+EGRVlv_facdrActFlt_C = Calibration.Parameter;
+EGRVlv_facdrActFlt_C.Value = 50;
+EGRVlv_facdrActFlt_C.CoderInfo.StorageClass = 'Custom';
+EGRVlv_facdrActFlt_C.CoderInfo.CustomStorageClass = 'ConstVolatile';
+EGRVlv_facdrActFlt_C.Description = 'Factor of the PT1 filter';
+EGRVlv_facdrActFlt_C.DataType = 'PT_fac';
+EGRVlv_facdrActFlt_C.Min = 0;
+EGRVlv_facdrActFlt_C.Max = 99.9985;
+EGRVlv_facdrActFlt_C.DocUnits = '';

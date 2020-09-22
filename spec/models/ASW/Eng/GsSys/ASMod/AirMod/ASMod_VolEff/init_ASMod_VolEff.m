@@ -243,3 +243,14 @@ ASMod_nThresDwn_C.DataType = 'EngSpeed_rpm';
 ASMod_nThresDwn_C.Min = 0;
 ASMod_nThresDwn_C.Max = 6000;
 ASMod_nThresDwn_C.DocUnits = 'rpm';
+
+
+Epm_numCyl_C = Calibration.Parameter;
+Epm_numCyl_C.Value = 4;
+Epm_numCyl_C.CoderInfo.StorageClass = 'Custom';
+Epm_numCyl_C.CoderInfo.CustomStorageClass = 'ConstVolatile';
+Epm_numCyl_C.Description = 'Engine cylinder number';
+Epm_numCyl_C.DataType = 'State_uint8';
+Epm_numCyl_C.Min = 0;
+Epm_numCyl_C.Max = 255;
+Epm_numCyl_C.DocUnits = '';

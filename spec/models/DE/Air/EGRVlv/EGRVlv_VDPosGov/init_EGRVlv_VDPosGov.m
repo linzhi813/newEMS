@@ -595,6 +595,21 @@ EGRVlv_stClnUpBlkd.SamplingMode = 'Sample based';
 EGRVlv_stClnUpBlkd.InitialValue = '0';
 
 
+EGRVlv_rOutPID_mp= Calibration.Signal;
+EGRVlv_rOutPID_mp.CoderInfo.StorageClass = 'ExportedGlobal';
+EGRVlv_rOutPID_mp.Description = 'Output of PID controller';
+EGRVlv_rOutPID_mp.DataType = 'Prc_100_rate';
+EGRVlv_rOutPID_mp.Min = -100;
+EGRVlv_rOutPID_mp.Max = 100;
+EGRVlv_rOutPID_mp.DocUnits = '%';
+EGRVlv_rOutPID_mp.Dimensions = -1;
+EGRVlv_rOutPID_mp.DimensionsMode = 'fixed';
+EGRVlv_rOutPID_mp.Complexity = 'real';
+EGRVlv_rOutPID_mp.SampleTime = -1;
+EGRVlv_rOutPID_mp.SamplingMode = 'Sample based';
+EGRVlv_rOutPID_mp.InitialValue = '0';
+
+
 %% Calibration value define
 
 EGRVlv_tiParDT1_C = Calibration.Parameter;
@@ -1200,6 +1215,17 @@ EGRVlv_rEGRDflVal_C.DataType = 'Prc_100_rate';
 EGRVlv_rEGRDflVal_C.Min = -100;
 EGRVlv_rEGRDflVal_C.Max = 100;
 EGRVlv_rEGRDflVal_C.DocUnits = '%';
+
+
+EGRVlv_facdrActFlt_C = Calibration.Parameter;
+EGRVlv_facdrActFlt_C.Value = 50;
+EGRVlv_facdrActFlt_C.CoderInfo.StorageClass = 'Custom';
+EGRVlv_facdrActFlt_C.CoderInfo.CustomStorageClass = 'ConstVolatile';
+EGRVlv_facdrActFlt_C.Description = 'Factor of the PT1 filter';
+EGRVlv_facdrActFlt_C.DataType = 'PT_fac';
+EGRVlv_facdrActFlt_C.Min = 0;
+EGRVlv_facdrActFlt_C.Max = 99.9985;
+EGRVlv_facdrActFlt_C.DocUnits = '';
 
 
 %% Fix value define

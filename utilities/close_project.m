@@ -11,5 +11,10 @@ function close_project()
 Simulink.fileGenControl('reset');
 
 % projects=slproject.getCurrentProjects;
+
+%删除基本工作空间的内容;
+evalin('base','clear');
+clc;
+
 % close(projects);
 end

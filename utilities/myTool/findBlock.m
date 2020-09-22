@@ -1,9 +1,10 @@
 
-[UnitNum, cellUnit]=getUnitList();
+global UnitTotNum UnitNameLst;
+
 clFindOut=[];
 
-for cnt=1:UnitNum
-    mdlName = cellUnit{cnt};
+for cnt=1:UnitTotNum
+    mdlName = UnitNameLst{cnt};
     if exist([mdlName, '.slx'], 'file')
 %         disp(['Loading: ' mdlName]);
         load_system(mdlName);

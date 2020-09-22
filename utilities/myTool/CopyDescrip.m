@@ -17,10 +17,7 @@ for i=1:length(PDiff)
         end
     end
     
-%     if j==length(txt1)+1
-%         disp(PDiff(i));
-%         PDescrip='';
-%     end
+
     
     for k=1:length(txt2)
          if strcmp(PDiff{i},txt2{k,1})

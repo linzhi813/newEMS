@@ -35,7 +35,7 @@ CnvSet_etaCurrRmp.DimensionsMode = 'fixed';
 CnvSet_etaCurrRmp.Complexity = 'real';
 CnvSet_etaCurrRmp.SampleTime = -1;
 CnvSet_etaCurrRmp.SamplingMode = 'Sample based';
-CnvSet_etaCurrRmp.InitialValue = '0';
+CnvSet_etaCurrRmp.InitialValue = '6';
 
 
 CnvSet_qSet= Calibration.Signal;
@@ -110,7 +110,7 @@ CnvSet_etaCurr.DimensionsMode = 'fixed';
 CnvSet_etaCurr.Complexity = 'real';
 CnvSet_etaCurr.SampleTime = -1;
 CnvSet_etaCurr.SamplingMode = 'Sample based';
-CnvSet_etaCurr.InitialValue = '0';
+CnvSet_etaCurr.InitialValue = '6';
 
 
 CnvSet_etaCurrNxt= Calibration.Signal;
@@ -125,7 +125,7 @@ CnvSet_etaCurrNxt.DimensionsMode = 'fixed';
 CnvSet_etaCurrNxt.Complexity = 'real';
 CnvSet_etaCurrNxt.SampleTime = -1;
 CnvSet_etaCurrNxt.SamplingMode = 'Sample based';
-CnvSet_etaCurrNxt.InitialValue = '0';
+CnvSet_etaCurrNxt.InitialValue = '6';
 
 
 PthSet_trqInrSetAct= Calibration.Signal;
