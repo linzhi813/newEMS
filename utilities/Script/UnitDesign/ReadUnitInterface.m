@@ -8,7 +8,9 @@ global strRecordIn strRecordOut strRecordMp strRecordCal strRecordConst
 %%
 
 run GetUnitName;
-
+if isempty(unitName)
+    return;
+end
 
 %%
 %用结构体数组保存所有信息

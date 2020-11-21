@@ -1,0 +1,20 @@
+% Define Enumeration Datatype
+classdef ECUPowerState < Simulink.IntEnumType
+    enumeration
+    PowerOFF(0)
+    PowerON(2)
+    PowerLatch(3)
+    end
+
+methods (Static = true)
+    function retVal = getDataScope()
+        retVal = 'Exported';
+    end
+    function retVal = getHeaderFile()
+        retVal = 'sl_ddtypes.h';
+    end
+    function retVal = addClassNameToEnumNames()
+        retVal = true;
+    end
+end
+end

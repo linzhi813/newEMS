@@ -118,6 +118,18 @@ Percent.IsAlias=1;
 Percent.DataScope='Exported';
 Percent.HeaderFile='sl_ddtypes.h';
 
+% define Percent_s
+Percent_s=Simulink.NumericType;
+Percent_s.DataTypeMode='Fixed-point: slope and bias scaling';
+Percent_s.Signedness='Signed';
+Percent_s.WordLength=16;
+Percent_s.Slope=1.000000e-02;
+Percent_s.Bias=0;
+Percent_s.Description='百分比变化率，0~100, %/s';
+Percent_s.IsAlias=1;
+Percent_s.DataScope='Exported';
+Percent_s.HeaderFile='sl_ddtypes.h';
+
 % define DutyCycle
 DutyCycle=Simulink.NumericType;
 DutyCycle.DataTypeMode='Fixed-point: slope and bias scaling';
@@ -130,17 +142,17 @@ DutyCycle.IsAlias=1;
 DutyCycle.DataScope='Exported';
 DutyCycle.HeaderFile='sl_ddtypes.h';
 
-% define Ratio100
-Ratio100=Simulink.NumericType;
-Ratio100.DataTypeMode='Fixed-point: slope and bias scaling';
-Ratio100.Signedness='Unsigned';
-Ratio100.WordLength=16;
-Ratio100.Slope=2.000000e-03;
-Ratio100.Bias=0;
-Ratio100.Description='比值，大致范围0~100, %';
-Ratio100.IsAlias=1;
-Ratio100.DataScope='Exported';
-Ratio100.HeaderFile='sl_ddtypes.h';
+% define Ratio
+Ratio=Simulink.NumericType;
+Ratio.DataTypeMode='Fixed-point: slope and bias scaling';
+Ratio.Signedness='Unsigned';
+Ratio.WordLength=16;
+Ratio.Slope=2.000000e-03;
+Ratio.Bias=0;
+Ratio.Description='比值，大致范围0~100, %';
+Ratio.IsAlias=1;
+Ratio.DataScope='Exported';
+Ratio.HeaderFile='sl_ddtypes.h';
 
 % define Ratio_100
 Ratio_100=Simulink.NumericType;
@@ -183,7 +195,7 @@ Day=Simulink.NumericType;
 Day.DataTypeMode='Fixed-point: slope and bias scaling';
 Day.Signedness='Signed';
 Day.WordLength=16;
-Day.Slope=1;
+Day.Slope=1.000000e-01;
 Day.Bias=0;
 Day.Description='时间，天数';
 Day.IsAlias=1;
@@ -195,7 +207,7 @@ Day1=Simulink.NumericType;
 Day1.DataTypeMode='Fixed-point: slope and bias scaling';
 Day1.Signedness='Signed';
 Day1.WordLength=16;
-Day1.Slope=1.000000e-01;
+Day1.Slope=1;
 Day1.Bias=0;
 Day1.Description='时间，天数，分辨率0.1';
 Day1.IsAlias=1;
@@ -231,7 +243,7 @@ Seconds=Simulink.NumericType;
 Seconds.DataTypeMode='Fixed-point: slope and bias scaling';
 Seconds.Signedness='Signed';
 Seconds.WordLength=16;
-Seconds.Slope=1.000000e-02;
+Seconds.Slope=1.000000e-01;
 Seconds.Bias=0;
 Seconds.Description='时间，秒';
 Seconds.IsAlias=1;
@@ -243,7 +255,7 @@ Seconds1=Simulink.NumericType;
 Seconds1.DataTypeMode='Fixed-point: slope and bias scaling';
 Seconds1.Signedness='Signed';
 Seconds1.WordLength=16;
-Seconds1.Slope=1.000000e-01;
+Seconds1.Slope=1;
 Seconds1.Bias=0;
 Seconds1.Description='时间，秒，分辨率0.1';
 Seconds1.IsAlias=1;
@@ -255,7 +267,7 @@ Seconds4=Simulink.NumericType;
 Seconds4.DataTypeMode='Fixed-point: slope and bias scaling';
 Seconds4.Signedness='Signed';
 Seconds4.WordLength=32;
-Seconds4.Slope=1.000000e-02;
+Seconds4.Slope=1.000000e-01;
 Seconds4.Bias=0;
 Seconds4.Description='时间，秒，大范围';
 Seconds4.IsAlias=1;
@@ -267,7 +279,7 @@ mSec=Simulink.NumericType;
 mSec.DataTypeMode='Fixed-point: slope and bias scaling';
 mSec.Signedness='Signed';
 mSec.WordLength=16;
-mSec.Slope=1.000000e-02;
+mSec.Slope=1.000000e-01;
 mSec.Bias=0;
 mSec.Description='时间，毫秒';
 mSec.IsAlias=1;
@@ -279,7 +291,7 @@ mSec1=Simulink.NumericType;
 mSec1.DataTypeMode='Fixed-point: slope and bias scaling';
 mSec1.Signedness='Signed';
 mSec1.WordLength=16;
-mSec1.Slope=1.000000e-01;
+mSec1.Slope=1;
 mSec1.Bias=0;
 mSec1.Description='时间，毫秒，分辨率0.1';
 mSec1.IsAlias=1;
@@ -291,7 +303,7 @@ mSec4=Simulink.NumericType;
 mSec4.DataTypeMode='Fixed-point: slope and bias scaling';
 mSec4.Signedness='Signed';
 mSec4.WordLength=32;
-mSec4.Slope=1.000000e-02;
+mSec4.Slope=1.000000e-01;
 mSec4.Bias=0;
 mSec4.Description='时间，毫秒，大范围';
 mSec4.IsAlias=1;
@@ -303,7 +315,7 @@ uSec=Simulink.NumericType;
 uSec.DataTypeMode='Fixed-point: slope and bias scaling';
 uSec.Signedness='Signed';
 uSec.WordLength=16;
-uSec.Slope=1.000000e-02;
+uSec.Slope=1.000000e-01;
 uSec.Bias=0;
 uSec.Description='时间，微秒';
 uSec.IsAlias=1;
@@ -315,7 +327,7 @@ uSec1=Simulink.NumericType;
 uSec1.DataTypeMode='Fixed-point: slope and bias scaling';
 uSec1.Signedness='Signed';
 uSec1.WordLength=16;
-uSec1.Slope=1.000000e-01;
+uSec1.Slope=1;
 uSec1.Bias=0;
 uSec1.Description='时间，微秒，分辨率0.1';
 uSec1.IsAlias=1;
@@ -327,7 +339,7 @@ uSec4=Simulink.NumericType;
 uSec4.DataTypeMode='Fixed-point: slope and bias scaling';
 uSec4.Signedness='Signed';
 uSec4.WordLength=32;
-uSec4.Slope=1.000000e-02;
+uSec4.Slope=1.000000e-01;
 uSec4.Bias=0;
 uSec4.Description='时间，微秒，大范围';
 uSec4.IsAlias=1;
@@ -501,6 +513,18 @@ Volt_mV1.Description='电压，mV，分辨率0.1';
 Volt_mV1.IsAlias=1;
 Volt_mV1.DataScope='Exported';
 Volt_mV1.HeaderFile='sl_ddtypes.h';
+
+% define Volt_mV_s
+Volt_mV_s=Simulink.NumericType;
+Volt_mV_s.DataTypeMode='Fixed-point: slope and bias scaling';
+Volt_mV_s.Signedness='Signed';
+Volt_mV_s.WordLength=16;
+Volt_mV_s.Slope=1;
+Volt_mV_s.Bias=0;
+Volt_mV_s.Description='电压变化率，mV/s';
+Volt_mV_s.IsAlias=1;
+Volt_mV_s.DataScope='Exported';
+Volt_mV_s.HeaderFile='sl_ddtypes.h';
 
 % define VoltV
 VoltV=Simulink.NumericType;
@@ -718,17 +742,29 @@ mFlow_kgph.IsAlias=1;
 mFlow_kgph.DataScope='Exported';
 mFlow_kgph.HeaderFile='sl_ddtypes.h';
 
-% define vFlow_m3ps
-vFlow_m3ps=Simulink.NumericType;
-vFlow_m3ps.DataTypeMode='Fixed-point: slope and bias scaling';
-vFlow_m3ps.Signedness='Signed';
-vFlow_m3ps.WordLength=16;
-vFlow_m3ps.Slope=1.000000e-01;
-vFlow_m3ps.Bias=0;
-vFlow_m3ps.Description='体积流量，立方米每秒';
-vFlow_m3ps.IsAlias=1;
-vFlow_m3ps.DataScope='Exported';
-vFlow_m3ps.HeaderFile='sl_ddtypes.h';
+% define vFlow_m3ph
+vFlow_m3ph=Simulink.NumericType;
+vFlow_m3ph.DataTypeMode='Fixed-point: slope and bias scaling';
+vFlow_m3ph.Signedness='Signed';
+vFlow_m3ph.WordLength=16;
+vFlow_m3ph.Slope=1.000000e-01;
+vFlow_m3ph.Bias=0;
+vFlow_m3ph.Description='体积流量，立方米每小时';
+vFlow_m3ph.IsAlias=1;
+vFlow_m3ph.DataScope='Exported';
+vFlow_m3ph.HeaderFile='sl_ddtypes.h';
+
+% define vFlow_mm3ps
+vFlow_mm3ps=Simulink.NumericType;
+vFlow_mm3ps.DataTypeMode='Fixed-point: slope and bias scaling';
+vFlow_mm3ps.Signedness='Signed';
+vFlow_mm3ps.WordLength=16;
+vFlow_mm3ps.Slope=1;
+vFlow_mm3ps.Bias=0;
+vFlow_mm3ps.Description='体积流量，立方豪米每秒';
+vFlow_mm3ps.IsAlias=1;
+vFlow_mm3ps.DataScope='Exported';
+vFlow_mm3ps.HeaderFile='sl_ddtypes.h';
 
 % define Density_kgpm3
 Density_kgpm3=Simulink.NumericType;
@@ -922,6 +958,18 @@ RPM.IsAlias=1;
 RPM.DataScope='Exported';
 RPM.HeaderFile='sl_ddtypes.h';
 
+% define RPM_s
+RPM_s=Simulink.NumericType;
+RPM_s.DataTypeMode='Fixed-point: slope and bias scaling';
+RPM_s.Signedness='Signed';
+RPM_s.WordLength=16;
+RPM_s.Slope=1.000000e-01;
+RPM_s.Bias=0;
+RPM_s.Description='转速变化率，转每分钟每秒';
+RPM_s.IsAlias=1;
+RPM_s.DataScope='Exported';
+RPM_s.HeaderFile='sl_ddtypes.h';
+
 % define ERPM
 ERPM=Simulink.NumericType;
 ERPM.DataTypeMode='Fixed-point: slope and bias scaling';
@@ -933,6 +981,18 @@ ERPM.Description='发动机转速，转每分钟';
 ERPM.IsAlias=1;
 ERPM.DataScope='Exported';
 ERPM.HeaderFile='sl_ddtypes.h';
+
+% define ERPM_s
+ERPM_s=Simulink.NumericType;
+ERPM_s.DataTypeMode='Fixed-point: slope and bias scaling';
+ERPM_s.Signedness='Signed';
+ERPM_s.WordLength=16;
+ERPM_s.Slope=5.000000e-01;
+ERPM_s.Bias=0;
+ERPM_s.Description='发动机转速变化率，转每分钟每秒';
+ERPM_s.IsAlias=1;
+ERPM_s.DataScope='Exported';
+ERPM_s.HeaderFile='sl_ddtypes.h';
 
 % define RPM_k
 RPM_k=Simulink.NumericType;
@@ -946,29 +1006,29 @@ RPM_k.IsAlias=1;
 RPM_k.DataScope='Exported';
 RPM_k.HeaderFile='sl_ddtypes.h';
 
-% define Velocity_mps
-Velocity_mps=Simulink.NumericType;
-Velocity_mps.DataTypeMode='Fixed-point: slope and bias scaling';
-Velocity_mps.Signedness='Signed';
-Velocity_mps.WordLength=16;
-Velocity_mps.Slope=1.000000e-02;
-Velocity_mps.Bias=0;
-Velocity_mps.Description='速度，米每秒';
-Velocity_mps.IsAlias=1;
-Velocity_mps.DataScope='Exported';
-Velocity_mps.HeaderFile='sl_ddtypes.h';
+% define V_mps
+V_mps=Simulink.NumericType;
+V_mps.DataTypeMode='Fixed-point: slope and bias scaling';
+V_mps.Signedness='Signed';
+V_mps.WordLength=16;
+V_mps.Slope=1.000000e-02;
+V_mps.Bias=0;
+V_mps.Description='速度，米每秒';
+V_mps.IsAlias=1;
+V_mps.DataScope='Exported';
+V_mps.HeaderFile='sl_ddtypes.h';
 
-% define Velocity_kmph
-Velocity_kmph=Simulink.NumericType;
-Velocity_kmph.DataTypeMode='Fixed-point: slope and bias scaling';
-Velocity_kmph.Signedness='Signed';
-Velocity_kmph.WordLength=16;
-Velocity_kmph.Slope=1.000000e-02;
-Velocity_kmph.Bias=0;
-Velocity_kmph.Description='速度，千米每小时';
-Velocity_kmph.IsAlias=1;
-Velocity_kmph.DataScope='Exported';
-Velocity_kmph.HeaderFile='sl_ddtypes.h';
+% define V_kmph
+V_kmph=Simulink.NumericType;
+V_kmph.DataTypeMode='Fixed-point: slope and bias scaling';
+V_kmph.Signedness='Signed';
+V_kmph.WordLength=16;
+V_kmph.Slope=1.000000e-02;
+V_kmph.Bias=0;
+V_kmph.Description='速度，千米每小时';
+V_kmph.IsAlias=1;
+V_kmph.DataScope='Exported';
+V_kmph.HeaderFile='sl_ddtypes.h';
 
 % define Accel_ms2
 Accel_ms2=Simulink.NumericType;
@@ -993,6 +1053,18 @@ Torq.Description='扭矩，NM';
 Torq.IsAlias=1;
 Torq.DataScope='Exported';
 Torq.HeaderFile='sl_ddtypes.h';
+
+% define Torq_s
+Torq_s=Simulink.NumericType;
+Torq_s.DataTypeMode='Fixed-point: slope and bias scaling';
+Torq_s.Signedness='Signed';
+Torq_s.WordLength=16;
+Torq_s.Slope=1.000000e-01;
+Torq_s.Bias=0;
+Torq_s.Description='扭矩变化率，NM/s';
+Torq_s.IsAlias=1;
+Torq_s.DataScope='Exported';
+Torq_s.HeaderFile='sl_ddtypes.h';
 
 % define Angle
 Angle=Simulink.NumericType;
@@ -1030,12 +1102,24 @@ Press_bar.IsAlias=1;
 Press_bar.DataScope='Exported';
 Press_bar.HeaderFile='sl_ddtypes.h';
 
+% define Press_bar1
+Press_bar1=Simulink.NumericType;
+Press_bar1.DataTypeMode='Fixed-point: slope and bias scaling';
+Press_bar1.Signedness='Signed';
+Press_bar1.WordLength=16;
+Press_bar1.Slope=1.000000e-01;
+Press_bar1.Bias=0;
+Press_bar1.Description='压强，bar';
+Press_bar1.IsAlias=1;
+Press_bar1.DataScope='Exported';
+Press_bar1.HeaderFile='sl_ddtypes.h';
+
 % define Press_kpa
 Press_kpa=Simulink.NumericType;
 Press_kpa.DataTypeMode='Fixed-point: slope and bias scaling';
 Press_kpa.Signedness='Signed';
 Press_kpa.WordLength=16;
-Press_kpa.Slope=2.000000e-02;
+Press_kpa.Slope=1.000000e-01;
 Press_kpa.Bias=0;
 Press_kpa.Description='压强，千帕';
 Press_kpa.IsAlias=1;

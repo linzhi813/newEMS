@@ -3,7 +3,7 @@
 % 假定所有Unit都列在ComponentList.xlsx文件中
 
 global unitName
-global UnitTotNum UnitNameLst UnitPathLst;
+global  UnitNameLst
 
 run ReadUnitList;
 
@@ -24,8 +24,7 @@ end
 
 if isempty(unitName)
     %错误提示，退出
-        disp('Error:The current folder is not one of Unit folder!')       
-        return;
+    disp('Error:The current folder is not one of Unit folder!');
 end
 
 clear k;

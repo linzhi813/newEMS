@@ -18,16 +18,6 @@ clc;
 run getProjectPath;
 run IniProjectEnv;
 
-% % Set the location of slprj to be the "work" folder of the current project:
-myCacheFolder = fullfile(projectRoot, 'cache');
-if ~exist(myCacheFolder, 'dir')
-    mkdir(myCacheFolder)
-end
-Simulink.fileGenControl('set', 'CacheFolder', myCacheFolder, ...
-   'CodeGenFolder', myCacheFolder);
-
-% Change working folder to the "work" folder:
-%cd(myCacheFolder);
 
 end
 

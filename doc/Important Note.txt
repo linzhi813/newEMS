@@ -1,0 +1,2 @@
+ONLY put caches files in this folder!
+Everything here will be cleared during project start£¡

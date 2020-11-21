@@ -1,0 +1,22 @@
+% Define Enumeration Datatype
+classdef EpmSynState < Simulink.IntEnumType
+    enumeration
+    NO_SYNC(0)
+    FULL_SYNC(10)
+    HALF_SYNC(20)
+    CRS_SYNC(30)
+    CAS_SYNC(40)
+    end
+
+methods (Static = true)
+    function retVal = getDataScope()
+        retVal = 'Exported';
+    end
+    function retVal = getHeaderFile()
+        retVal = 'sl_ddtypes.h';
+    end
+    function retVal = addClassNameToEnumNames()
+        retVal = true;
+    end
+end
+end
