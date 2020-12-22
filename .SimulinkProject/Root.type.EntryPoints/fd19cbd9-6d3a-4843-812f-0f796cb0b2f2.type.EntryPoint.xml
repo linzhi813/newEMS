@@ -1,2 +1,2 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Info Type="Basic" GroupUUID="54a78cd5-41ca-49cb-9986-1e1c16131bca" Visible="1" Icon="" File="utilities/Script/UnitDesign/SetAttribute.m" Name="ud8_SetAttribute" />
+<Info Type="Basic" GroupUUID="54a78cd5-41ca-49cb-9986-1e1c16131bca" Visible="1" Icon="" File="utilities/PrjScript/UnitDesign/SetAttribute.m" Name="ud8_SetAttribute" />
