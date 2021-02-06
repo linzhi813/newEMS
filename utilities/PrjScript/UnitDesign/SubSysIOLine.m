@@ -1,19 +1,17 @@
-%自动将子系统的端口和输入输出模块连接起来
-%必须先选中子系统，再点击快捷方式
+% 自动将子系统的端口和输入输出模块连接起来
+% 函数形式，供调用
+%不考虑原子子系统的Enable，Trigger等端口连线
 
-% 先判断是否为子系统
-if gcbh==-1
-   disp('Please Open the Model and select one Subsystem!');
-   return;
-end
-selectedBlock=get_param(gcbh,'BlockType');
+function SubSysIOLine(SysH)
+
+selectedBlock=get_param(SysH,'BlockType');
 if ~strcmp(selectedBlock,'SubSystem')
     disp('The current Selected Block is not Subsystem!');
     clear selectedBlock;
     return;
 end
 
-sysHandle=get_param(gcbh,'handle');
+sysHandle=SysH;
 sysPorts=get_param(sysHandle,'PortConnectivity');
 sysPortsHand=get(sysHandle,'PortHandles');
 sysParent=get(sysHandle,'Path');
@@ -73,7 +71,12 @@ sysOutOutsName=get_param(sysOutOuts,'Name');
 for ii=1:length(sysInnerOuts)
     
     portName=get_param(sysInnerOuts(ii),'Name');
-    portPos=sysPorts(ii+length(sysInnerIns)).Position;
+    
+    if isempty(sysPortsHand.Trigger)
+        portPos=sysPorts(ii+length(sysInnerIns)).Position;
+    else
+        portPos=sysPorts(ii+length(sysInnerIns)+1).Position;
+    end
     SportHandle=sysPortsHand.Outport(ii);
     
     %搜索子系统外面和这个port名字相同的输入模块
@@ -112,3 +115,6 @@ clearvars sysInnerIns portName portPos DportHandle sysOutIns sysOutInsName Sport
 clearvars newPosX newPosY;
 clearvars sysInnerOuts sysOutOuts DportHandleS sysOutOutsName OutOutPortHandle;
 clearvars ii k;
+
+
+end

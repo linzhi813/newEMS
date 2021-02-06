@@ -1,5 +1,5 @@
 %集成前检查
-% 不是unit集成时，调用这个脚本
+% 
 
 function bCheckResult=TopLayerIntegCheck()
 

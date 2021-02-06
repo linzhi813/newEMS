@@ -21,12 +21,15 @@ bdclose('All');
 
 %% 设置临时文件夹
 myCacheFolder = fullfile(projectRoot, 'cache');
+
+%清空临时文件夹
 if ~exist(myCacheFolder, 'dir')
     mkdir(myCacheFolder);
 else
     rmdir(myCacheFolder,'s');
     mkdir(myCacheFolder);
 end
+
 copyfile(fullfile(projectRoot,'\doc\','Important Note.txt'),myCacheFolder);
 addpath(genpath(myCacheFolder));
 

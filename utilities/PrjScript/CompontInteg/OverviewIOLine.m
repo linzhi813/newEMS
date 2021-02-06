@@ -16,7 +16,32 @@ if ~any(strcmp(CmpntName,bdName))
         load_system(CmpntName);
 end
 
+%%
+
 sysHandle=get_param([CmpntName '/Overview'],'handle');
+
+%设置function call port number为1
+sysInnerIns=find_system(sysHandle,'SearchDepth',1,'BlockType','Inport');
+
+for ii=1:length(sysInnerIns)    
+    portName=get_param(sysInnerIns(ii),'Name');
+    if strcmp(extractBefore(portName,6),'Task_')
+        set_param(sysInnerIns(ii),'Port','1');            
+        continue;
+    end
+
+end
+
+%%
+%先删掉原来的输入输出端口和连线
+Inports=find_system(CmpntName,'SearchDepth',1,'BlockType','Inport');
+delete_block(Inports);
+Outports=find_system(CmpntName,'SearchDepth',1,'BlockType','Outport');
+delete_block(Outports);
+hLines=find_system(CmpntName,'SearchDepth','1','FindAll','on','type','line');
+delete_line(hLines);
+
+
 sysPorts=get_param(sysHandle,'PortConnectivity');
 sysPortsHand=get_param(sysHandle,'PortHandles');
 sysParent=get(sysHandle,'Path');
@@ -35,8 +60,8 @@ for ii=1:length(sysInnerIns)
     
     portName=get_param(sysInnerIns(ii),'Name');
     portPos=sysPorts(ii).Position;
-    DportHandle=sysPortsHand.Inport(ii);
-    
+    DportHandle=sysPortsHand.Inport(ii);    
+   
     %搜索子系统外面和这个port名字相同的输入模块
     %如果没有，添加同名字的端口模块
     %如果有，直接设置位置和大小，并连线
@@ -62,7 +87,13 @@ for ii=1:length(sysInnerIns)
          if sysLines.Inport(ii)~=-1
              delete_line(sysLines.Inport(ii));
          end
-        add_line(sysParent,SportHandle,DportHandle);        
+        add_line(sysParent,SportHandle,DportHandle); 
+        
+        % 如果是Function call端口
+        if strcmp(extractBefore(portName,6),'Task_')
+            set_param(OutInPortHandle,'OutputFunctionCall','On');            
+            continue;
+        end
     
 end
 
@@ -113,7 +144,7 @@ run SetIOColor;
 
 %%
 clearvars selectedBlock;
-clearvars sysPorts sysPortsHand sysParent sysLines sysHandle;
+clearvars sysPorts sysPortsHand sysParent sysLines sysHandle hLines Inports Outports;
 clearvars sysInnerIns portName portPos DportHandle sysOutIns sysOutInsName SportHandleS SportHandle OutInPortHandle;
 clearvars newPosX newPosY;
 clearvars sysInnerOuts sysOutOuts DportHandleS sysOutOutsName OutOutPortHandle;

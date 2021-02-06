@@ -1,0 +1,588 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     RailP_VD.a2l
+ *
+ * Code generation for model "RailP_VD".
+ *
+ * Model version              : 1.53
+ * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
+ * C source code generated on : Thu Feb  4 09:41:23 2021
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      RailP_numMax_CUR
+      /* Long Identifier        */      "Curve that delivers the number of rail pressure max values"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_numMax_CUR@ */
+      /* Record Layout          */      Lookup1D_UBYTE
+      /* Maxdiff                */      0
+      /* Conversion Method      */      RailP_VD_CM_uint8_NaN
+      /* Lower Limit            */      1.0
+      /* Upper Limit            */      20.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      RailP_nRef_mp
+        /* Conversion Method    */      RailP_VD_CM_ERPM_rpm
+        /* Number of Axis Pts   */      10
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      6000.0
+        AXIS_PTS_REF                    RailP_numMax_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      RailP_numMax_CURX
+      /* Long Identifier        */      "Curve that delivers the number of rail pressure max values"
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_numMax_CURX@ */
+      /* Input Quantity         */      RailP_nRef_mp
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      RailP_VD_CM_ERPM_rpm
+      /* Number of Axis Pts     */      10
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      6000.0
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      RailP_pFltWinNeg_CUR
+      /* Long Identifier        */      "Rail pressure decrease from which the system switches to the large signal parameter"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_pFltWinNeg_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      RailP_VD_CM_Press_bar1_bar
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      2500.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      InjCtl_qSetUnBal
+        /* Conversion Method    */      RailP_VD_CM_InjMass_mg_hub
+        /* Number of Axis Pts   */      10
+        /* Lower Limit          */      -300.0
+        /* Upper Limit          */      300.0
+        AXIS_PTS_REF                    RailP_pFltWinNeg_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      RailP_pFltWinNeg_CURX
+      /* Long Identifier        */      "InjCtl_qSetUnBal"
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_pFltWinNeg_CURX@ */
+      /* Input Quantity         */      InjCtl_qSetUnBal
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      RailP_VD_CM_InjMass_mg_hub
+      /* Number of Axis Pts     */      10
+      /* Lower Limit            */      -300.0
+      /* Upper Limit            */      300.0
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_nDiffMax_C  
+      /* Long Identifier        */      "Speed difference from that a new speed to the determination of the number of rail pressure max values is applied"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_nDiffMax_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_ERPM_rpm 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      50.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_facFlt1PT1_C  
+      /* Long Identifier        */      "PT1 filter parameter for increasing rail pressure"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_facFlt1PT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_facFlt2PT1_C  
+      /* Long Identifier        */      "PT1 filter parameter for decreasing rail pressure (small signal behaviour)"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_facFlt2PT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_facFlt3PT1_C  
+      /* Long Identifier        */      "PT1 filter parameter for severely decreasing rail pressure (large signal behaviour)"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_facFlt3PT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_swtFlt_C  
+      /* Long Identifier        */      "Functioning of the peak rail pressure value determination"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_swtFlt_C@ */ 
+      /* Record Layout          */      Scalar_BOOLEAN 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_boolean_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1.0
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_pLin
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_Press_bar1
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      2500.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_pLin@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjCtl_qSetUnBal
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_InjMass
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCtl_qSetUnBal@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Epm_nEng
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_ERPM
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      6000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@Epm_nEng@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_pFlt
+      /* Long identifier        */      "Maximum rail pressure of the last 10 sampling cycle"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_Press_bar1_bar
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      2500.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_pFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_facFltPT1_mp
+      /* Long identifier        */      "Current filter time for PT1 filter"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_Fac_100_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      99.9985
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_facFltPT1_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_nRef_mp
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_ERPM_rpm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      6000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_nRef_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_numMax_mp
+      /* Long identifier        */      "Number of rail pressure max values"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      RailP_VD_CM_uint8_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      1.0
+      /* Upper limit            */      20.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_numMax_mp@ */
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_uint8_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_ERPM_rpm
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_Press_bar1_bar
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.1"
+      /* Units                  */      "bar"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_InjMass_mg_hub
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.2"
+      /* Units                  */      "mg/hub"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_Fac_100_NaN
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_Press_bar1
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.1"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_InjMass
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.2"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_ERPM
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       RailP_VD
+      /* Long identifier        */       "RailP_VD"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Overview
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        Epm_nEng
+        InjCtl_qSetUnBal
+        RailP_pLin
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview
+      /* Long identifier        */       "RailP_VD/Overview"
+      /begin SUB_GROUP
+        S1_RailP_VD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_RailP_VD
+      /* Long identifier        */       "RailP_VD/Overview/RailP_VD"
+      /begin SUB_GROUP
+        S2_PT1_Parameter_Selection
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        RailP_nDiffMax_C
+        RailP_numMax_CUR
+        RailP_swtFlt_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        RailP_nRef_mp
+        RailP_numMax_mp
+        RailP_pFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_PT1_Parameter_Selection
+      /* Long identifier        */       "RailP_VD/Overview/RailP_VD/PT1 Parameter Selection"
+      /begin REF_CHARACTERISTIC
+        RailP_facFlt1PT1_C
+        RailP_facFlt2PT1_C
+        RailP_facFlt3PT1_C
+        RailP_pFltWinNeg_CUR
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        RailP_facFltPT1_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF RailP_VD.a2l */

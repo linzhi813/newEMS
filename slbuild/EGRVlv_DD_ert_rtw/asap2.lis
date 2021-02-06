@@ -1,0 +1,46 @@
+    EGRVlv_rCnvHb_MAP    
+      EGRVlv_rCnvHb_MAPX
+      EGRVlv_rCnvHb_MAPY
+    EGRVlv_rCnvPsNrmHb_CUR    
+        EGRVlv_rCnvPsNrmHb_CURX
+    EGRVlv_rCnvPWM_MAP    
+      EGRVlv_rCnvPWM_MAPX
+      EGRVlv_rCnvPWM_MAPY
+    EGRVlv_rCnvPsNrmPWM_CUR    
+        EGRVlv_rCnvPsNrmPWM_CURX
+EGRVlv_facBattCorFacFlt_C 
+
+EGRVlv_facCorStrt_C 
+
+EGRVlv_rPwmOutMax_C 
+
+EGRVlv_rPwmOutMin_C 
+
+EGRVlv_tiPs_C 
+
+EGRVlv_stPwrStgDiaDis_C 
+
+EGRVlv_stPwrStgDis_C 
+
+EGRVlv_swtHwSel_C 
+
+EGRVlv_swtPwmOutBattCor_C 
+
+EGRVlv_rEGR
+BattU_facCor
+CoEng_st
+Epm_nEng
+DevLib_stPwrStgEnaCond
+EGRVlv_tiPs
+EGRVlv_rCnvInHb_mp
+EGRVlv_rCnvHb_mp
+EGRVlv_facCorFltHb_mp
+EGRVlv_rPsHb
+EGRVlv_rCnvInPWM_mp
+EGRVlv_rCnvPWM_mp
+EGRVlv_facCorFltPWM_mp
+EGRVlv_rPsPWM
+EGRVlv_rPs
+EGRVlv_rPsNrmPWM
+EGRVlv_rPsNrmHb
+EGRVlv_rPsNrm

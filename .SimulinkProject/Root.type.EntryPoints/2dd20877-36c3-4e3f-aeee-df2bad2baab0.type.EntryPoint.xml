@@ -1,2 +1,2 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Info Type="Basic" GroupUUID="8c73a54b-9b70-4dc1-90e0-78dc0e116bcd" Visible="1" Icon="" File="utilities/PrjScript/Mdl2Code/StartBuild.m" Name="StartBuild" />
+<Info Type="Basic" GroupUUID="8c73a54b-9b70-4dc1-90e0-78dc0e116bcd" Visible="1" Icon="" File="utilities/PrjScript/CodeGeneration/StartCodeGen.m" Name="StartCodeGen" />

@@ -1,0 +1,462 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     AccPed_DrvDemDes.a2l
+ *
+ * Code generation for model "AccPed_DrvDemDes".
+ *
+ * Model version              : 1.56
+ * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
+ * C source code generated on : Thu Feb  4 09:43:37 2021
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      MoFDrDem_trqEng_MAP
+      /* Long Identifier        */      "inner torque for disengaged reverse gear calculated from the accelerator pedal angle and the engine speed"
+      /* Characteristic Type    */      MAP
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFDrDem_trqEng_MAP@ */
+      /* Record Layout          */      Lookup2D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Lower Limit            */      -3000.0
+      /* Upper Limit            */      3000.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      Epm_nEng
+        /* Conversion Method    */      AccPed_DrvDemDes_CM_ERPM_rpm
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      6000.0
+        AXIS_PTS_REF                    MoFDrDem_trqEng_MAPX
+      /end AXIS_DESCR
+      /begin AXIS_DESCR                 
+        /* Description of Y-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      APP_r
+        /* Conversion Method    */      AccPed_DrvDemDes_CM_Percent__
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      120.0
+        AXIS_PTS_REF                    MoFDrDem_trqEng_MAPY
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      MoFDrDem_trqEng_MAPY
+      /* Long Identifier        */      "Standardized accelerator pedal position"
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFDrDem_trqEng_MAPY@ */
+      /* Input Quantity         */      APP_r
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Percent__
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      120.0
+    /end AXIS_PTS
+    
+    /begin AXIS_PTS
+      /* Name                   */      MoFDrDem_trqEng_MAPX
+      /* Long Identifier        */      "Average engine speed of one cylinder segment"
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFDrDem_trqEng_MAPX@ */
+      /* Input Quantity         */      Epm_nEng
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_ERPM_rpm
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      6000.0
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtAccPed_C  
+      /* Long Identifier        */      "switch of torque under test"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtAccPed_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_trqAccPed_C  
+      /* Long Identifier        */      "torque under test"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_trqAccPed_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Torq_Nm 
+      /* Lower Limit            */      -3000.0 
+      /* Upper Limit            */      3000.0
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_r
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_Percent
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_r@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Epm_nEng
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_ERPM
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      6000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@Epm_nEng@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AccPed_trqDesPull
+      /* Long identifier        */      "Application parameter for driver demand in pull mode for desired value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@AccPed_trqDesPull@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AccPed_trqDesAct
+      /* Long identifier        */      "driver torque raw of propulsion"
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@AccPed_trqDesAct@ */
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.1"
+      /* Units                  */      "Nm"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_ERPM_rpm
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Percent__
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_AccPed_DrvDemDes_CM_Switch_NaN
+    /end COMPU_METHOD
+    
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_AccPed_DrvDemDes_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+    
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Percent
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_ERPM
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       AccPed_DrvDemDes
+      /* Long identifier        */       "AccPed_DrvDemDes"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Overview
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_r
+        Epm_nEng
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview
+      /* Long identifier        */       "AccPed_DrvDemDes/Overview"
+      /begin SUB_GROUP
+        S1_AccPed_DrvDemDes
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_AccPed_DrvDemDes
+      /* Long identifier        */       "AccPed_DrvDemDes/Overview/AccPed_DrvDemDes"
+      /begin REF_CHARACTERISTIC
+        MoFDrDem_trqEng_MAP
+        SigTst_swtAccPed_C
+        SigTst_trqAccPed_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        AccPed_trqDesAct
+        AccPed_trqDesPull
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF AccPed_DrvDemDes.a2l */

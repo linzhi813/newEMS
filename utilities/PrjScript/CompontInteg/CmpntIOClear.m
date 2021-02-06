@@ -42,6 +42,12 @@ for ii=1:size(CmpntSubLstIntedName,1)
     subMdlIns=find_system(CmpntSubLstIntedName{ii},'SearchDepth',1,'BlockType','Inport');
     subMdlInName=get_param(subMdlIns,'Name');
     for jj=1:length(subMdlInName)
+        
+        %如果该输入端口是function call端口，则跳过
+        if strcmp(extractAfter(subMdlInName{jj},length(subMdlInName{jj})-5),'_Step')
+            continue;
+        end
+        
         %该输入是从外部过来的 %该输入没有重名的（已经添加） 
         if isempty(find(mdlddallEntries,'Name',subMdlInName{jj})) && (~any(strcmp(MdlInName,subMdlInName{jj})))
                        

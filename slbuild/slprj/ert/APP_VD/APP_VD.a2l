@@ -1,0 +1,797 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     APP_VD.a2l
+ *
+ * Code generation for model "APP_VD".
+ *
+ * Model version              : 1.55
+ * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
+ * C source code generated on : Thu Feb  4 09:43:25 2021
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      MoFAPP_rLinAPPCURCalMsgA_CUR
+      /* Long Identifier        */      "the physical value of accpedal"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFAPP_rLinAPPCURCalMsgA_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      APP_VD_CM_Percent__
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      100.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      APP_uUnJit_mp
+        /* Conversion Method    */      APP_VD_CM_Volt_mV_mv
+        /* Number of Axis Pts   */      2
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      5000.0
+        AXIS_PTS_REF                    MoFAPP_rLinAPPCURCalMsgA_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      MoFAPP_rLinAPPCURCalMsgA_CURX
+      /* Long Identifier        */      "accpedal axis"
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFAPP_rLinAPPCURCalMsgA_CURX@ */
+      /* Input Quantity         */      APP_uUnJit_mp
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      APP_VD_CM_Volt_mV_mv
+      /* Number of Axis Pts     */      2
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      5000.0
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_swtEnaFlt_C  
+      /* Long Identifier        */      "Switch to enable PT1"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_swtEnaFlt_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_swtEnaUnJit_C  
+      /* Long Identifier        */      "Switch to enable unjittering"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_swtEnaUnJit_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtAPP_C  
+      /* Long Identifier        */      "Switch to set accpedal value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtAPP_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facLowNegPT1_C  
+      /* Long Identifier        */      "Filter parameter falling signal low range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facLowNegPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facLowPosPT1_C  
+      /* Long Identifier        */      "Filter parameter rising signal low range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facLowPosPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facMidNegPT1_C  
+      /* Long Identifier        */      "Filter parameter falling signal mid range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facMidNegPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facMidPosPT1_C  
+      /* Long Identifier        */      "Filter parameter rising signal mid range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facMidPosPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facUppNegPT1_C  
+      /* Long Identifier        */      "Filter parameter falling signal high range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facUppNegPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facUppPosPT1_C  
+      /* Long Identifier        */      "Filter parameter rising signal high range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facUppPosPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltLowNeg_C  
+      /* Long Identifier        */      "Threshold for low/mid-range Filter parameter falling signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltLowNeg_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltLowPos_C  
+      /* Long Identifier        */      "Threshold for low/mid-range Filter parameter rising signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltLowPos_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltMidNeg_C  
+      /* Long Identifier        */      "Threshold for mid/high-range Filter parameter falling signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltMidNeg_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltMidPos_C  
+      /* Long Identifier        */      "Threshold for mid/high-range Filter parameter rising signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltMidPos_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_rAPP_C  
+      /* Long Identifier        */      "set the accpedal value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_rAPP_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_drLinRmp_C  
+      /* Long Identifier        */      "Permissible amount of accpedal value when vehicle quits limp mode"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_drLinRmp_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent_s___s 
+      /* Lower Limit            */      -200.0 
+      /* Upper Limit            */      200.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uJitter_C  
+      /* Long Identifier        */      "Threshold for unjittering"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uJitter_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Volt_mV_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw_mp
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Volt_mV
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APPLIMP_BP
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_VD_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APPLIMP_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APPDEF_BP
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_VD_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APPDEF_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_drUnFlt
+      /* Long identifier        */      "Acceleration pedal position gradient of unfilterd value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent_s___ms
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_drUnFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rLinAPP_mp
+      /* Long identifier        */      "Linearisation ratio of accelerator pedal"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rLinAPP_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rUnFlt_mp
+      /* Long identifier        */      "Unfiltered APP value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rUnFlt_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rUnFlt
+      /* Long identifier        */      "Unfiltered APP value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rUnFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rFlt_mp
+      /* Long identifier        */      "Acceleration pedal position filtered value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rFlt_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_facPT1
+      /* Long identifier        */      "Filter time"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Fac_100_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      99.9985
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_facPT1@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uUnJit_mp
+      /* Long identifier        */      "Acceleration pedal position unjittered value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Volt_mV_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uUnJit_mp@ */
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Percent__
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Volt_mV_mv
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_APP_VD_CM_Switch_NaN
+    /end COMPU_METHOD
+    
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_APP_VD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+    
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Fac_100_NaN
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Percent_s___s
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.2"
+      /* Units                  */      "%/s"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Volt_mV
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Percent_s___ms
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.2"
+      /* Units                  */      "%/ms"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       APP_VD
+      /* Long identifier        */       "APP_VD"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Overview
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_stSigSrc_APPDEF_BP
+        APP_stSigSrc_APPLIMP_BP
+        APP_uRaw_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview
+      /* Long identifier        */       "APP_VD/Overview"
+      /begin SUB_GROUP
+        S1_APP_VD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_APP_VD
+      /* Long identifier        */       "APP_VD/Overview/APP_VD"
+      /begin SUB_GROUP
+        S2_APP_UnJit
+        S2_Linearisation
+        S2_Signal_Filter
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_APP_UnJit
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/APP_UnJit"
+      /begin REF_CHARACTERISTIC
+        APP_swtEnaUnJit_C
+        APP_uJitter_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_uUnJit_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Linearisation
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Linearisation"
+      /begin SUB_GROUP
+        S4_APP_rUnFlt_inl
+        S4_dt2s
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        MoFAPP_rLinAPPCURCalMsgA_CUR
+        SigTst_rAPP_C
+        SigTst_swtAPP_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_rLinAPP_mp
+        APP_rUnFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Signal_Filter
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Signal_Filter"
+      /begin SUB_GROUP
+        S5_Filter_parameter_selection
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        APP_swtEnaFlt_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_rFlt_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_APP_rUnFlt_inl
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Linearisation/APP_rUnFlt_inl"
+      /begin REF_CHARACTERISTIC
+        APP_drLinRmp_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_rUnFlt_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_dt2s
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Linearisation/dt2s"
+      /begin REF_MEASUREMENT
+        APP_drUnFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S5_Filter_parameter_selection
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Signal_Filter/Filter_parameter_selection"
+      /begin REF_CHARACTERISTIC
+        APP_facLowNegPT1_C
+        APP_facLowPosPT1_C
+        APP_facMidNegPT1_C
+        APP_facMidPosPT1_C
+        APP_facUppNegPT1_C
+        APP_facUppPosPT1_C
+        APP_rThrFltLowNeg_C
+        APP_rThrFltLowPos_C
+        APP_rThrFltMidNeg_C
+        APP_rThrFltMidPos_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_facPT1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF APP_VD.a2l */

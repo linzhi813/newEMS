@@ -19,7 +19,8 @@ if exist([unitName,'.sldd'],'file')
 end
 
 unitddObj = Simulink.data.dictionary.create([pwd '\' [unitName,'.sldd']]);
-unitddObj.EnableAccessToBaseWorkspace=1;
+% 不能再链接到base workspace
+unitddObj.EnableAccessToBaseWorkspace=0;
 
 unitddSectObj = getSection(unitddObj,'Design Data');
 
@@ -75,11 +76,13 @@ addDataSource(unitddObj,'sl_const.sldd');
 %% 写Out
 for k=1:length(strRecordOut)
 
-    eval([char(strRecordOut(k).Name) '=Simulink.Signal;']);    
-    eval([char(strRecordOut(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
-    eval([char(strRecordOut(k).Name) '.CoderInfo.CustomStorageClass=''ExportToFile'';']);
-    eval([char(strRecordOut(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Signals.h'';']);
-    eval([char(strRecordOut(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Signals.c'';']);
+    eval([char(strRecordOut(k).Name) '=Simulink.Signal;']);
+    eval([char(strRecordOut(k).Name) '.CoderInfo.StorageClass=''ExportedGlobal'';']);
+    
+%     eval([char(strRecordOut(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
+%     eval([char(strRecordOut(k).Name) '.CoderInfo.CustomStorageClass=''ExportToFile'';']);
+%     eval([char(strRecordOut(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Signals.h'';']);
+%     eval([char(strRecordOut(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Signals.c'';']);
     
     eval([char(strRecordOut(k).Name) '.DataType=''' strRecordOut(k).Typedef ''';']);
     
@@ -119,10 +122,12 @@ end
 for k=1:length(strRecordMp)
 
     eval([char(strRecordMp(k).Name) '=Simulink.Signal;']);
-    eval([char(strRecordMp(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
-    eval([char(strRecordMp(k).Name) '.CoderInfo.CustomStorageClass=''ExportToFile'';']);
-    eval([char(strRecordMp(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Signals.h'';']);
-    eval([char(strRecordMp(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Signals.c'';']);
+    eval([char(strRecordMp(k).Name) '.CoderInfo.StorageClass=''ExportedGlobal'';']); 
+    
+%     eval([char(strRecordMp(k).Name) '.CoderInfo.StorageClass=''Custom'';']);    
+%     eval([char(strRecordMp(k).Name) '.CoderInfo.CustomStorageClass=''ExportToFile'';']);
+%     eval([char(strRecordMp(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Signals.h'';']);
+%     eval([char(strRecordMp(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Signals.c'';']);
     
     eval([char(strRecordMp(k).Name) '.DataType=''' strRecordMp(k).Typedef ''';']);
     
@@ -163,7 +168,7 @@ for k=1:length(strRecordCal)
 
     eval([char(strRecordCal(k).Name) '=Simulink.Parameter;']);
     eval([char(strRecordCal(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
-    eval([char(strRecordCal(k).Name) '.CoderInfo.CustomStorageClass=''ExportToFile'';']);
+    eval([char(strRecordCal(k).Name) '.CoderInfo.CustomStorageClass=''ConstVolatile'';']);
     eval([char(strRecordCal(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Paras.h'';']);
     eval([char(strRecordCal(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Paras.c'';']);
     
@@ -208,18 +213,55 @@ end
 
 %% 写Const
 for k=1:length(strRecordConst)
-
-   
-    stype=strRecordConst(k).Typedef;
-    if strcmp(stype,'int8')||strcmp(stype,'uint8')||strcmp(stype,'int16')||strcmp(stype,'uint16')||...
-            strcmp(stype,'int32')||strcmp(stype,'uint32')||strcmp(stype,'boolean')
-       assignin(unitddSectObj,strRecordConst(k).Name,fi(eval([stype '(' num2str(strRecordConst(k).Value) ')'])));
+ 
+% 定义成Simulink.Parameter
+    eval([char(strRecordConst(k).Name) '=Simulink.Parameter;']);
+    eval([char(strRecordConst(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
+    eval([char(strRecordConst(k).Name) '.CoderInfo.CustomStorageClass=''Define'';']);
+%     eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Paras.h'';']);
+%     eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Paras.c'';']);
+    
+    eval([char(strRecordConst(k).Name) '.DataType=''' strRecordConst(k).Typedef ''';']);
+    
+  
+    
+    if ischar(strRecordConst(k).Value)
+        eval([char(strRecordConst(k).Name) '.Value=' strRecordConst(k).Value ';']);
     else
-        typevalue=evalin(unitddSectObj,stype);    
-        assignin(unitddSectObj,strRecordConst(k).Name,fi(strRecordConst(k).Value,typevalue));
+         eval([char(strRecordConst(k).Name) '.Value=' num2str(strRecordConst(k).Value) ';']);
     end
     
+%     eval([char(strRecordConst(k).Name) '.Dimensions=' '-1' ';']);
+    
+    eval([char(strRecordConst(k).Name) '.Min=[];']);     
+    
+    eval([char(strRecordConst(k).Name) '.Max=[];']);  
+    
+    if isnan(strRecordConst(k).Unit)
+        eval([char(strRecordConst(k).Name) '.Unit=''' 'NaN' ''';']);
+    else
+        eval([char(strRecordConst(k).Name) '.Unit=''' char(strRecordConst(k).Unit) ''';']);
+    end   
+    
+    
+    eval([char(strRecordConst(k).Name) '.Description=''' strRecordConst(k).Description ''';']);
+    
    
+    importFromBaseWorkspace(unitddObj,'varList',{strRecordConst(k).Name},'existingVarsAction','overwrite');
+    
+    evalin('base',['clear ' strRecordConst(k).Name]);
+   
+% 定义成fixed point
+%     stype=strRecordConst(k).Typedef;
+%     if strcmp(stype,'int8')||strcmp(stype,'uint8')||strcmp(stype,'int16')||strcmp(stype,'uint16')||...
+%             strcmp(stype,'int32')||strcmp(stype,'uint32')||strcmp(stype,'boolean')
+%        assignin(unitddSectObj,strRecordConst(k).Name,fi(eval([stype '(' num2str(strRecordConst(k).Value) ')'])));
+%     else
+%         typevalue=evalin(unitddSectObj,stype);    
+%         assignin(unitddSectObj,strRecordConst(k).Name,fi(strRecordConst(k).Value,typevalue));
+%     end
+%     
+%    
 end
 
 %%

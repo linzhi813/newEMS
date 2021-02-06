@@ -1,2 +1,3 @@
 ONLY put caches files in this folder!
+Don't Commit caches files to Server!
 Everything here will be cleared during project start£¡

@@ -42,9 +42,9 @@ for k=1:length(strRecordConst)
 
     eval([char(strRecordConst(k).Name) '=Simulink.Parameter;']);
     eval([char(strRecordConst(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
-    eval([char(strRecordConst(k).Name) '.CoderInfo.CustomStorageClass=''Const'';']);
+    eval([char(strRecordConst(k).Name) '.CoderInfo.CustomStorageClass=''Define'';']);
     eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' 'sl_Const_Paras.h'';']);
-    eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' 'sl_Const_Paras.c'';']);
+%     eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' 'sl_Const_Paras.c'';']);
     
     eval([char(strRecordConst(k).Name) '.DataType=''' strRecordConst(k).Typedef ''';']);    
     

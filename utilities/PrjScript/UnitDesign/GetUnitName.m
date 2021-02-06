@@ -29,4 +29,3 @@ end
 
 clear k;
 clear cellPath unitNameRaw unitPath;
-clear UnitTotNum UnitNameLst UnitPathLst;

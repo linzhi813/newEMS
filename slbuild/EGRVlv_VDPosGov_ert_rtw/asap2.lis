@@ -1,0 +1,90 @@
+    EGRVlv_rDesEGR_CUR    
+        EGRVlv_rDesEGR_CURX
+    EGRVlv_iEff_CUR    
+        EGRVlv_iEff_CURX
+    EGRVlv_rGovMax_CUR    
+        EGRVlv_rGovMax_CURX
+    EGRVlv_rGovMin_CUR    
+        EGRVlv_rGovMin_CURX
+EGRVlv_iEffOvrLd_C 
+
+EGRVlv_DKdNgv_C 
+
+EGRVlv_DKdPsv_C 
+
+EGRVlv_SlwClsDKd_C 
+
+EGRVlv_SlwClsIKi_C 
+
+EGRVlv_SlwClsPKp_C 
+
+EGRVlv_SmlSigNgvDKd_C 
+
+EGRVlv_SmlSigNgvIKi_C 
+
+EGRVlv_SmlSigNgvPKp_C 
+
+EGRVlv_SmlSigPsvDKd_C 
+
+EGRVlv_SmlSigPsvIKi_C 
+
+EGRVlv_SmlSigPsvPKp_C 
+
+EGRVlv_facCrntEffFlt_C 
+
+EGRVlv_rEGRDflVal_C 
+
+EGRVlv_rEGRSwtOff_C 
+
+EGRVlv_rGovDvtThres_C 
+
+EGRVlv_rGovMax_C 
+
+EGRVlv_rGovMin_C 
+
+EGRVlv_rIniStp_C 
+
+EGRVlv_rOutIMax_C 
+
+EGRVlv_rPIDWinNgv_C 
+
+EGRVlv_rPIDWinPsv_C 
+
+EGRVlv_rSwtOffRmp_C 
+
+EGRVlv_tiLimDlyOvrLd_C 
+
+EGRVlv_tiOutIMax_C 
+
+EGRVlv_swtDesValNrmInv_C 
+
+EGRVlv_swtGovByp_C 
+
+EGRVlv_rAct
+EGRVlv_rPs
+BattU_facCor
+EGRVlv_stMon
+DSM_bEGRVlvGovOn
+EGRVlv_rRlsEGR
+DSM_bEGRVlvClnUp
+SyC_stSub
+EGRVlv_stTrgClnUp
+EGRVlv_r
+EGRVlv_stJamVlv
+EGRVlv_rAbsEGR_mp
+EGRVlv_rGovMax_mp
+EGRVlv_rGovDesVal
+EGRVlv_rGovDvt
+EGRVlv_rGovMin_mp
+EGRVlv_KpPar
+EGRVlv_rOutPID_mp
+EGRVlv_rIniVal
+EGRVlv_rGovEGR
+EGRVlv_rEGR
+EGRVlv_KdPar
+EGRVlv_KiPar
+EGRVlv_rDesValNrm
+EGRVlv_iEff_mp
+GovIni
+EGRVlv_stIni
+swt_off

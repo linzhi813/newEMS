@@ -1,5 +1,5 @@
-% 更新Config Set
-% 每次cs更新必须先手动将更改保存到ConfigSetRef.mat文件中，然后再运行该脚本
+% 打开模型引用的Config Set
+% Config Set更改完成后必须手动保存，本脚本只完成打开cs的操作
 
 global projectRoot;
 
@@ -13,5 +13,17 @@ cmddObj=Simulink.data.dictionary.open([projectRoot '\cm\confg\' 'slprj_cm.sldd']
 
 show(cmddObj);
 
+% csObj=getEntry(cmddSectObj,'cs_ert');
+% % 
+%  cs=getValue(csObj);
+% %  
+%  openDialog(cs);
+ 
+%  openDialog(cs);
+
+% 时间上不对
+%  setValue(csObj,cs);
+ 
+%  saveChanges(cmddObj);
 
 clear cmddSectObj cmddObj;

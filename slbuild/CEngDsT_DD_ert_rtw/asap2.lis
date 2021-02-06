@@ -1,0 +1,37 @@
+    CEngDsT_tTransf_CUR    
+        CEngDsT_tTransf_CURX
+CEngDsT_tiMaxDefDeb_C 
+
+CEngDsT_tiMaxOKDeb_C 
+
+CEngDsT_tiMinDefDeb_C 
+
+CEngDsT_tiMinOKDeb_C 
+
+CEngDsT_tiPhysRngHiDefDeb_C 
+
+CEngDsT_tiPhysRngHiOKDeb_C 
+
+CEngDsT_tiPhysRngLoDefDeb_C 
+
+CEngDsT_tiPhysRngLoOKDeb_C 
+
+CEngDsT_uSRCMax_C 
+
+CEngDsT_uSRCMin_C 
+
+CEngDsT_uRaw
+DSM_bCEngDsTSS
+CEngDsT_tSens
+CEngDsT_bSRCMax
+CEngDsT_bSRCMaxDeb_DSM
+CEngDsT_bSRCMin
+CEngDsT_bSRCMinDeb_DSM
+CEngDsT_bFinalDef
+CEngDsT_bProvDef
+CEngDsT_bPhysRngHi
+CEngDsT_bPhysRngHiDeb_DSM
+CEngDsT_bPhysRngLo
+CEngDsT_bPhysRngLoDeb_DSM
+CEngDsT_bPhysRngFinalDef
+CEngDsT_bPhysRngProvDef

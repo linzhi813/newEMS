@@ -1,0 +1,723 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     CEngDsT_DD.a2l
+ *
+ * Code generation for model "CEngDsT_DD".
+ *
+ * Model version              : 1.108
+ * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
+ * C source code generated on : Thu Feb  4 10:09:05 2021
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      CEngDsT_tTransf_CUR
+      /* Long Identifier        */      "Transformation curve to convert the voltage value to temperature value"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tTransf_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      CEngDsT_DD_CM_Temp_C_deg
+      /* Lower Limit            */      -50.0
+      /* Upper Limit            */      150.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      CEngDsT_uRaw
+        /* Conversion Method    */      CEngDsT_DD_CM_Volt_mV_mv
+        /* Number of Axis Pts   */      26
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      5000.0
+        AXIS_PTS_REF                    CEngDsT_tTransf_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      CEngDsT_tTransf_CURX
+      /* Long Identifier        */      "Transformation aixs to convert the voltage value to temperature value"
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tTransf_CURX@ */
+      /* Input Quantity         */      CEngDsT_uRaw
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      CEngDsT_DD_CM_Volt_mV_mv
+      /* Number of Axis Pts     */      26
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      5000.0
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMaxDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMax"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMaxDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMaxOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMax"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMaxOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMinDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMin"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMinDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMinOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMin"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMinOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngHiDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngHi"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngHiDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngHiOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngHi"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngHiOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngLoDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngLo"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngLoDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngLoOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngLo"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngLoOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_uSRCMax_C  
+      /* Long Identifier        */      "Signal Range Check / Threshold for SRC -Max detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_uSRCMax_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Volt_mV_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_uSRCMin_C  
+      /* Long Identifier        */      "Signal Range Check / Threshold for SRC -Min detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_uSRCMin_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Volt_mV_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_uRaw
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_DD_CM_Volt_mV
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_uRaw@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      DSM_bCEngDsTSS
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@DSM_bCEngDsTSS@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_tSens
+      /* Long identifier        */      "Sensed engine coolant temperature"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_DD_CM_Temp_C_deg
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_tSens@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMax
+      /* Long identifier        */      "coolant temperature voltage signal maximum limit value"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMax@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMaxDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bSRCMaxDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMaxDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMin
+      /* Long identifier        */      "coolant temperature voltage signal minimum limit value"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMin@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMinDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bSRCMinDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMinDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bFinalDef
+      /* Long identifier        */      "Status Sensor of the coolant temperature finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bProvDef
+      /* Long identifier        */      "Status Sensor of the coolant temperature temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngHi
+      /* Long identifier        */      "Status Sensor of the coolant temperature high voltage Signal range"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngHi@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngHiDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bPhysRngHiDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngHiDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngLo
+      /* Long identifier        */      "Status Sensor of the coolant temperature low voltage Signal range"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngLo@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngLoDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bPhysRngLoDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngLoDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngFinalDef
+      /* Long identifier        */      "Status Sensor of the CEngDsT physical Signal range check finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngProvDef
+      /* Long identifier        */      "Status Sensor of the CEngDsT physical Signal range check temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngProvDef@ */
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Temp_C_deg
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.1"
+      /* Units                  */      "deg"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Volt_mV_mv
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.1"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Volt_mV
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       CEngDsT_DD
+      /* Long identifier        */       "CEngDsT_DD"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Overview
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CEngDsT_uRaw
+        DSM_bCEngDsTSS
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview
+      /* Long identifier        */       "CEngDsT_DD/Overview"
+      /begin SUB_GROUP
+        S1_CEngDsT_DD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_CEngDsT_DD
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD"
+      /begin SUB_GROUP
+        S2_PRC_Debounce
+        S2_SRC_Debounce
+        S2_U2T_Cnv
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_PRC_Debounce
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/PRC_Debounce"
+      /begin REF_CHARACTERISTIC
+        CEngDsT_tiPhysRngHiDefDeb_C
+        CEngDsT_tiPhysRngHiOKDeb_C
+        CEngDsT_tiPhysRngLoDefDeb_C
+        CEngDsT_tiPhysRngLoOKDeb_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_bPhysRngFinalDef
+        CEngDsT_bPhysRngHi
+        CEngDsT_bPhysRngHiDeb_DSM
+        CEngDsT_bPhysRngLo
+        CEngDsT_bPhysRngLoDeb_DSM
+        CEngDsT_bPhysRngProvDef
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_SRC_Debounce
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/SRC_Debounce"
+      /begin REF_CHARACTERISTIC
+        CEngDsT_tiMaxDefDeb_C
+        CEngDsT_tiMaxOKDeb_C
+        CEngDsT_tiMinDefDeb_C
+        CEngDsT_tiMinOKDeb_C
+        CEngDsT_uSRCMax_C
+        CEngDsT_uSRCMin_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_bFinalDef
+        CEngDsT_bProvDef
+        CEngDsT_bSRCMax
+        CEngDsT_bSRCMaxDeb_DSM
+        CEngDsT_bSRCMin
+        CEngDsT_bSRCMinDeb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_U2T_Cnv
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/U2T_Cnv"
+      /begin REF_CHARACTERISTIC
+        CEngDsT_tTransf_CUR
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_tSens
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF CEngDsT_DD.a2l */

@@ -91,7 +91,8 @@ if exist([CmpntName,'.sldd'],'file')
 else
 
     mdlddObj = Simulink.data.dictionary.create([pwd '\' CmpntName,'.sldd']); 
-    mdlddObj.EnableAccessToBaseWorkspace=1;
+    % 不能再链接到base workspace
+    mdlddObj.EnableAccessToBaseWorkspace=0;
     
 end
 

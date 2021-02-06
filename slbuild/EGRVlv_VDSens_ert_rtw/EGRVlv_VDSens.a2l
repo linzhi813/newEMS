@@ -1,0 +1,858 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     EGRVlv_VDSens.a2l
+ *
+ * Code generation for model "EGRVlv_VDSens".
+ *
+ * Model version              : 1.67
+ * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
+ * C source code generated on : Thu Feb  4 09:40:05 2021
+ * 
+ * Target selection: ert.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_LAST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BOOLEAN
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT    
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtEGRVlv_C  
+      /* Long Identifier        */      "Switch for EGR valve position by hand"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtEGRVlv_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_RmpSlpNeg_C  
+      /* Long Identifier        */      "Parameter for Ramp 1 / negative ramp slope"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_RmpSlpNeg_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle___s 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_RmpSlpPos_C  
+      /* Long Identifier        */      "Parameter for Ramp 1 / Slope if the ramp has to be increased"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_RmpSlpPos_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle___s 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_facPT1ModVal_C  
+      /* Long Identifier        */      "PT1 filter factor for EGRVlv sensor model value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_facPT1ModVal_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_facPT1_C  
+      /* Long Identifier        */      "PT1 filter factor for EGRVlv sensor"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_facPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rActMax_C  
+      /* Long Identifier        */      "Maximum threshold for actual sensed valve position"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rActMax_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rActMin_C  
+      /* Long Identifier        */      "Minimum threshold for actual sensed valve position"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rActMin_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rActOfs_C  
+      /* Long Identifier        */      "Offset correction value."
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rActOfs_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rCmpNewCtlUn_C  
+      /* Long Identifier        */      "Default value for the new ECU"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rCmpNewCtlUn_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rPullDwnThres_C  
+      /* Long Identifier        */      "Pull down threshold ratio"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rPullDwnThres_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rTmpOfsLrnMax_C  
+      /* Long Identifier        */      "Maximum offset ratio"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rTmpOfsLrnMax_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rTmpOfsLrnMin_C  
+      /* Long Identifier        */      "Minimum offset ratio"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rTmpOfsLrnMin_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_rTransStgDfl_C  
+      /* Long Identifier        */      "Structure for Transtage / Fixed replacement value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_rTransStgDfl_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_rEGRVlv_C  
+      /* Long Identifier        */      "Set EGR valve position by hand"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_rEGRVlv_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_DutyCycle__ 
+      /* Lower Limit            */      -100.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_swtActOfs_C  
+      /* Long Identifier        */      "Switch to activate offset correction replacement value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_swtActOfs_C@ */ 
+      /* Record Layout          */      Scalar_BOOLEAN 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_boolean_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_swtOfsLrnActv_C  
+      /* Long Identifier        */      "Switch to ENABLE/DISABLE offset learning"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_swtOfsLrnActv_C@ */ 
+      /* Record Layout          */      Scalar_BOOLEAN 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_boolean_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1.0
+    /end CHARACTERISTIC
+    
+    
+    /begin CHARACTERISTIC
+      /* Name                   */      EGRVlv_swtSensPrs_C  
+      /* Long Identifier        */      "Switch for position sensor present or not"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@EGRVlv_swtSensPrs_C@ */ 
+      /* Record Layout          */      Scalar_BOOLEAN 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      EGRVlv_VDSens_CM_boolean_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1.0
+    /end CHARACTERISTIC
+    
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rSens
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rSens@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_bFinalDef
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      EGRVlv_VDSens_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_bFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_bProvDef
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      EGRVlv_VDSens_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_bProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_bPhysRngFinalDef
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      EGRVlv_VDSens_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_bPhysRngFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_bPhysRngProvDef
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      EGRVlv_VDSens_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_bPhysRngProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rEGR
+      /* Long identifier        */      ""
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rEGR@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      DSM_bEGRVlvModVal
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      EGRVlv_VDSens_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@DSM_bEGRVlvModVal@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      DSM_bEGRVlvReplVal
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      EGRVlv_VDSens_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@DSM_bEGRVlvReplVal@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rTmpOfs
+      /* Long identifier        */      "Temperory offset calculated"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rTmpOfs@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rUnFlt
+      /* Long identifier        */      "Unfiltered EGR valve position"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rUnFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rFlt
+      /* Long identifier        */      "Filtered EGR valve position"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rActUnCor
+      /* Long identifier        */      "Uncorrected position of the valve"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rActUnCor@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rOfs_mp
+      /* Long identifier        */      "Offset correction"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rOfs_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rLinOfs_mp
+      /* Long identifier        */      "Valve position before limiting"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rLinOfs_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rModVal
+      /* Long identifier        */      "The model value used in the evaluation of the EGR valve actuator position EGRVlv_rAct"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rModVal@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rAct
+      /* Long identifier        */      "Actuatorposition"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rAct@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rActInv
+      /* Long identifier        */      "Actuatorposition (100% - rAct)"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rActInv@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EGRVlv_rActNoErrHdl
+      /* Long identifier        */      "Valve position (offset corrected without error handling)"
+      /* Data type              */      SWORD
+      /* Conversion method      */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -100.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@EGRVlv_rActNoErrHdl@ */
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_EGRVlv_VDSens_CM_Switch_NaN
+    /end COMPU_METHOD
+    
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_EGRVlv_VDSens_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+    
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_DutyCycle___s
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "%/s"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_Fac_100_NaN
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_DutyCycle__
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_DutyCycle
+      /* Long identifier        */      "Q = V*200.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.3"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 200.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      EGRVlv_VDSens_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       EGRVlv_VDSens
+      /* Long identifier        */       "EGRVlv_VDSens"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_Overview
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        DSM_bEGRVlvModVal
+        DSM_bEGRVlvReplVal
+        EGRVlv_bFinalDef
+        EGRVlv_bPhysRngFinalDef
+        EGRVlv_bPhysRngProvDef
+        EGRVlv_bProvDef
+        EGRVlv_rEGR
+        EGRVlv_rSens
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview
+      /* Long identifier        */       "EGRVlv_VDSens/Overview"
+      /begin SUB_GROUP
+        S1_EGRVlv_VDSens
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_EGRVlv_VDSens
+      /* Long identifier        */       "EGRVlv_VDSens/Overview/EGRVlv_VDSens"
+      /begin SUB_GROUP
+        S2_Calculation_of_the_actual_valve_position
+        S2_Transtage_Evaluation
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Calculation_of_the_actual_valve_position
+      /* Long identifier        */       "EGRVlv_VDSens/Overview/EGRVlv_VDSens/Calculation of the actual valve position"
+      /begin SUB_GROUP
+        S3_Offset_Correction_and_Slope_Calculation
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        EGRVlv_rActMax_C
+        EGRVlv_rActMin_C
+        EGRVlv_rPullDwnThres_C
+        EGRVlv_rTmpOfsLrnMax_C
+        EGRVlv_rTmpOfsLrnMin_C
+        EGRVlv_swtOfsLrnActv_C
+        EGRVlv_swtSensPrs_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        EGRVlv_rAct
+        EGRVlv_rActInv
+        EGRVlv_rTmpOfs
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Transtage_Evaluation
+      /* Long identifier        */       "EGRVlv_VDSens/Overview/EGRVlv_VDSens/Transtage Evaluation"
+      /begin SUB_GROUP
+        S4_sensor_fault
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        EGRVlv_RmpSlpNeg_C
+        EGRVlv_RmpSlpPos_C
+        EGRVlv_facPT1ModVal_C
+        EGRVlv_facPT1_C
+        EGRVlv_rTransStgDfl_C
+        SigTst_rEGRVlv_C
+        SigTst_swtEGRVlv_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        EGRVlv_rActUnCor
+        EGRVlv_rFlt
+        EGRVlv_rModVal
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_Offset_Correction_and_Slope_Calculation
+      /* Long identifier        */       "EGRVlv_VDSens/Overview/EGRVlv_VDSens/Calculation of the actual valve position/Offset Correction and Slope Calculation"
+      /begin REF_CHARACTERISTIC
+        EGRVlv_rActOfs_C
+        EGRVlv_rCmpNewCtlUn_C
+        EGRVlv_swtActOfs_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        EGRVlv_rActNoErrHdl
+        EGRVlv_rLinOfs_mp
+        EGRVlv_rOfs_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_sensor_fault
+      /* Long identifier        */       "EGRVlv_VDSens/Overview/EGRVlv_VDSens/Transtage Evaluation/sensor_fault"
+      /begin REF_MEASUREMENT
+        EGRVlv_rUnFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF EGRVlv_VDSens.a2l */
