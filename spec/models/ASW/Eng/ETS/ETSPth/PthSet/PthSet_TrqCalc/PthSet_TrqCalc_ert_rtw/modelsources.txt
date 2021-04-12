@@ -1,1 +1,0 @@
-   PthSet_TrqCalc.c 

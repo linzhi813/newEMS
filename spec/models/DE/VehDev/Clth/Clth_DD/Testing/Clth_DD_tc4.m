@@ -1,1 +1,0 @@
-SigTst_swtClth_C.Value=Switch_conv.ON;

@@ -1,2 +1,0 @@
-MSTSHFT_SY = uint8(1);
-ACCPED_REVGEARMAP_SY = uint8(0);

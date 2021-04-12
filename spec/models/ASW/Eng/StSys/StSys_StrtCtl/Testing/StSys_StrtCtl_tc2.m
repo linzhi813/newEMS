@@ -1,1 +1,0 @@
-StSys_stCondActv_C.Value = 249;

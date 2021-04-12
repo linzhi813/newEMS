@@ -1,1 +1,0 @@
-StSys_tiStrtCutOut_C.Value = 30;

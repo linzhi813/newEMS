@@ -1,4 +1,0 @@
-
-%% Calibration value define
-Rail_dvolMeUnCtlUpLim_CUR.Value = [0 10 100 500 1000 2000 3000 4000 5000 6000 8000 10000 15000 20000 30000 50000];
-

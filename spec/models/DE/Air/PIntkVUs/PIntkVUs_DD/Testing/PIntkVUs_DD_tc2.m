@@ -1,9 +1,0 @@
-Air_uSRCPIntkVUsMax_C.Value=3500;
-Air_uSRCPIntkVUsMin_C.Value=500;
-Air_pPhysRngPIntkVUsMax_C.Value=250;
-Air_pPhysRngPIntkVUsMin_C.Value=20;
-Air_tiPIntkVUsMaxDefDeb_C.Value=50;
-Air_tiPIntkVUsMaxOKDeb_C.Value=50;
-Air_tiPIntkVUsMinDefDeb_C.Value=50;
-Air_tiPIntkVUsMinOKDeb_C.Value=50;
-Air_pMaxDiffLimPlsPIntkVUs_C.Value=250;

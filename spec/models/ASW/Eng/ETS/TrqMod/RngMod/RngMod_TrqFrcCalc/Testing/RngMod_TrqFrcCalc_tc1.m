@@ -1,1 +1,0 @@
-RngMod_trqLossComp_C.Value = -3267;

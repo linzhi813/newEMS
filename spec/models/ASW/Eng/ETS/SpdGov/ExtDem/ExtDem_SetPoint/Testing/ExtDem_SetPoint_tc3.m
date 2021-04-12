@@ -1,1 +1,0 @@
-ExtDem_swtTrqSel_C=2

@@ -1,1 +1,0 @@
-AirHt_tiStDelay_C.Value = 0;

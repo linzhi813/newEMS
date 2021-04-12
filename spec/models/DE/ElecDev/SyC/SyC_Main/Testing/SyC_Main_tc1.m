@@ -1,1 +1,0 @@
-SyC_Main_DT=10;

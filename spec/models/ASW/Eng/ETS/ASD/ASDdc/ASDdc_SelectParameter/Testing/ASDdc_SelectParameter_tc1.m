@@ -1,2 +1,0 @@
-ASDdc_KdGovGear3_CUR.Value = [10 10 10 10 10 13 6 2 11 5];
-ASDdc_DT1GovGear3_CUR.Value = [50 50 50 50 50 57 85 122 150 196];

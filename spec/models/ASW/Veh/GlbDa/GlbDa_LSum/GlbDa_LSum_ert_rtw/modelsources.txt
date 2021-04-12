@@ -1,1 +1,0 @@
-   GlbDa_LSum.c 

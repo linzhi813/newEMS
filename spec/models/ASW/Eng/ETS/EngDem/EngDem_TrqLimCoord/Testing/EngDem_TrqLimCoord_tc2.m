@@ -1,4 +1,0 @@
-EngDem_trqLimErr3_CUR.Value = [100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100];
-EngDem_RmpLimErrNeg_C.Value=100;
-EngDem_RmpLimErrPos_C.Value=1000;
-EngDem_TrqLimErrRmpPos_C.Value = 1000;

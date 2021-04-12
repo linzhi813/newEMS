@@ -1,1 +1,0 @@
-BattU_swtRated_C.Value=Switch_conv.ON;

@@ -1,1 +1,0 @@
-SigTst_swtAPPKickDown_C.Value=Switch_conv.ON;
