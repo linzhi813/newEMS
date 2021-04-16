@@ -28,6 +28,7 @@ unitddSectObj = getSection(unitddObj,'Design Data');
 addDataSource(unitddObj,'slprj_cm.sldd');
 addDataSource(unitddObj,'sl_ddtypes.sldd');
 addDataSource(unitddObj,'sl_const.sldd');
+addDataSource(unitddObj,'slprj_FM.sldd');
 
 %% 将输入信号写入base workspace
 % 将输入信号信息写入模型Inport端口，下面注释掉
@@ -217,7 +218,7 @@ for k=1:length(strRecordConst)
 % 定义成Simulink.Parameter
     eval([char(strRecordConst(k).Name) '=Simulink.Parameter;']);
     eval([char(strRecordConst(k).Name) '.CoderInfo.StorageClass=''Custom'';']);
-    eval([char(strRecordConst(k).Name) '.CoderInfo.CustomStorageClass=''Define'';']);
+    eval([char(strRecordConst(k).Name) '.CoderInfo.CustomStorageClass=''Const'';']);
 %     eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.HeaderFile=''' unitName '_Paras.h'';']);
 %     eval([char(strRecordConst(k).Name) '.CoderInfo.CustomAttributes.DefinitionFile=''' unitName '_Paras.c'';']);
     
