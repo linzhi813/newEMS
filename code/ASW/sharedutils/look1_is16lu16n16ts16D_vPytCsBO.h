@@ -1,11 +1,11 @@
 /*
  * File: look1_is16lu16n16ts16D_vPytCsBO.h
  *
- * Code generated for Simulink model 'EGRVlv_VDPosGov'.
+ * Code generated for Simulink model 'RailP_VD'.
  *
- * Model version                  : 1.82
+ * Model version                  : 6.1
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:39:04 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:47 2021
  */
 
 #ifndef RTW_HEADER_look1_is16lu16n16ts16D_vPytCsBO_h_

@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.66
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:40:32 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:27 2021
  */
 
 #ifndef RTW_HEADER_CnvSet_Trq2Q_Paras_h_

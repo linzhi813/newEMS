@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'InjVlv_CalcET'.
  *
- * Model version                  : 1.59
+ * Model version                  : 1.60
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:41:40 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:58 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -51,9 +51,15 @@ struct tag_RTM_InjVlv_CalcET_T {
 };
 
 /* Imported (extern) block signals */
-extern Press_bar1 RailP_pFlt;          /* '<Root>/RailP_pFlt' */
-extern InjMass InjCrv_qMI1Des;         /* '<Root>/InjCrv_qMI1Des' */
-extern Switch T15_st;                  /* '<Root>/T15_st' */
+extern Press_bar1 RailP_pFlt;          /* '<Root>/RailP_pFlt'
+                                        * Maximum rail pressure of the last 10 sampling cycle
+                                        */
+extern InjMass InjCrv_qMI1Des;         /* '<Root>/InjCrv_qMI1Des'
+                                        * desired MI1 injection quantity
+                                        */
+extern Switch T15_st;                  /* '<Root>/T15_st'
+                                        * Terminal 15 status after debouncing
+                                        */
 
 /* Block states (default storage) */
 extern DW_InjVlv_CalcET_T InjVlv_CalcET_DW;
@@ -66,10 +72,10 @@ extern DW_InjVlv_CalcET_T InjVlv_CalcET_DW;
  * these signals and export their symbols.
  *
  */
-extern uSec1 InjVlv_tiETMI1NoCor_mp;   /* '<S2>/InjVlv_tiET_MAP'
+extern uSec4 InjVlv_tiETMI1NoCor_mp;   /* '<S2>/InjVlv_tiET_MAP'
                                         * Start of energizing for MI1 without correction
                                         */
-extern uSec1 InjCrv_tiMI1ET;           /* '<S2>/Switch4'
+extern uSec4 InjCrv_tiMI1ET;           /* '<S2>/Switch4'
                                         * Estimated MI1 energizing time
                                         */
 

@@ -5,6 +5,7 @@
 global projectRoot
 global UnitPathLst;
 global UnitYLst;
+global bCopyCodeSuccess;
 
 CheckResult=preCodeGenCheck();
 if ~CheckResult
@@ -12,8 +13,8 @@ if ~CheckResult
     return;
 end
 
-strIn=input('Need Top Model Running(Simulation) Check? Y/N [Y]','s');
-if ~strcmp(strIn,'N')
+strIn=input('Need Top Model Running(Simulation) Check? Y/N [N]','s');
+if strcmp(strIn,'Y')
     disp('Top Model Running Check, Please Wait...')
     SimCheck=TopMdlSimCheck();
     if ~SimCheck
@@ -61,35 +62,33 @@ UnitYLstPath=UnitPathLst(strcmp(UnitLst(1:end,2),'Y'));
 
  
 for ii=1:length(UnitYLst)    
-       
-    hUnit=load_system([UnitYLstPath{ii} '\' UnitYLst{ii}]);
     
-    % 根据port名字绑定输入信号
-    cellInports=find_system(UnitYLst{ii},'SearchDepth',1,'BlockType','Inport');
-    cellInportsName=get_param(cellInports,'Name');
-    %跳过_Step端口
-    for jj=1:length(cellInports)
-        
-        if strcmp(extractAfter(cellInportsName{jj},length(cellInportsName{jj})-5),'_Step')
-            continue;
-        end
-        
-        PortHandle=get_param(cellInports{jj},'Handle');
-        PortHandles=get(PortHandle,'Porthandles');
-        InportHandle=PortHandles.Outport;
-        LineHandle=find_system(UnitYLst{ii},'SearchDepth',1,'FindAll','on','Type','line','SrcPortHandle',InportHandle);
-        set(LineHandle,'Name',cellInportsName{jj});
-        set(LineHandle,'MustResolveToSignalObject',0);       
-        set(LineHandle,'SignalObjectClass','Simulink.Signal');
-        set(LineHandle,'StorageClass','ImportedExtern');
-    end
-
-    rtwbuild(UnitYLst{ii});
-    
-    close_system(hUnit,0);
+    cd(UnitYLstPath{ii});
+   
+    run UnitCodeGen;
 
 end
 
+% 为FM_GlobalData模型另外生成代码,把全局数组变量FM_All_Fault_Status_Array定义为输出
+% 该模型不参与集成，但需要生成代码
+
+    cd(fullfile(projectRoot, 'spec\ASW\FM\FM_GlobalData'));
+    unitName='FM_GlobalData';
+    load_system(unitName);
+    
+    unitddObj = Simulink.data.dictionary.open([unitName,'.sldd']);
+    unitddSecObj = getSection(unitddObj,'Design Data');
+    FMGlobalDataObj = getEntry(unitddSecObj,'FM_All_Fault_Status_Array');
+    Singal1=getValue(FMGlobalDataObj);
+    Singal1.CoderInfo.StorageClass='ExportedGlobal';
+    setValue(FMGlobalDataObj,Singal1);       
+    
+    rtwbuild(unitName);
+    
+    Simulink.data.dictionary.closeAll([unitName,'.sldd'],'-discard');
+    close_system(unitName,0);
+    clear Singal1 unitddObj unitddSecObj FMGlobalDataObj;
+    
 
 disp( '*******************');
 disp( 'Code Generation Successfully finished!');
@@ -106,8 +105,12 @@ discardChanges(cmddObj);
 close(cmddObj);
 
 run CopyCodefiles;
-% A2l Merge
-run MergeA2l;
+
+if bCopyCodeSuccess    
+    % A2l Merge
+    run MergeA2l;    
+end
+
 
 %%
 clear CheckResult cmddObj cmddSectObj cmddSectObj csObj cs;

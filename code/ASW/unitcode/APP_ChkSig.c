@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_ChkSig'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.0
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:33 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:34 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -84,6 +84,7 @@ void APP_ChkSig_Step(void)
   uint32_T tmp_0;
   Debncd_ms tmp_1;
   boolean_T rtb_RelationalOperator;
+  boolean_T rtb_Switch1;
 
   /* RootInportFunctionCallGenerator generated from: '<Root>/APP_ChkSig_Step' incorporates:
    *  SubSystem: '<S1>/APP_ChkSig'
@@ -99,7 +100,6 @@ void APP_ChkSig_Step(void)
 
   /* Delay: '<S4>/Delay1' */
   if (APP_ChkSig_DW.icLoad != 0) {
-    /* Switch: '<S4>/Switch1' */
     APP_ChkSig_DW.Delay1_DSTATE = rtb_RelationalOperator;
   }
 
@@ -114,71 +114,6 @@ void APP_ChkSig_Step(void)
 
   APP_ChkSig_PrevZCX.Delay_Reset_ZCE = APP_ChkSig_DW.Delay2_DSTATE;
 
-  /* Switch: '<S4>/Switch2' incorporates:
-   *  Delay: '<S4>/Delay'
-   *  Delay: '<S4>/Delay1'
-   *  MinMax: '<S4>/Min'
-   *  RelationalOperator: '<S4>/Relational Operator1'
-   */
-  if (rtb_RelationalOperator == APP_ChkSig_DW.Delay1_DSTATE) {
-    /* Sum: '<S4>/Add' incorporates:
-     *  Constant: '<S3>/Constant8'
-     *  Delay: '<S4>/Delay'
-     */
-    tmp_0 = APP_ChkSig_DW.Delay_DSTATE + 100U;
-    if (APP_ChkSig_DW.Delay_DSTATE + 100U > 65535U) {
-      tmp_0 = 65535U;
-    }
-
-    /* MinMax: '<S4>/Min' incorporates:
-     *  Delay: '<S4>/Delay'
-     *  Sum: '<S4>/Add'
-     *  Switch: '<S4>/Switch2'
-     */
-    APP_ChkSig_DW.Delay_DSTATE = (Debncd_ms)tmp_0;
-  } else {
-    if (APP_ChkSig_DW.Delay_DSTATE > 100) {
-      /* MinMax: '<S4>/Min' incorporates:
-       *  Delay: '<S4>/Delay'
-       */
-      tmp_1 = APP_ChkSig_DW.Delay_DSTATE;
-    } else {
-      /* MinMax: '<S4>/Min' incorporates:
-       *  Constant: '<S3>/Constant8'
-       */
-      tmp_1 = 100U;
-    }
-
-    /* Sum: '<S4>/Subtract' incorporates:
-     *  Constant: '<S3>/Constant8'
-     */
-    tmp = tmp_1 - 100;
-
-    /* MinMax: '<S4>/Min' incorporates:
-     *  Constant: '<S3>/Constant8'
-     *  Delay: '<S4>/Delay'
-     */
-    if (APP_ChkSig_DW.Delay_DSTATE <= 100) {
-      APP_ChkSig_DW.Delay_DSTATE = 100U;
-    }
-
-    /* Sum: '<S4>/Subtract' incorporates:
-     *  Constant: '<S3>/Constant8'
-     */
-    if (APP_ChkSig_DW.Delay_DSTATE - 100 < 0) {
-      tmp = 0;
-    }
-
-    /* MinMax: '<S4>/Min' incorporates:
-     *  Delay: '<S4>/Delay'
-     *  Sum: '<S4>/Subtract'
-     *  Switch: '<S4>/Switch2'
-     */
-    APP_ChkSig_DW.Delay_DSTATE = (Debncd_ms)tmp;
-  }
-
-  /* End of Switch: '<S4>/Switch2' */
-
   /* Logic: '<S4>/Logical Operator' incorporates:
    *  Constant: '<S3>/Constant4'
    *  Constant: '<S3>/Constant5'
@@ -190,7 +125,6 @@ void APP_ChkSig_Step(void)
    *  Logic: '<S4>/Logical Operator5'
    *  RelationalOperator: '<S4>/Relational Operator2'
    *  RelationalOperator: '<S4>/Relational Operator3'
-   *  Switch: '<S4>/Switch2'
    */
   APP_ChkSig_DW.Delay2_DSTATE = (((!APP_ChkSig_DW.Delay1_DSTATE) &&
     (APP_ChkSig_DW.Delay_DSTATE >= APP_tiAliveDebLoHi_C)) ||
@@ -198,14 +132,13 @@ void APP_ChkSig_Step(void)
     APP_tiAliveDebHiLo_C)));
 
   /* Switch: '<S4>/Switch1' incorporates:
+   *  Delay: '<S4>/Delay1'
    *  Delay: '<S4>/Delay2'
    */
   if (APP_ChkSig_DW.Delay2_DSTATE) {
-    /* Switch: '<S4>/Switch1' incorporates:
-     *  Delay: '<S4>/Delay1'
-     *  Logic: '<S4>/Logical Operator1'
-     */
-    APP_ChkSig_DW.Delay1_DSTATE = !APP_ChkSig_DW.Delay1_DSTATE;
+    rtb_Switch1 = rtb_RelationalOperator;
+  } else {
+    rtb_Switch1 = APP_ChkSig_DW.Delay1_DSTATE;
   }
 
   /* End of Switch: '<S4>/Switch1' */
@@ -221,6 +154,7 @@ void APP_ChkSig_Step(void)
    *  RelationalOperator: '<S3>/Relational Operator2'
    *  RelationalOperator: '<S5>/FixPt Relational Operator'
    *  RelationalOperator: '<S6>/FixPt Relational Operator'
+   *  Switch: '<S7>/Switch1'
    *  UnitDelay: '<S5>/Delay Input1'
    *  UnitDelay: '<S6>/Delay Input1'
    *  UnitDelay: '<S7>/Unit Delay'
@@ -239,13 +173,12 @@ void APP_ChkSig_Step(void)
    *
    *  Store in Global RAM
    */
-  if (APP_ChkSig_DW.Delay1_DSTATE) {
-    APP_ChkSig_DW.UnitDelay_DSTATE = false;
+  if ((APP_swtAliveDetEna_C == Switch_ON) && (((int32_T)APP_stSigSrc_APP1_BP >
+        (int32_T)APP_ChkSig_DW.DelayInput1_DSTATE) || ((int32_T)
+        APP_stSigSrc_APP2_BP > (int32_T)APP_ChkSig_DW.DelayInput1_DSTATE_e))) {
+    APP_ChkSig_DW.UnitDelay_DSTATE = true;
   } else {
-    APP_ChkSig_DW.UnitDelay_DSTATE = (((APP_swtAliveDetEna_C == Switch_ON) &&
-      (((int32_T)APP_stSigSrc_APP1_BP > (int32_T)
-        APP_ChkSig_DW.DelayInput1_DSTATE) || ((int32_T)APP_stSigSrc_APP2_BP >
-      (int32_T)APP_ChkSig_DW.DelayInput1_DSTATE_e))) ||
+    APP_ChkSig_DW.UnitDelay_DSTATE = ((!rtb_Switch1) &&
       APP_ChkSig_DW.UnitDelay_DSTATE);
   }
 
@@ -270,6 +203,71 @@ void APP_ChkSig_Step(void)
   }
 
   /* End of Switch: '<S3>/Switch6' */
+
+  /* Switch: '<S4>/Switch2' incorporates:
+   *  Delay: '<S4>/Delay'
+   *  Delay: '<S4>/Delay1'
+   *  MinMax: '<S4>/Min'
+   *  RelationalOperator: '<S4>/Relational Operator1'
+   */
+  if (rtb_RelationalOperator != APP_ChkSig_DW.Delay1_DSTATE) {
+    /* Sum: '<S4>/Add' incorporates:
+     *  Constant: '<S3>/Constant8'
+     *  Delay: '<S4>/Delay'
+     */
+    tmp_0 = APP_ChkSig_DW.Delay_DSTATE + 640U;
+    if (APP_ChkSig_DW.Delay_DSTATE + 640U > 65535U) {
+      tmp_0 = 65535U;
+    }
+
+    /* MinMax: '<S4>/Min' incorporates:
+     *  Delay: '<S4>/Delay'
+     *  Sum: '<S4>/Add'
+     *  Switch: '<S4>/Switch2'
+     */
+    APP_ChkSig_DW.Delay_DSTATE = (Debncd_ms)tmp_0;
+  } else {
+    if (APP_ChkSig_DW.Delay_DSTATE > 640) {
+      /* MinMax: '<S4>/Min' incorporates:
+       *  Delay: '<S4>/Delay'
+       */
+      tmp_1 = APP_ChkSig_DW.Delay_DSTATE;
+    } else {
+      /* MinMax: '<S4>/Min' incorporates:
+       *  Constant: '<S3>/Constant8'
+       */
+      tmp_1 = 640U;
+    }
+
+    /* Sum: '<S4>/Subtract' incorporates:
+     *  Constant: '<S3>/Constant8'
+     */
+    tmp = tmp_1 - 640;
+
+    /* MinMax: '<S4>/Min' incorporates:
+     *  Constant: '<S3>/Constant8'
+     *  Delay: '<S4>/Delay'
+     */
+    if (APP_ChkSig_DW.Delay_DSTATE <= 640) {
+      APP_ChkSig_DW.Delay_DSTATE = 640U;
+    }
+
+    /* Sum: '<S4>/Subtract' incorporates:
+     *  Constant: '<S3>/Constant8'
+     */
+    if (APP_ChkSig_DW.Delay_DSTATE - 640 < 0) {
+      tmp = 0;
+    }
+
+    /* MinMax: '<S4>/Min' incorporates:
+     *  Delay: '<S4>/Delay'
+     *  Sum: '<S4>/Subtract'
+     *  Switch: '<S4>/Switch2'
+     */
+    APP_ChkSig_DW.Delay_DSTATE = (Debncd_ms)tmp;
+  }
+
+  /* End of Switch: '<S4>/Switch2' */
 
   /* Update for UnitDelay: '<S5>/Delay Input1' incorporates:
    *  Inport: '<Root>/APP_stSigSrc_APP1_BP'
@@ -297,6 +295,7 @@ void APP_ChkSig_Step(void)
 
   /* Update for Delay: '<S4>/Delay1' */
   APP_ChkSig_DW.icLoad = 0U;
+  APP_ChkSig_DW.Delay1_DSTATE = rtb_Switch1;
 
   /* End of Outputs for RootInportFunctionCallGenerator generated from: '<Root>/APP_ChkSig_Step' */
 }

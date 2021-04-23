@@ -1,11 +1,11 @@
 /*
  * File: look2_is16s16lu16n16ts_XfzHng1h.c
  *
- * Code generated for Simulink model 'InjVlv_CalcET'.
+ * Code generated for Simulink model 'AccPed_DrvDemDes'.
  *
- * Model version                  : 1.59
+ * Model version                  : 1.57
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:41:40 2021
+ * C/C++ source code generated on : Fri Apr 23 14:58:18 2021
  */
 
 #include "rtwtypes.h"

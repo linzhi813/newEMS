@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_DD1'.
  *
- * Model version                  : 1.60
+ * Model version                  : 6.1
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:48 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:42 2021
  */
 
 #ifndef RTW_HEADER_APP_DD1_Paras_h_
@@ -27,15 +27,18 @@ extern const volatile Debncd_ms APP_tiSRCLowDefDeb_C;
 extern const volatile Debncd_ms APP_tiSRCLowOKDeb_C;
 
 /* debounce time */
-extern const volatile Volt_mV APP_uRaw1Def_C;
+extern const volatile Volt_mV1 APP_uRaw1Def_C;
 
 /* Substitute value for sensor 1 defect */
-extern const volatile Volt_mV APP_uRaw1SRCHigh_C;
+extern const volatile Volt_mV1 APP_uRaw1SRCHigh_C;
 
 /* voltage upper threshold of channel 1 */
-extern const volatile Volt_mV APP_uRaw1SRCLow_C;
+extern const volatile Volt_mV1 APP_uRaw1SRCLow_C;
 
 /* voltage lower threshold of channel 1 */
+extern const volatile Fault_ID FM_APP1_SRC_FG_CA[15];
+
+/* Fault Group */
 #endif                                 /* RTW_HEADER_APP_DD1_Paras_h_ */
 
 /*

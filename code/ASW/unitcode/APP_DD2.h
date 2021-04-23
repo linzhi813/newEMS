@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_DD2'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.2
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:58 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:51 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -28,6 +28,7 @@
 
 /* Includes for objects with custom storage classes. */
 #include "APP_DD2_Paras.h"
+#include "FM_Fault_ID.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetErrorStatus
@@ -41,24 +42,56 @@
 /* Forward declaration for rtModel */
 typedef struct tag_RTM_APP_DD2_T RT_MODEL_APP_DD2_T;
 
+/* Zero-crossing (trigger) state for system '<S5>/Report_Fault_Status' */
+typedef struct {
+  ZCSigState SetFault_Trig_ZCE;        /* '<S8>/SetFault' */
+  ZCSigState ClearFault_Trig_ZCE;      /* '<S8>/ClearFault' */
+} ZCE_Report_Fault_Status_APP_D_T;
+
+/* Block signals (default storage) */
+typedef struct {
+  Debncd_ms Delay;                     /* '<S5>/Delay' */
+  Debncd_ms Delay_c;                   /* '<S6>/Delay' */
+} B_APP_DD2_T;
+
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  Volt_mV Delay_DSTATE;                /* '<S4>/Delay' */
-  Debncd_ms Delay_DSTATE_h;            /* '<S5>/Delay' */
-  Debncd_ms Delay_DSTATE_k;            /* '<S6>/Delay' */
-  boolean_T Delay1_DSTATE;             /* '<S5>/Delay1' */
+  Volt_mV1 Delay_DSTATE;               /* '<S4>/Delay' */
+  Debncd_ms Delay_DSTATE_n;            /* '<S5>/Delay' */
+  Debncd_ms Delay_DSTATE_p;            /* '<S6>/Delay' */
   boolean_T Delay2_DSTATE;             /* '<S5>/Delay2' */
-  boolean_T Delay1_DSTATE_p;           /* '<S6>/Delay1' */
-  boolean_T Delay2_DSTATE_d;           /* '<S6>/Delay2' */
-  uint8_T icLoad;                      /* '<S5>/Delay1' */
-  uint8_T icLoad_h;                    /* '<S6>/Delay1' */
+  boolean_T Delay2_DSTATE_b;           /* '<S6>/Delay2' */
+  boolean_T Delay3_DSTATE;             /* '<S5>/Delay3' */
+  boolean_T Delay3_DSTATE_i;           /* '<S6>/Delay3' */
+  uint8_T icLoad;                      /* '<S5>/Delay3' */
+  uint8_T icLoad_c;                    /* '<S6>/Delay3' */
 } DW_APP_DD2_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
   ZCSigState Delay_Reset_ZCE;          /* '<S5>/Delay' */
-  ZCSigState Delay_Reset_ZCE_o;        /* '<S6>/Delay' */
+  ZCSigState Delay_Reset_ZCE_i;        /* '<S6>/Delay' */
+  ZCE_Report_Fault_Status_APP_D_T Report_Fault_Status_l;/* '<S6>/Report_Fault_Status' */
+  ZCE_Report_Fault_Status_APP_D_T Report_Fault_Status;/* '<S5>/Report_Fault_Status' */
 } PrevZCX_APP_DD2_T;
+
+/* Invariant block signals for system '<S3>/Get_FG_Status' */
+typedef struct {
+  const uint16_T Width;                /* '<S15>/Width' */
+  const uint16_T Switch1;              /* '<S15>/Switch1' */
+  const uint16_T Subtract;             /* '<S15>/Subtract' */
+  const uint16_T Switch;               /* '<S15>/Switch' */
+  const uint16_T Width_m;              /* '<S16>/Width' */
+  const uint16_T Switch1_n;            /* '<S16>/Switch1' */
+  const uint16_T Subtract_h;           /* '<S16>/Subtract' */
+  const uint16_T Switch_b;             /* '<S16>/Switch' */
+  const uint8_T Width_f;               /* '<S14>/Width' */
+} ConstB_Get_FG_Status_APP_DD2_T;
+
+/* Invariant block signals (default storage) */
+typedef struct {
+  ConstB_Get_FG_Status_APP_DD2_T Get_FG_Status;/* '<S3>/Get_FG_Status' */
+} ConstB_APP_DD2_T;
 
 /* Real-time Model Data Structure */
 struct tag_RTM_APP_DD2_T {
@@ -66,14 +99,25 @@ struct tag_RTM_APP_DD2_T {
 };
 
 /* Imported (extern) block signals */
-extern boolean_T DSM_bAPP2SigPath;     /* '<Root>/DSM_bAPP2SigPath' */
-extern Volt_mV APP_uRaw2unLim;         /* '<Root>/APP_uRaw2unLim' */
+extern Volt_mV1 APP_uRaw2unLim;        /* '<Root>/APP_uRaw2unLim'
+                                        * Acceleration pedal sensor 2 unlimited raw value
+                                        */
+
+/* Imported (extern) states */
+extern boolean_T FM_All_Fault_Status_Array[100];
+                           /* Simulink.Signal object 'FM_All_Fault_Status_Array'
+                            * 整个工程所有故障的故障状态数组：数组索引为故障编号，范围为0~65535；数组元素为故障状态，逻辑值，1表示当前故障编号对应故障已确认，0表示无故障或故障已恢复。
+                            */
+
+/* Block signals (default storage) */
+extern B_APP_DD2_T APP_DD2_B;
 
 /* Block states (default storage) */
 extern DW_APP_DD2_T APP_DD2_DW;
 
 /* Zero-crossing (trigger) state */
 extern PrevZCX_APP_DD2_T APP_DD2_PrevZCX;
+extern const ConstB_APP_DD2_T APP_DD2_ConstB;/* constant block i/o */
 
 /*
  * Exported Global Signals
@@ -83,22 +127,16 @@ extern PrevZCX_APP_DD2_T APP_DD2_PrevZCX;
  * these signals and export their symbols.
  *
  */
-extern Volt_mV APP_uRaw2;              /* '<S4>/Switch'
+extern Volt_mV1 APP_uRaw2;             /* '<S4>/Switch'
                                         * Acceleration Pedal Position E
                                         */
-extern boolean_T APP_bSRCHigh2;        /* '<S3>/Logical Operator3'
-                                        * Status temporary SRC-High error Sensor 2
-                                        */
-extern boolean_T APP_bSRCHigh2Deb_DSM; /* '<S3>/Logical Operator5'
+extern boolean_T APP_bSRCHigh2Deb_DSM; /* '<S5>/Switch1'
                                         * Status debounced SRC-High error Sensor 2
                                         */
-extern boolean_T APP_bSRCLow2;         /* '<S3>/Logical Operator4'
-                                        * Status temporary SRC-Low error Sensor 2
-                                        */
-extern boolean_T APP_bSRCLow2Deb_DSM;  /* '<S3>/Logical Operator7'
+extern boolean_T APP_bSRCLow2Deb_DSM;  /* '<S6>/Switch1'
                                         * Status debounced SRC-Low error Sensor 2
                                         */
-extern boolean_T APP_bAPP2FinalDef;    /* '<S3>/Logical Operator8'
+extern boolean_T APP_bAPP2FinalDef;    /* '<S3>/Logical Operator'
                                         * Status Sensor 2 of the acceleration pedal finally defect
                                         */
 extern boolean_T APP_bAPP2ProvDef;     /* '<S4>/Logical Operator9'
@@ -114,6 +152,15 @@ extern void APP_DD2_Step(void);
 
 /* Real-time Model object */
 extern RT_MODEL_APP_DD2_T *const APP_DD2_M;
+
+/*-
+ * These blocks were eliminated from the model due to optimizations:
+ *
+ * Block '<S17>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S17>/Data Type Propagation' : Unused code path elimination
+ * Block '<S18>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S18>/Data Type Propagation' : Unused code path elimination
+ */
 
 /*-
  * The generated code includes comments that allow you to trace directly
@@ -134,8 +181,20 @@ extern RT_MODEL_APP_DD2_T *const APP_DD2_M;
  * '<S2>'   : 'APP_DD2/Overview/APP_DD2'
  * '<S3>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check'
  * '<S4>'   : 'APP_DD2/Overview/APP_DD2/Error_Reaction'
- * '<S5>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/Debounce_DT'
- * '<S6>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/Debounce_DT1'
+ * '<S5>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T'
+ * '<S6>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T1'
+ * '<S7>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/Get_FG_Status'
+ * '<S8>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T/Report_Fault_Status'
+ * '<S9>'   : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T/Report_Fault_Status/ClearFault'
+ * '<S10>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T/Report_Fault_Status/SetFault'
+ * '<S11>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T1/Report_Fault_Status'
+ * '<S12>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T1/Report_Fault_Status/ClearFault'
+ * '<S13>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T1/Report_Fault_Status/SetFault'
+ * '<S14>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/Get_FG_Status/While Iterator Subsystem'
+ * '<S15>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/Get_FG_Status/While Iterator Subsystem/Table1D_Read'
+ * '<S16>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/Get_FG_Status/While Iterator Subsystem/Table1D_Read1'
+ * '<S17>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/Get_FG_Status/While Iterator Subsystem/Table1D_Read/Saturation Dynamic'
+ * '<S18>'  : 'APP_DD2/Overview/APP_DD2/DSM_Check/Get_FG_Status/While Iterator Subsystem/Table1D_Read1/Saturation Dynamic'
  */
 #endif                                 /* RTW_HEADER_APP_DD2_h_ */
 

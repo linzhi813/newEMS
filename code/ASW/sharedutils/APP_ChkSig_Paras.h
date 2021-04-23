@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_ChkSig'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.0
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:33 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:34 2021
  */
 
 #ifndef RTW_HEADER_APP_ChkSig_Paras_h_

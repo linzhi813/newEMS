@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'RailP_VD'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.1
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:41:23 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:47 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -21,6 +21,7 @@
 #ifndef RailP_VD_COMMON_INCLUDES_
 #define RailP_VD_COMMON_INCLUDES_
 #include "rtwtypes.h"
+#include "zero_crossing_types.h"
 #endif                                 /* RailP_VD_COMMON_INCLUDES_ */
 
 /* Model Code Variants */
@@ -42,12 +43,24 @@ typedef struct tag_RTM_RailP_VD_T RT_MODEL_RailP_VD_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  int32_T Delay_DSTATE;                /* '<S4>/Delay' */
-  uint32_T m_bpIndex;                  /* '<S2>/RailP_numMax_CUR' */
-  uint32_T m_bpIndex_c;                /* '<S5>/RailP_pFltWinNeg_CUR' */
-  int16_T RailPArray[10];              /* '<S2>/Chart2' */
-  uint8_T icLoad;                      /* '<S4>/Delay' */
+  uint32_T m_bpIndex;                  /* '<S2>/RailP_pFltWinNeg_CUR' */
+  Press_bar1 Delay2_DSTATE;            /* '<S3>/Delay2' */
+  Press_bar1 Delay_DSTATE_l;           /* '<S3>/Delay' */
+  uint16_T Delay1_DSTATE;              /* '<S3>/Delay1' */
+  uint8_T icLoad;                      /* '<S3>/Delay2' */
+  uint8_T icLoad_j;                    /* '<S3>/Delay1' */
+  uint8_T icLoad_i;                    /* '<S3>/Delay' */
 } DW_RailP_VD_T;
+
+/* Zero-crossing (trigger) state */
+typedef struct {
+  ZCSigState Delay1_Reset_ZCE;         /* '<S3>/Delay1' */
+} PrevZCX_RailP_VD_T;
+
+/* External outputs (root outports fed by signals with default storage) */
+typedef struct {
+  Press_bar1 RailP_pFlt;               /* '<Root>/RailP_pFlt' */
+} ExtY_RailP_VD_T;
 
 /* Real-time Model Data Structure */
 struct tag_RTM_RailP_VD_T {
@@ -55,12 +68,23 @@ struct tag_RTM_RailP_VD_T {
 };
 
 /* Imported (extern) block signals */
-extern Press_bar1 RailP_pLin;          /* '<Root>/RailP_pLin' */
-extern InjMass InjCtl_qSetUnBal;       /* '<Root>/InjCtl_qSetUnBal' */
-extern ERPM Epm_nEng;                  /* '<Root>/Epm_nEng' */
+extern Press_bar1 RailP_pLin;          /* '<Root>/RailP_pLin'
+                                        * Fuel pressure
+                                        */
+extern InjMass InjCtl_qSetUnBal;       /* '<Root>/InjCtl_qSetUnBal'
+                                        * Current injection quantity
+                                        */
 
 /* Block states (default storage) */
 extern DW_RailP_VD_T RailP_VD_DW;
+
+/* Zero-crossing (trigger) state */
+extern PrevZCX_RailP_VD_T RailP_VD_PrevZCX;
+
+/* External outputs (root outports fed by signals with default storage) */
+
+/* Volatile memory section */
+extern ExtY_RailP_VD_T RailP_VD_Y;
 
 /*
  * Exported Global Signals
@@ -70,17 +94,8 @@ extern DW_RailP_VD_T RailP_VD_DW;
  * these signals and export their symbols.
  *
  */
-extern Press_bar1 RailP_pFlt;          /* '<S2>/Switch2'
-                                        * Maximum rail pressure of the last 10 sampling cycle
-                                        */
-extern Fac_100 RailP_facFltPT1_mp;     /* '<S5>/Switch4'
+extern Fac_100 RailP_facFltPT1_mp;     /* '<S2>/Switch4'
                                         * Current filter time for PT1 filter
-                                        */
-extern ERPM RailP_nRef_mp;             /* '<S2>/Switch3'
-                                        * Engine speed
-                                        */
-extern uint8_T RailP_numMax_mp;        /* '<S2>/RailP_numMax_CUR'
-                                        * Number of rail pressure max values
                                         */
 
 /* Model entry point functions */
@@ -96,11 +111,9 @@ extern RT_MODEL_RailP_VD_T *const RailP_VD_M;
 /*-
  * These blocks were eliminated from the model due to optimizations:
  *
- * Block '<S4>/Data Type Duplicate' : Unused code path elimination
- * Block '<S4>/Data Type Duplicate1' : Unused code path elimination
- * Block '<S4>/Data Type Duplicate2' : Unused code path elimination
- * Block '<S4>/Data Type Propagation' : Unused code path elimination
- * Block '<S4>/Data Type Propagation1' : Unused code path elimination
+ * Block '<S3>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S3>/Data Type Propagation' : Unused code path elimination
+ * Block '<S4>/FixPt Data Type Propagation' : Unused code path elimination
  */
 
 /*-
@@ -120,9 +133,8 @@ extern RT_MODEL_RailP_VD_T *const RailP_VD_M;
  * '<Root>' : 'RailP_VD'
  * '<S1>'   : 'RailP_VD/Overview'
  * '<S2>'   : 'RailP_VD/Overview/RailP_VD'
- * '<S3>'   : 'RailP_VD/Overview/RailP_VD/Chart2'
- * '<S4>'   : 'RailP_VD/Overview/RailP_VD/LowPassK'
- * '<S5>'   : 'RailP_VD/Overview/RailP_VD/PT1 Parameter Selection'
+ * '<S3>'   : 'RailP_VD/Overview/RailP_VD/LowPassK1'
+ * '<S4>'   : 'RailP_VD/Overview/RailP_VD/LowPassK1/Data Type Police Signed Only'
  */
 #endif                                 /* RTW_HEADER_RailP_VD_h_ */
 

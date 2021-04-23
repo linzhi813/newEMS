@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'RailP_VD'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.1
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:41:23 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:47 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -15,9 +15,6 @@
 
 #include "RailP_VD.h"
 #include "look1_is16lu16n16ts16D_vPytCsBO.h"
-#include "look1_is16lu8n8tu8_plinlcafe.h"
-#include "mul_s32_hiSR_round.h"
-#include "mul_s32_sr1_sat_round.h"
 #ifndef UCHAR_MAX
 #include <limits.h>
 #endif
@@ -67,21 +64,20 @@ preprocessor word size checks.
 #endif
 
 /* Exported block signals */
-Press_bar1 RailP_pFlt;                 /* '<S2>/Switch2'
-                                        * Maximum rail pressure of the last 10 sampling cycle
-                                        */
-Fac_100 RailP_facFltPT1_mp;            /* '<S5>/Switch4'
+Fac_100 RailP_facFltPT1_mp;            /* '<S2>/Switch4'
                                         * Current filter time for PT1 filter
-                                        */
-ERPM RailP_nRef_mp;                    /* '<S2>/Switch3'
-                                        * Engine speed
-                                        */
-uint8_T RailP_numMax_mp;               /* '<S2>/RailP_numMax_CUR'
-                                        * Number of rail pressure max values
                                         */
 
 /* Block states (default storage) */
 DW_RailP_VD_T RailP_VD_DW;
+
+/* Previous zero-crossings (trigger) states */
+PrevZCX_RailP_VD_T RailP_VD_PrevZCX;
+
+/* External outputs (root outports fed by signals with default storage) */
+
+/* Volatile memory section */
+ExtY_RailP_VD_T RailP_VD_Y;
 
 /* Real-time model */
 static RT_MODEL_RailP_VD_T RailP_VD_M_;
@@ -90,221 +86,225 @@ RT_MODEL_RailP_VD_T *const RailP_VD_M = &RailP_VD_M_;
 /* Model step function */
 void RailP_VD_Step(void)
 {
-  int32_T q0;
-  Fac_100 rtb_Min;
-  int16_T RailPMax;
-  uint8_T i;
+  int32_T tmp;
+  uint32_T tmp_0;
+  Press_bar1 rtb_RailP_pFltWinNeg_CUR;
+  boolean_T rtb_RelationalOperator_l;
 
   /* RootInportFunctionCallGenerator generated from: '<Root>/RailP_VD_Step' incorporates:
    *  SubSystem: '<S1>/RailP_VD'
    */
-  /* Sum: '<S2>/Add1' incorporates:
-   *  Delay: '<S2>/Delay3'
-   *  Inport: '<Root>/Epm_nEng'
-   *  MinMax: '<S4>/Min'
-   *
-   * Block description for '<Root>/Epm_nEng':
-   *  Engine speed
-   */
-  rtb_Min = (Fac_100)(Epm_nEng - RailP_nRef_mp);
-
-  /* Abs: '<S2>/Abs' incorporates:
-   *  MinMax: '<S4>/Min'
-   */
-  if (rtb_Min < 0) {
-    rtb_Min = (Fac_100)-rtb_Min;
-  }
-
-  /* End of Abs: '<S2>/Abs' */
-
-  /* Switch: '<S2>/Switch3' incorporates:
-   *  Constant: '<S2>/Constant2'
-   *  MinMax: '<S4>/Min'
-   *  RelationalOperator: '<S2>/Relational Operator2'
-   */
-  if (rtb_Min > RailP_nDiffMax_C) {
-    /* Switch: '<S2>/Switch3' incorporates:
-     *  Inport: '<Root>/Epm_nEng'
-     *
-     * Block description for '<Root>/Epm_nEng':
-     *  Engine speed
-     */
-    RailP_nRef_mp = Epm_nEng;
-  }
-
-  /* End of Switch: '<S2>/Switch3' */
-
-  /* Lookup_n-D: '<S2>/RailP_numMax_CUR' incorporates:
-   *  Switch: '<S2>/Switch3'
-   */
-  RailP_numMax_mp = look1_is16lu8n8tu8_plinlcafe(RailP_nRef_mp, ((const ERPM *)
-    &(RailP_numMax_CURX[0])), ((const uint8_T *)&(RailP_numMax_CUR[0])),
-    &RailP_VD_DW.m_bpIndex, 9U);
-
-  /* Chart: '<S2>/Chart2' incorporates:
-   *  Inport: '<Root>/RailP_pLin'
-   *
-   * Block description for '<Root>/RailP_pLin':
-   *  Fuel pressure
-   */
-  for (i = 9U; i >= 1; i--) {
-    RailP_VD_DW.RailPArray[i] = RailP_VD_DW.RailPArray[i - 1];
-  }
-
-  RailP_VD_DW.RailPArray[0] = RailP_pLin;
-  RailPMax = RailP_VD_DW.RailPArray[0];
-  while (i < RailP_numMax_mp) {
-    if (RailPMax < RailP_VD_DW.RailPArray[i]) {
-      RailPMax = RailP_VD_DW.RailPArray[i];
-    }
-
-    i++;
-  }
-
-  /* Delay: '<S4>/Delay' */
-  if (RailP_VD_DW.icLoad != 0) {
-    /* Sum: '<S4>/Add2' incorporates:
-     *  DataTypeConversion: '<S4>/Data Type Conversion1'
-     *  Inport: '<Root>/RailP_pLin'
-     *
-     * Block description for '<Root>/RailP_pLin':
-     *  Fuel pressure
-     */
-    RailP_VD_DW.Delay_DSTATE = RailP_pLin << 1;
-  }
-
-  /* Switch: '<S5>/Switch4' incorporates:
+  /* Switch: '<S2>/Switch4' incorporates:
    *  Delay: '<S2>/Delay'
    *  Inport: '<Root>/RailP_pLin'
-   *  RelationalOperator: '<S5>/Relational Operator'
+   *  RelationalOperator: '<S2>/Relational Operator'
    *
    * Block description for '<Root>/RailP_pLin':
    *  Fuel pressure
    */
-  if (RailP_pLin >= RailP_pFlt) {
-    /* Switch: '<S5>/Switch4' incorporates:
-     *  Constant: '<S5>/Constant3'
+  if (RailP_pLin >= RailP_VD_Y.RailP_pFlt) {
+    /* Switch: '<S2>/Switch4' incorporates:
+     *  Constant: '<S2>/Constant3'
      */
     RailP_facFltPT1_mp = RailP_facFlt1PT1_C;
   } else {
-    /* Lookup_n-D: '<S5>/RailP_pFltWinNeg_CUR' incorporates:
+    /* Lookup_n-D: '<S2>/RailP_pFltWinNeg_CUR' incorporates:
      *  Inport: '<Root>/InjCtl_qSetUnBal'
      *
      * Block description for '<Root>/InjCtl_qSetUnBal':
      *  Current injection quantity
      */
-    rtb_Min = look1_is16lu16n16ts16D_vPytCsBO(InjCtl_qSetUnBal, ((const InjMass *)
-      &(RailP_pFltWinNeg_CURX[0])), ((const Press_bar1 *)&(RailP_pFltWinNeg_CUR
-      [0])), &RailP_VD_DW.m_bpIndex_c, 9U);
+    rtb_RailP_pFltWinNeg_CUR = look1_is16lu16n16ts16D_vPytCsBO(InjCtl_qSetUnBal,
+      ((const InjMass *)&(RailP_pFltWinNeg_CURX[0])), ((const Press_bar1 *)
+      &(RailP_pFltWinNeg_CUR[0])), &RailP_VD_DW.m_bpIndex, 9U);
 
-    /* Switch: '<S5>/Switch1' incorporates:
-     *  Lookup_n-D: '<S5>/RailP_pFltWinNeg_CUR'
-     *  RelationalOperator: '<S5>/Relational Operator1'
-     *  Sum: '<S5>/Add'
+    /* Switch: '<S2>/Switch1' incorporates:
+     *  Lookup_n-D: '<S2>/RailP_pFltWinNeg_CUR'
+     *  RelationalOperator: '<S2>/Relational Operator1'
+     *  Sum: '<S2>/Add'
      */
-    if ((int16_T)(RailP_pFlt - RailP_pLin) < rtb_Min) {
-      /* Switch: '<S5>/Switch4' incorporates:
-       *  Constant: '<S5>/Constant1'
+    if ((int16_T)(RailP_VD_Y.RailP_pFlt - RailP_pLin) < rtb_RailP_pFltWinNeg_CUR)
+    {
+      /* Switch: '<S2>/Switch4' incorporates:
+       *  Constant: '<S2>/Constant1'
        */
       RailP_facFltPT1_mp = RailP_facFlt2PT1_C;
     } else {
-      /* Switch: '<S5>/Switch4' incorporates:
-       *  Constant: '<S5>/Constant2'
+      /* Switch: '<S2>/Switch4' incorporates:
+       *  Constant: '<S2>/Constant2'
        */
       RailP_facFltPT1_mp = RailP_facFlt3PT1_C;
     }
 
-    /* End of Switch: '<S5>/Switch1' */
+    /* End of Switch: '<S2>/Switch1' */
   }
 
-  /* End of Switch: '<S5>/Switch4' */
+  /* End of Switch: '<S2>/Switch4' */
 
-  /* MinMax: '<S4>/Min' incorporates:
-   *  Constant: '<S4>/Constant'
-   *  Switch: '<S5>/Switch4'
+  /* MinMax: '<S3>/Min' incorporates:
+   *  Constant: '<S3>/Constant'
+   *  Sum: '<S3>/Add1'
+   *  Switch: '<S2>/Switch4'
    */
-  if (RailP_facFltPT1_mp < 200) {
-    rtb_Min = RailP_facFltPT1_mp;
+  if (RailP_facFltPT1_mp < 256) {
+    rtb_RailP_pFltWinNeg_CUR = RailP_facFltPT1_mp;
   } else {
-    rtb_Min = 200;
+    rtb_RailP_pFltWinNeg_CUR = 256;
   }
 
-  /* End of MinMax: '<S4>/Min' */
+  /* End of MinMax: '<S3>/Min' */
 
-  /* Sum: '<S4>/Add1' incorporates:
-   *  Delay: '<S4>/Delay'
+  /* Delay: '<S3>/Delay2' incorporates:
    *  Inport: '<Root>/RailP_pLin'
    *
    * Block description for '<Root>/RailP_pLin':
    *  Fuel pressure
    */
-  q0 = RailP_pLin << 1;
-  if ((q0 >= 0) && (RailP_VD_DW.Delay_DSTATE < q0 - MAX_int32_T)) {
-    q0 = MAX_int32_T;
-  } else if ((q0 < 0) && (RailP_VD_DW.Delay_DSTATE > q0 - MIN_int32_T)) {
-    q0 = MIN_int32_T;
+  if (RailP_VD_DW.icLoad != 0) {
+    RailP_VD_DW.Delay2_DSTATE = RailP_pLin;
+  }
+
+  /* RelationalOperator: '<S3>/Relational Operator' incorporates:
+   *  Delay: '<S3>/Delay2'
+   *  Inport: '<Root>/RailP_pLin'
+   *
+   * Block description for '<Root>/RailP_pLin':
+   *  Fuel pressure
+   */
+  rtb_RelationalOperator_l = (RailP_pLin != RailP_VD_DW.Delay2_DSTATE);
+
+  /* Delay: '<S3>/Delay1' incorporates:
+   *  Constant: '<S3>/Constant3'
+   */
+  if ((((RailP_VD_PrevZCX.Delay1_Reset_ZCE == POS_ZCSIG) != (int32_T)
+        rtb_RelationalOperator_l) && (RailP_VD_PrevZCX.Delay1_Reset_ZCE !=
+        UNINITIALIZED_ZCSIG)) || rtb_RelationalOperator_l) {
+    RailP_VD_DW.icLoad_j = 1U;
+  }
+
+  RailP_VD_PrevZCX.Delay1_Reset_ZCE = rtb_RelationalOperator_l;
+  if (RailP_VD_DW.icLoad_j != 0) {
+    RailP_VD_DW.Delay1_DSTATE = 0U;
+  }
+
+  /* MinMax: '<S3>/Min1' incorporates:
+   *  Constant: '<S3>/Constant1'
+   *  Sum: '<S3>/Add1'
+   */
+  if (rtb_RailP_pFltWinNeg_CUR <= 0) {
+    rtb_RailP_pFltWinNeg_CUR = 0;
+  }
+
+  /* End of MinMax: '<S3>/Min1' */
+
+  /* Product: '<S3>/Divide2' incorporates:
+   *  Constant: '<S3>/Constant2'
+   *  Delay: '<S3>/Delay1'
+   *  Sum: '<S3>/Add3'
+   */
+  tmp = (((32768 - RailP_VD_DW.Delay1_DSTATE) >> 7) * rtb_RailP_pFltWinNeg_CUR) >>
+    1;
+  if (tmp < 0) {
+    tmp = 0;
   } else {
-    q0 -= RailP_VD_DW.Delay_DSTATE;
-  }
-
-  /* End of Sum: '<S4>/Add1' */
-
-  /* MinMax: '<S4>/Min1' incorporates:
-   *  Constant: '<S4>/Constant1'
-   *  MinMax: '<S4>/Min'
-   */
-  if (rtb_Min <= 0) {
-    rtb_Min = 0;
-  }
-
-  /* End of MinMax: '<S4>/Min1' */
-
-  /* Sum: '<S4>/Add2' incorporates:
-   *  Delay: '<S4>/Delay'
-   *  Product: '<S4>/Divide1'
-   */
-  q0 = mul_s32_hiSR_round(mul_s32_sr1_sat_round(q0, rtb_Min), 1374389535, 5U);
-  if ((RailP_VD_DW.Delay_DSTATE < 0) && (q0 < MIN_int32_T
-       - RailP_VD_DW.Delay_DSTATE)) {
-    RailP_VD_DW.Delay_DSTATE = MIN_int32_T;
-  } else if ((RailP_VD_DW.Delay_DSTATE > 0) && (q0 > MAX_int32_T
-              - RailP_VD_DW.Delay_DSTATE)) {
-    RailP_VD_DW.Delay_DSTATE = MAX_int32_T;
-  } else {
-    RailP_VD_DW.Delay_DSTATE += q0;
-  }
-
-  /* Switch: '<S2>/Switch2' incorporates:
-   *  Constant: '<S2>/Constant4'
-   */
-  if (RailP_swtFlt_C) {
-    /* DataTypeConversion: '<S4>/Data Type Conversion' incorporates:
-     *  Sum: '<S4>/Add2'
-     */
-    q0 = RailP_VD_DW.Delay_DSTATE >> 1;
-    if (q0 > 32767) {
-      q0 = 32767;
-    } else {
-      if (q0 < -32768) {
-        q0 = -32768;
-      }
+    if (tmp > 65535) {
+      tmp = 65535;
     }
-
-    /* Switch: '<S2>/Switch2' incorporates:
-     *  DataTypeConversion: '<S4>/Data Type Conversion'
-     */
-    RailP_pFlt = (Press_bar1)q0;
-  } else {
-    /* Switch: '<S2>/Switch2' incorporates:
-     *  Chart: '<S2>/Chart2'
-     */
-    RailP_pFlt = RailPMax;
   }
 
-  /* End of Switch: '<S2>/Switch2' */
+  /* Sum: '<S3>/Add4' incorporates:
+   *  Delay: '<S3>/Delay1'
+   *  Product: '<S3>/Divide2'
+   */
+  tmp_0 = (uint32_T)RailP_VD_DW.Delay1_DSTATE + tmp;
+  if (tmp_0 > 65535U) {
+    tmp_0 = 65535U;
+  }
 
-  /* Update for Delay: '<S4>/Delay' */
+  /* Delay: '<S3>/Delay' incorporates:
+   *  Inport: '<Root>/RailP_pLin'
+   *
+   * Block description for '<Root>/RailP_pLin':
+   *  Fuel pressure
+   */
+  if (RailP_VD_DW.icLoad_i != 0) {
+    RailP_VD_DW.Delay_DSTATE_l = RailP_pLin;
+  }
+
+  /* Sum: '<S3>/Add1' incorporates:
+   *  Delay: '<S3>/Delay'
+   *  Inport: '<Root>/RailP_pLin'
+   *
+   * Block description for '<Root>/RailP_pLin':
+   *  Fuel pressure
+   */
+  tmp = RailP_pLin - RailP_VD_DW.Delay_DSTATE_l;
+  if (tmp > 32767) {
+    tmp = 32767;
+  } else {
+    if (tmp < -32768) {
+      tmp = -32768;
+    }
+  }
+
+  /* Product: '<S3>/Divide1' incorporates:
+   *  Sum: '<S3>/Add1'
+   *  Sum: '<S3>/Add4'
+   */
+  tmp = (tmp * (uint16_T)tmp_0) >> 15;
+  if (tmp > 32767) {
+    tmp = 32767;
+  } else {
+    if (tmp < -32768) {
+      tmp = -32768;
+    }
+  }
+
+  /* Sum: '<S3>/Add2' incorporates:
+   *  Delay: '<S3>/Delay'
+   *  Product: '<S3>/Divide1'
+   */
+  tmp += RailP_VD_DW.Delay_DSTATE_l;
+  if (tmp > 32767) {
+    tmp = 32767;
+  } else {
+    if (tmp < -32768) {
+      tmp = -32768;
+    }
+  }
+
+  /* Outport: '<Root>/RailP_pFlt' incorporates:
+   *  Sum: '<S3>/Add2'
+   *
+   * Block description for '<Root>/RailP_pFlt':
+   *  Maximum rail pressure of the last 10 sampling cycle
+   */
+  RailP_VD_Y.RailP_pFlt = (Press_bar1)tmp;
+
+  /* Update for Delay: '<S3>/Delay2' incorporates:
+   *  Inport: '<Root>/RailP_pLin'
+   *
+   * Block description for '<Root>/RailP_pLin':
+   *  Fuel pressure
+   */
   RailP_VD_DW.icLoad = 0U;
+  RailP_VD_DW.Delay2_DSTATE = RailP_pLin;
+
+  /* Update for Delay: '<S3>/Delay1' incorporates:
+   *  Sum: '<S3>/Add4'
+   */
+  RailP_VD_DW.icLoad_j = 0U;
+  RailP_VD_DW.Delay1_DSTATE = (uint16_T)tmp_0;
+
+  /* Update for Delay: '<S3>/Delay' incorporates:
+   *  Outport: '<Root>/RailP_pFlt'
+   *  Sum: '<S3>/Add2'
+   *
+   * Block description for '<Root>/RailP_pFlt':
+   *  Maximum rail pressure of the last 10 sampling cycle
+   */
+  RailP_VD_DW.icLoad_i = 0U;
+  RailP_VD_DW.Delay_DSTATE_l = RailP_VD_Y.RailP_pFlt;
 
   /* End of Outputs for RootInportFunctionCallGenerator generated from: '<Root>/RailP_VD_Step' */
 }
@@ -320,32 +320,29 @@ void RailP_VD_initialize(void)
   /* block I/O */
 
   /* exported global signals */
-  RailP_pFlt = 0;
   RailP_facFltPT1_mp = 0;
-  RailP_nRef_mp = 0;
-  RailP_numMax_mp = ((uint8_T)1U);
 
   /* states (dwork) */
   (void) memset((void *)&RailP_VD_DW, 0,
                 sizeof(DW_RailP_VD_T));
 
-  {
-    int32_T i;
+  /* external outputs */
+  RailP_VD_Y.RailP_pFlt = 0;
+  RailP_VD_PrevZCX.Delay1_Reset_ZCE = UNINITIALIZED_ZCSIG;
 
-    /* SystemInitialize for RootInportFunctionCallGenerator generated from: '<Root>/RailP_VD_Step' incorporates:
-     *  SubSystem: '<S1>/RailP_VD'
-     */
-    /* InitializeConditions for Delay: '<S4>/Delay' */
-    RailP_VD_DW.icLoad = 1U;
+  /* SystemInitialize for RootInportFunctionCallGenerator generated from: '<Root>/RailP_VD_Step' incorporates:
+   *  SubSystem: '<S1>/RailP_VD'
+   */
+  /* InitializeConditions for Delay: '<S3>/Delay2' */
+  RailP_VD_DW.icLoad = 1U;
 
-    /* SystemInitialize for Chart: '<S2>/Chart2' */
-    for (i = 0; i < 10; i++) {
-      RailP_VD_DW.RailPArray[i] = 0;
-    }
+  /* InitializeConditions for Delay: '<S3>/Delay1' */
+  RailP_VD_DW.icLoad_j = 1U;
 
-    /* End of SystemInitialize for Chart: '<S2>/Chart2' */
-    /* End of SystemInitialize for RootInportFunctionCallGenerator generated from: '<Root>/RailP_VD_Step' */
-  }
+  /* InitializeConditions for Delay: '<S3>/Delay' */
+  RailP_VD_DW.icLoad_i = 1U;
+
+  /* End of SystemInitialize for RootInportFunctionCallGenerator generated from: '<Root>/RailP_VD_Step' */
 }
 
 /* Model terminate function */

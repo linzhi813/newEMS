@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.60
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:08 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:20 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -42,7 +42,9 @@ struct tag_RTM_InjCtl_qCo_T {
 };
 
 /* Imported (extern) block signals */
-extern InjMass CnvSet_qSet;            /* '<Root>/CnvSet_qSet' */
+extern InjMass CnvSet_qSet;            /* '<Root>/CnvSet_qSet'
+                                        * Injection quantity current path
+                                        */
 
 /*
  * Exported Global Signals

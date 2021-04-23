@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.56
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:43:49 2021
+ * C/C++ source code generated on : Fri Apr 23 14:58:25 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -42,7 +42,9 @@ struct tag_RTM_VehCo_VehDem_T {
 };
 
 /* Imported (extern) block signals */
-extern Torq AccPed_trqDesAct;          /* '<Root>/AccPed_trqDesAct' */
+extern Torq AccPed_trqDesAct;          /* '<Root>/AccPed_trqDesAct'
+                                        * driver torque raw of propulsion
+                                        */
 
 /*
  * Exported Global Signals

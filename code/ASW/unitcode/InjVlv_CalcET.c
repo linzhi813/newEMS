@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'InjVlv_CalcET'.
  *
- * Model version                  : 1.59
+ * Model version                  : 1.60
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:41:40 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:58 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -14,7 +14,7 @@
  */
 
 #include "InjVlv_CalcET.h"
-#include "look2_is16s16lu16n16ts_XfzHng1h.h"
+#include "look2_is16s16lu32n32ts_oGXGG4kn.h"
 #ifndef UCHAR_MAX
 #include <limits.h>
 #endif
@@ -64,10 +64,10 @@ preprocessor word size checks.
 #endif
 
 /* Exported block signals */
-uSec1 InjVlv_tiETMI1NoCor_mp;          /* '<S2>/InjVlv_tiET_MAP'
+uSec4 InjVlv_tiETMI1NoCor_mp;          /* '<S2>/InjVlv_tiET_MAP'
                                         * Start of energizing for MI1 without correction
                                         */
-uSec1 InjCrv_tiMI1ET;                  /* '<S2>/Switch4'
+uSec4 InjCrv_tiMI1ET;                  /* '<S2>/Switch4'
                                         * Estimated MI1 energizing time
                                         */
 
@@ -99,9 +99,9 @@ void InjVlv_CalcET_Step(void)
    * Block description for '<Root>/RailP_pFlt':
    *  Maximum rail pressure of the last 10 sampling cycle
    */
-  InjVlv_tiETMI1NoCor_mp = look2_is16s16lu16n16ts_XfzHng1h(RailP_pFlt,
+  InjVlv_tiETMI1NoCor_mp = look2_is16s16lu32n32ts_oGXGG4kn(RailP_pFlt,
     InjCrv_qMI1Des, ((const Press_bar1 *)&(InjVlv_tiET_MAPY[0])), ((const
-    InjMass *)&(InjVlv_tiET_MAPX[0])), ((const uSec1 *)&(InjVlv_tiET_MAP[0])),
+    InjMass *)&(InjVlv_tiET_MAPX[0])), ((const uSec4 *)&(InjVlv_tiET_MAP[0])),
     InjVlv_CalcET_DW.m_bpIndex, rtCP_InjVlv_tiET_MAP_maxIndex, 16U);
 
   /* Switch: '<S2>/Switch4' incorporates:
@@ -129,6 +129,7 @@ void InjVlv_CalcET_Step(void)
     InjCrv_tiMI1ET = SigTst_tiMI1ET_C;
   } else {
     /* Switch: '<S2>/Switch4' incorporates:
+     *  Lookup_n-D: '<S2>/InjVlv_tiET_MAP'
      *  Switch: '<S2>/Switch7'
      */
     InjCrv_tiMI1ET = InjVlv_tiETMI1NoCor_mp;

@@ -3,9 +3,11 @@
 
 global projectRoot
 global UnitYLst
+global bCopyCodeSuccess
 
 disp( '*******************');
-disp( 'Begin to Copy Code files to code\ASW ......');
+disp( 'Start process to Copy Code files to code\ASW ......');
+bCopyCodeSuccess=false;
 
 %% 检查文件
 disp( 'Checking Unit Code files first......');
@@ -18,8 +20,8 @@ for ii=1:length(UnitYLst)
     lsh=dir('*.h');
 %     lsA2l=dir('*.a2l');    
     
-    if (length(lsc)~=2) || (length(lsh)~=2) %|| (length(lsA2l)~=1)
-        disp( 'Please Check: The Number of generated Code files is Not Typical!');
+    if (length(lsc)>2) || (length(lsh)>2) %|| (length(lsA2l)~=1)
+        disp( 'Please Check: The Number of generated Code files is More than normal!');
         disp(UnitYLst{ii});
         bCheckResult=false;
     end
@@ -63,8 +65,8 @@ if ~bCheckResult
    end
 end
     
-%% moving unit code files
-disp( 'Begin Moving Code files ......');
+%% copy unit code files
+disp( 'Begin to Copy Code files ......');
 UnitCodefolder=[projectRoot '\code\ASW\unitcode'];
 
 % 删除原来文件夹下的code
@@ -119,7 +121,7 @@ end
 
 
 
-%% move shared code
+%% copy shared code
 
 SharedCodefolder=[projectRoot '\code\ASW\sharedutils'];
 
@@ -177,10 +179,9 @@ end
 
  %%
  cd(fullfile(projectRoot, 'code','ASW'));
- copyfile('D:\newEMS\slbuild\ASW_ert_rtw\ASW_Merged.a2l',pwd);
- 
- disp( '*******************');
+
  disp('Copy Code files Successfully Finished.');
+ bCopyCodeSuccess=true;
  
  %%
  clear bCheckResult lsc lsh lsA2l strIn;

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_ChkSig'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.0
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:33 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:34 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -46,9 +46,9 @@ typedef struct {
   Debncd_ms Delay_DSTATE;              /* '<S4>/Delay' */
   boolean_T DelayInput1_DSTATE;        /* '<S5>/Delay Input1' */
   boolean_T DelayInput1_DSTATE_e;      /* '<S6>/Delay Input1' */
-  boolean_T UnitDelay_DSTATE;          /* '<S7>/Unit Delay' */
   boolean_T Delay1_DSTATE;             /* '<S4>/Delay1' */
   boolean_T Delay2_DSTATE;             /* '<S4>/Delay2' */
+  boolean_T UnitDelay_DSTATE;          /* '<S7>/Unit Delay' */
   uint8_T icLoad;                      /* '<S4>/Delay1' */
 } DW_APP_ChkSig_T;
 
@@ -63,9 +63,15 @@ struct tag_RTM_APP_ChkSig_T {
 };
 
 /* Imported (extern) block signals */
-extern Percent APP_rFlt_mp;            /* '<Root>/APP_rFlt_mp' */
-extern boolean_T APP_stSigSrc_APP1_BP; /* '<Root>/APP_stSigSrc_APP1_BP' */
-extern boolean_T APP_stSigSrc_APP2_BP; /* '<Root>/APP_stSigSrc_APP2_BP' */
+extern Percent APP_rFlt_mp;            /* '<Root>/APP_rFlt_mp'
+                                        * Acceleration pedal position filtered value
+                                        */
+extern boolean_T APP_stSigSrc_APP1_BP; /* '<Root>/APP_stSigSrc_APP1_BP'
+                                        * Sensor 1 is the reference variable, Sensor 2 value is defective
+                                        */
+extern boolean_T APP_stSigSrc_APP2_BP; /* '<Root>/APP_stSigSrc_APP2_BP'
+                                        * Sensor 2 is the reference variable,Sensor1 value is defective
+                                        */
 
 /* Block states (default storage) */
 extern DW_APP_ChkSig_T APP_ChkSig_DW;
@@ -98,11 +104,7 @@ extern RT_MODEL_APP_ChkSig_T *const APP_ChkSig_M;
 /*-
  * These blocks were eliminated from the model due to optimizations:
  *
- * Block '<S7>/Constant2' : Unused code path elimination
- * Block '<S7>/Constant3' : Unused code path elimination
  * Block '<S7>/Logical Operator' : Unused code path elimination
- * Block '<S7>/Switch2' : Unused code path elimination
- * Block '<S7>/Switch3' : Unused code path elimination
  */
 
 /*-
@@ -123,10 +125,10 @@ extern RT_MODEL_APP_ChkSig_T *const APP_ChkSig_M;
  * '<S1>'   : 'APP_ChkSig/Overview'
  * '<S2>'   : 'APP_ChkSig/Overview/APP_ChkSig'
  * '<S3>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection'
- * '<S4>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection/Debounce_DT'
+ * '<S4>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection/Debounce_DT1'
  * '<S5>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection/Detect Increase'
  * '<S6>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection/Detect Increase1'
- * '<S7>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection/RSFilpFlop'
+ * '<S7>'   : 'APP_ChkSig/Overview/APP_ChkSig/Live_Detection/RSFilpFlop_Sp'
  */
 #endif                                 /* RTW_HEADER_APP_ChkSig_h_ */
 

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'AccPed_DrvDemDes'.
  *
- * Model version                  : 1.56
+ * Model version                  : 1.57
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:43:37 2021
+ * C/C++ source code generated on : Fri Apr 23 14:58:18 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -51,8 +51,12 @@ struct tag_RTM_AccPed_DrvDemDes_T {
 };
 
 /* Imported (extern) block signals */
-extern Percent APP_r;                  /* '<Root>/APP_r' */
-extern ERPM Epm_nEng;                  /* '<Root>/Epm_nEng' */
+extern Percent APP_r;                  /* '<Root>/APP_r'
+                                        * Acceleration pedal sensor 1 value after fault handling
+                                        */
+extern ERPM Epm_nEng;                  /* '<Root>/Epm_nEng'
+                                        * Engine speed
+                                        */
 
 /* Block states (default storage) */
 extern DW_AccPed_DrvDemDes_T AccPed_DrvDemDes_DW;

@@ -30,7 +30,7 @@ addDataSource(unitddObj,'sl_ddtypes.sldd');
 addDataSource(unitddObj,'sl_const.sldd');
 addDataSource(unitddObj,'slprj_FM.sldd');
 
-%% 将输入信号写入base workspace
+%% 将输入信号写入base workspace或dd
 % 将输入信号信息写入模型Inport端口，下面注释掉
 
 % for k=1:length(strRecordIn)

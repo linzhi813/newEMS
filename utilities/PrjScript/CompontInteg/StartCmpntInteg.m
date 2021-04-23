@@ -113,7 +113,7 @@ if exist([CmpntName,'.slx'],'file')
         if (~any(strcmp(CmpntSubLstS{ii},cModelRefName))) && (exist([CmpntSubLstS{ii},'.slx'],'file'))        
         
             hCurr=add_block('built-in/ModelReference',[CmpntName '/Overview/' CmpntSubLstS{ii}]);
-            set_param(hCurr,'ModelName',CmpntSubLstS{ii});
+            set_param(hCurr,'ModelName',[CmpntSubLstS{ii} '.slx']);
             
             set_param(hCurr,'SimulationMode','Normal');
             
@@ -138,7 +138,7 @@ else
                       
             if exist([CmpntSubLstS{ii},'.slx'],'file')
                 hCurr=add_block('built-in/ModelReference',[CmpntName '/Overview/' CmpntSubLstS{ii}]);
-                set_param(hCurr,'ModelName',CmpntSubLstS{ii});
+                set_param(hCurr,'ModelName',[CmpntSubLstS{ii} '.slx']);
 
                 set_param(hCurr,'SimulationMode','Normal');
 

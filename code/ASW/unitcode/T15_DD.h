@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'T15_DD'.
  *
- * Model version                  : 1.54
+ * Model version                  : 6.2
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:22 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:27 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -60,7 +60,9 @@ struct tag_RTM_T15_DD_T {
 };
 
 /* Imported (extern) block signals */
-extern Volt_mV T15_uRaw;               /* '<Root>/T15_uRaw' */
+extern Volt_mV1 T15_uRaw;              /* '<Root>/T15_uRaw'
+                                        * Raw ADC value of downstream engine coolant temperature sensor signal
+                                        */
 
 /* Block states (default storage) */
 extern DW_T15_DD_T T15_DD_DW;

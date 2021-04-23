@@ -11,11 +11,21 @@ for kk=1:UnitTotNum
     
 %     if ~ismember(UnitNameLst(kk), {'APP_DD1' 'CEngDsT_DD'}) 
         
-        cd(UnitPathLst{kk});   
+%         cd(UnitPathLst{kk});   
     
         % 重新运行单元data define 脚本
-         run WriteUnitDD;   
+%          run WriteUnitDD;   
 %     end
+% 
+%     if bdIsLoaded(UnitNameLst{kk})
+%         bdclose(UnitNameLst{kk});
+%     end
+%     load_system(UnitNameLst{kk});
+%     
+%     set_param(UnitNameLst{kk},'EnableAccessToBaseWorkspace','on');
+%     
+%     close_system(UnitNameLst{kk});
+%     save_system(UnitNameLst{kk});
     
 end  
 

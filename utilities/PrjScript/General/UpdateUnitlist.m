@@ -58,6 +58,8 @@ for ii=1:UnitTotNum
  load_system([dName '.slx']);
  set_param(dName,'DataDictionary', [dName '.sldd']);
  
+%  set_param(dName,'EnableAccessToBaseWorkspace','on');
+ 
  % ≈‰÷√ƒ£–ÕConfigSet
  cref = Simulink.ConfigSetRef;
  cref.Name = 'ConfigSetRef';

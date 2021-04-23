@@ -1,11 +1,11 @@
 /*
  * File: mul_wide_u32.h
  *
- * Code generated for Simulink model 'EGRVlv_VDPosGov'.
+ * Code generated for Simulink model 'InjVlv_CalcET'.
  *
- * Model version                  : 1.82
+ * Model version                  : 1.60
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:39:04 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:58 2021
  */
 
 #ifndef RTW_HEADER_mul_wide_u32_h_

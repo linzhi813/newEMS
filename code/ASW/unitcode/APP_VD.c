@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_VD'.
  *
- * Model version                  : 1.55
+ * Model version                  : 6.0
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:43:25 2021
+ * C/C++ source code generated on : Fri Apr 23 14:58:09 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -16,8 +16,6 @@
 #include "APP_VD.h"
 #include "div_nde_s32_floor.h"
 #include "look1_is16lu16n16ts16D_vPytCsBO.h"
-#include "mul_s32_hiSR_round.h"
-#include "mul_s32_sr1_sat_round.h"
 #ifndef UCHAR_MAX
 #include <limits.h>
 #endif
@@ -67,9 +65,6 @@ preprocessor word size checks.
 #endif
 
 /* Exported block signals */
-Percent_s APP_drUnFlt;                 /* '<S7>/Product'
-                                        * Acceleration pedal position gradient of unfilterd value
-                                        */
 Percent APP_rLinAPP_mp;                /* '<S4>/MoFAPP_rLinAPPCURCalMsgA_CUR'
                                         * Linearisation ratio of accelerator pedal
                                         */
@@ -79,13 +74,16 @@ Percent APP_rUnFlt_mp;                 /* '<S6>/Switch'
 Percent APP_rUnFlt;                    /* '<S4>/Switch'
                                         * Unfiltered APP value
                                         */
-Percent APP_rFlt_mp;                   /* '<S5>/Switch1'
-                                        * Acceleration pedal position filtered value
-                                        */
 Fac_100 APP_facPT1;                    /* '<S10>/Switch'
                                         * Filter time
                                         */
-Volt_mV APP_uUnJit_mp;                 /* '<S3>/Switch3'
+Percent APP_rFlt_mp;                   /* '<S5>/Switch1'
+                                        * Acceleration pedal position filtered value
+                                        */
+Percent_s APP_drUnFlt;                 /* '<S7>/Product'
+                                        * Acceleration pedal position gradient of unfilterd value
+                                        */
+Volt_mV1 APP_uUnJit_mp;                /* '<S3>/Switch3'
                                         * Acceleration pedal position unjittered value
                                         */
 
@@ -97,6 +95,9 @@ const ConstB_APP_VD_T APP_VD_ConstB = {
 /* Block states (default storage) */
 DW_APP_VD_T APP_VD_DW;
 
+/* Previous zero-crossings (trigger) states */
+PrevZCX_APP_VD_T APP_VD_PrevZCX;
+
 /* Real-time model */
 static RT_MODEL_APP_VD_T APP_VD_M_;
 RT_MODEL_APP_VD_T *const APP_VD_M = &APP_VD_M_;
@@ -104,9 +105,11 @@ RT_MODEL_APP_VD_T *const APP_VD_M = &APP_VD_M_;
 /* Model step function */
 void APP_VD_Step(void)
 {
-  int32_T q0;
-  Volt_mV rtb_Abs;
-  Volt_mV rtb_Add_k;
+  int32_T tmp_0;
+  uint32_T tmp;
+  Volt_mV1 rtb_Abs;
+  Volt_mV1 rtb_Add_k;
+  boolean_T rtb_RelationalOperator_h;
 
   /* RootInportFunctionCallGenerator generated from: '<Root>/APP_VD_Step' incorporates:
    *  SubSystem: '<S1>/APP_VD'
@@ -118,11 +121,13 @@ void APP_VD_Step(void)
    * Block description for '<Root>/APP_uRaw_mp':
    *  Acceleration pedal position raw value
    */
-  rtb_Add_k = (Volt_mV)(APP_VD_DW.Delay2_DSTATE - APP_uRaw_mp);
+  rtb_Add_k = (Volt_mV1)(APP_VD_DW.Delay2_DSTATE - APP_uRaw_mp);
 
-  /* Abs: '<S3>/Abs' */
+  /* Abs: '<S3>/Abs' incorporates:
+   *  Sum: '<S3>/Add'
+   */
   if (rtb_Add_k < 0) {
-    rtb_Abs = (int16_T)-rtb_Add_k;
+    rtb_Abs = (Volt_mV1)-rtb_Add_k;
   } else {
     rtb_Abs = rtb_Add_k;
   }
@@ -130,19 +135,21 @@ void APP_VD_Step(void)
   /* End of Abs: '<S3>/Abs' */
 
   /* Switch: '<S3>/Switch7' incorporates:
+   *  Abs: '<S3>/Abs'
    *  Constant: '<S3>/Constant2'
    *  RelationalOperator: '<S3>/Relational Operator1'
    */
   if (rtb_Abs > APP_uJitter_C) {
     /* Switch: '<S3>/Switch8' incorporates:
-     *  Constant: '<S3>/Constant4'
      *  Product: '<S3>/Divide'
      *  RelationalOperator: '<S3>/Relational Operator2'
      *  RelationalOperator: '<S3>/Relational Operator3'
+     *  Sum: '<S3>/Add'
      *  Switch: '<S3>/Switch9'
      */
     if (rtb_Abs > (int16_T)(APP_uJitter_C << 1)) {
-      /* Delay: '<S3>/Delay2' incorporates:
+      /* Switch: '<S3>/Switch7' incorporates:
+       *  Delay: '<S3>/Delay2'
        *  Inport: '<Root>/APP_uRaw_mp'
        *
        * Block description for '<Root>/APP_uRaw_mp':
@@ -153,11 +160,15 @@ void APP_VD_Step(void)
       /* Switch: '<S3>/Switch9' incorporates:
        *  Delay: '<S3>/Delay2'
        *  Sum: '<S3>/Add1'
+       *  Switch: '<S3>/Switch7'
+       *  Switch: '<S3>/Switch8'
        */
       APP_VD_DW.Delay2_DSTATE -= APP_uJitter_C;
     } else {
-      /* Delay: '<S3>/Delay2' incorporates:
+      /* Switch: '<S3>/Switch7' incorporates:
+       *  Delay: '<S3>/Delay2'
        *  Sum: '<S3>/Add2'
+       *  Switch: '<S3>/Switch8'
        *  Switch: '<S3>/Switch9'
        */
       APP_VD_DW.Delay2_DSTATE += APP_uJitter_C;
@@ -176,6 +187,7 @@ void APP_VD_Step(void)
   if (APP_swtEnaUnJit_C == Switch_ON) {
     /* Switch: '<S3>/Switch3' incorporates:
      *  Delay: '<S3>/Delay2'
+     *  Switch: '<S3>/Switch7'
      */
     APP_uUnJit_mp = APP_VD_DW.Delay2_DSTATE;
   } else {
@@ -194,7 +206,7 @@ void APP_VD_Step(void)
    *  Switch: '<S3>/Switch3'
    */
   APP_rLinAPP_mp = look1_is16lu16n16ts16D_vPytCsBO(APP_uUnJit_mp, ((const
-    Volt_mV *)&(MoFAPP_rLinAPPCURCalMsgA_CURX[0])), ((const Percent *)
+    Volt_mV1 *)&(MoFAPP_rLinAPPCURCalMsgA_CURX[0])), ((const Percent *)
     &(MoFAPP_rLinAPPCURCalMsgA_CUR[0])), &APP_VD_DW.m_bpIndex, 1U);
 
   /* Switch: '<S9>/Switch' incorporates:
@@ -215,11 +227,12 @@ void APP_VD_Step(void)
    *
    *  Store in Global RAM
    */
-  if (APP_rLinAPP_mp <= APP_rUnFlt_mp) {
-    APP_VD_DW.UnitDelay_DSTATE = false;
+  if ((int32_T)APP_stSigSrc_APPLIMP_BP < (int32_T)APP_VD_DW.DelayInput1_DSTATE)
+  {
+    APP_VD_DW.UnitDelay_DSTATE = true;
   } else {
-    APP_VD_DW.UnitDelay_DSTATE = (((int32_T)APP_stSigSrc_APPLIMP_BP < (int32_T)
-      APP_VD_DW.DelayInput1_DSTATE) || APP_VD_DW.UnitDelay_DSTATE);
+    APP_VD_DW.UnitDelay_DSTATE = ((APP_rLinAPP_mp > APP_rUnFlt_mp) &&
+      APP_VD_DW.UnitDelay_DSTATE);
   }
 
   /* End of Switch: '<S9>/Switch' */
@@ -234,8 +247,8 @@ void APP_VD_Step(void)
      *  Delay: '<S6>/Delay'
      *  Product: '<S6>/Product'
      */
-    APP_rUnFlt_mp += (int16_T)(((int16_T)div_nde_s32_floor((int16_T)
-      ((APP_drLinRmp_C * 125) >> 3), 1000) * 5243) >> 12);
+    APP_rUnFlt_mp += (int16_T)div_nde_s32_floor((int16_T)(APP_drLinRmp_C * 40),
+      1000);
 
     /* MinMax: '<S6>/MinMax' incorporates:
      *  Lookup_n-D: '<S4>/MoFAPP_rLinAPPCURCalMsgA_CUR'
@@ -262,19 +275,20 @@ void APP_VD_Step(void)
    *  Sum: '<S4>/Add3'
    *  Switch: '<S6>/Switch'
    */
-  q0 = (int16_T)(APP_rUnFlt_mp - APP_VD_DW.Delay_DSTATE_ob) *
+  tmp_0 = (int16_T)(APP_rUnFlt_mp - APP_VD_DW.Delay_DSTATE_o) *
     APP_VD_ConstB.Divide;
-  q0 = (((q0 & 1U) != 0U) && (q0 > 0)) + (q0 >> 1);
-  if (q0 > 32767) {
-    q0 = 32767;
+  tmp_0 = (((tmp_0 & 2U) != 0U) && (((tmp_0 & 1U) != 0U) || (tmp_0 > 0))) +
+    (tmp_0 >> 2);
+  if (tmp_0 > 32767) {
+    tmp_0 = 32767;
   } else {
-    if (q0 < -32768) {
-      q0 = -32768;
+    if (tmp_0 < -32768) {
+      tmp_0 = -32768;
     }
   }
 
   /* Product: '<S7>/Product' */
-  APP_drUnFlt = (Percent_s)q0;
+  APP_drUnFlt = (Percent_s)tmp_0;
 
   /* Switch: '<S4>/Switch' incorporates:
    *  Constant: '<S4>/Constant6'
@@ -295,7 +309,6 @@ void APP_VD_Step(void)
 
   /* End of Switch: '<S4>/Switch' */
 
-  /* Outputs for Atomic SubSystem: '<S5>/Filter_parameter_selection' */
   /* Switch: '<S10>/Switch' incorporates:
    *  Constant: '<S10>/Constant7'
    *  Constant: '<S10>/Constant9'
@@ -358,91 +371,136 @@ void APP_VD_Step(void)
   }
 
   /* End of Switch: '<S10>/Switch' */
-  /* End of Outputs for SubSystem: '<S5>/Filter_parameter_selection' */
 
-  /* Delay: '<S11>/Delay' */
-  if (APP_VD_DW.icLoad != 0) {
-    /* Switch: '<S11>/Switch' incorporates:
-     *  DataTypeConversion: '<S11>/Data Type Conversion1'
-     *  Switch: '<S4>/Switch'
-     */
-    APP_VD_DW.Delay_DSTATE = APP_rUnFlt << 1;
+  /* MinMax: '<S11>/Min' incorporates:
+   *  Constant: '<S11>/Constant'
+   *  Product: '<S11>/Divide1'
+   *  Switch: '<S10>/Switch'
+   */
+  if (APP_facPT1 < 256) {
+    rtb_Add_k = APP_facPT1;
+  } else {
+    rtb_Add_k = 256;
   }
 
-  /* Switch: '<S11>/Switch' incorporates:
+  /* End of MinMax: '<S11>/Min' */
+
+  /* Delay: '<S11>/Delay2' incorporates:
+   *  Switch: '<S4>/Switch'
+   */
+  if (APP_VD_DW.icLoad != 0) {
+    APP_VD_DW.Delay2_DSTATE_l = APP_rUnFlt;
+  }
+
+  /* RelationalOperator: '<S11>/Relational Operator' incorporates:
+   *  Delay: '<S11>/Delay2'
+   *  Switch: '<S4>/Switch'
+   */
+  rtb_RelationalOperator_h = (APP_rUnFlt != APP_VD_DW.Delay2_DSTATE_l);
+
+  /* Delay: '<S11>/Delay1' incorporates:
+   *  Constant: '<S11>/Constant3'
+   */
+  if ((((APP_VD_PrevZCX.Delay1_Reset_ZCE == POS_ZCSIG) != (int32_T)
+        rtb_RelationalOperator_h) && (APP_VD_PrevZCX.Delay1_Reset_ZCE !=
+        UNINITIALIZED_ZCSIG)) || rtb_RelationalOperator_h) {
+    APP_VD_DW.icLoad_g = 1U;
+  }
+
+  APP_VD_PrevZCX.Delay1_Reset_ZCE = rtb_RelationalOperator_h;
+  if (APP_VD_DW.icLoad_g != 0) {
+    APP_VD_DW.Delay1_DSTATE_b = 0U;
+  }
+
+  /* MinMax: '<S11>/Min1' incorporates:
+   *  Constant: '<S11>/Constant1'
+   *  Product: '<S11>/Divide1'
+   */
+  if (rtb_Add_k <= 0) {
+    rtb_Add_k = 0;
+  }
+
+  /* End of MinMax: '<S11>/Min1' */
+
+  /* Product: '<S11>/Divide2' incorporates:
+   *  Constant: '<S11>/Constant2'
+   *  Delay: '<S11>/Delay1'
+   *  Sum: '<S11>/Add3'
+   */
+  tmp_0 = (((32768 - APP_VD_DW.Delay1_DSTATE_b) >> 7) * rtb_Add_k) >> 1;
+  if (tmp_0 < 0) {
+    tmp_0 = 0;
+  } else {
+    if (tmp_0 > 65535) {
+      tmp_0 = 65535;
+    }
+  }
+
+  /* Sum: '<S11>/Add4' incorporates:
+   *  Delay: '<S11>/Delay1'
+   *  Product: '<S11>/Divide2'
+   */
+  tmp = (uint32_T)APP_VD_DW.Delay1_DSTATE_b + tmp_0;
+  if (tmp > 65535U) {
+    tmp = 65535U;
+  }
+
+  /* Delay: '<S11>/Delay' incorporates:
    *  Inport: '<Root>/APP_stSigSrc_APPDEF_BP'
-   *  MinMax: '<S11>/Min'
-   *  Switch: '<S10>/Switch'
+   *  Switch: '<S4>/Switch'
    *
    * Block description for '<Root>/APP_stSigSrc_APPDEF_BP':
    *  both the sensors are defective. Use the default value
    */
-  if (APP_stSigSrc_APPDEF_BP) {
-    /* Switch: '<S11>/Switch' incorporates:
-     *  DataTypeConversion: '<S11>/Data Type Conversion3'
-     *  Switch: '<S4>/Switch'
-     */
-    APP_VD_DW.Delay_DSTATE = APP_rUnFlt << 1;
-  } else {
-    if (APP_facPT1 < 200) {
-      /* MinMax: '<S11>/Min' incorporates:
-       *  Switch: '<S10>/Switch'
-       */
-      rtb_Add_k = APP_facPT1;
-    } else {
-      /* MinMax: '<S11>/Min' incorporates:
-       *  Constant: '<S11>/Constant'
-       */
-      rtb_Add_k = 200;
-    }
-
-    /* Sum: '<S11>/Add1' incorporates:
-     *  Delay: '<S11>/Delay'
-     *  Switch: '<S4>/Switch'
-     */
-    q0 = APP_rUnFlt << 1;
-    if ((q0 >= 0) && (APP_VD_DW.Delay_DSTATE < q0 - MAX_int32_T)) {
-      q0 = MAX_int32_T;
-    } else if ((q0 < 0) && (APP_VD_DW.Delay_DSTATE > q0 - MIN_int32_T)) {
-      q0 = MIN_int32_T;
-    } else {
-      q0 -= APP_VD_DW.Delay_DSTATE;
-    }
-
-    /* End of Sum: '<S11>/Add1' */
-
-    /* MinMax: '<S11>/Min1' incorporates:
-     *  Constant: '<S11>/Constant1'
-     *  MinMax: '<S11>/Min'
-     */
-    if (rtb_Add_k <= 0) {
-      rtb_Add_k = 0;
-    }
-
-    /* End of MinMax: '<S11>/Min1' */
-
-    /* Sum: '<S11>/Add2' incorporates:
-     *  Delay: '<S11>/Delay'
-     *  Product: '<S11>/Divide1'
-     */
-    q0 = mul_s32_hiSR_round(mul_s32_sr1_sat_round(q0, rtb_Add_k), 1374389535, 5U);
-    if ((APP_VD_DW.Delay_DSTATE < 0) && (q0 < MIN_int32_T
-         - APP_VD_DW.Delay_DSTATE)) {
-      /* Switch: '<S11>/Switch' */
-      APP_VD_DW.Delay_DSTATE = MIN_int32_T;
-    } else if ((APP_VD_DW.Delay_DSTATE > 0) && (q0 > MAX_int32_T
-                - APP_VD_DW.Delay_DSTATE)) {
-      /* Switch: '<S11>/Switch' */
-      APP_VD_DW.Delay_DSTATE = MAX_int32_T;
-    } else {
-      /* Switch: '<S11>/Switch' */
-      APP_VD_DW.Delay_DSTATE += q0;
-    }
-
-    /* End of Sum: '<S11>/Add2' */
+  if ((((APP_VD_PrevZCX.Delay_Reset_ZCE == POS_ZCSIG) != (int32_T)
+        APP_stSigSrc_APPDEF_BP) && (APP_VD_PrevZCX.Delay_Reset_ZCE !=
+        UNINITIALIZED_ZCSIG)) || APP_stSigSrc_APPDEF_BP) {
+    APP_VD_DW.icLoad_d = 1U;
   }
 
-  /* End of Switch: '<S11>/Switch' */
+  APP_VD_PrevZCX.Delay_Reset_ZCE = APP_stSigSrc_APPDEF_BP;
+  if (APP_VD_DW.icLoad_d != 0) {
+    APP_VD_DW.Delay_DSTATE_l = APP_rUnFlt;
+  }
+
+  /* Sum: '<S11>/Add1' incorporates:
+   *  Delay: '<S11>/Delay'
+   *  Switch: '<S4>/Switch'
+   */
+  tmp_0 = APP_rUnFlt - APP_VD_DW.Delay_DSTATE_l;
+  if (tmp_0 > 32767) {
+    tmp_0 = 32767;
+  } else {
+    if (tmp_0 < -32768) {
+      tmp_0 = -32768;
+    }
+  }
+
+  /* Product: '<S11>/Divide1' incorporates:
+   *  Sum: '<S11>/Add1'
+   *  Sum: '<S11>/Add4'
+   */
+  tmp_0 = (tmp_0 * (uint16_T)tmp) >> 15;
+  if (tmp_0 > 32767) {
+    tmp_0 = 32767;
+  } else {
+    if (tmp_0 < -32768) {
+      tmp_0 = -32768;
+    }
+  }
+
+  /* Sum: '<S11>/Add2' incorporates:
+   *  Delay: '<S11>/Delay'
+   *  Product: '<S11>/Divide1'
+   */
+  tmp_0 += APP_VD_DW.Delay_DSTATE_l;
+  if (tmp_0 > 32767) {
+    tmp_0 = 32767;
+  } else {
+    if (tmp_0 < -32768) {
+      tmp_0 = -32768;
+    }
+  }
 
   /* Switch: '<S5>/Switch1' incorporates:
    *  Constant: '<S5>/Constant10'
@@ -450,22 +508,10 @@ void APP_VD_Step(void)
    *  RelationalOperator: '<S5>/Relational Operator5'
    */
   if (APP_swtEnaFlt_C == Switch_ON) {
-    /* DataTypeConversion: '<S11>/Data Type Conversion2' incorporates:
-     *  Switch: '<S11>/Switch'
-     */
-    q0 = APP_VD_DW.Delay_DSTATE >> 1;
-    if (q0 > 32767) {
-      q0 = 32767;
-    } else {
-      if (q0 < -32768) {
-        q0 = -32768;
-      }
-    }
-
     /* Switch: '<S5>/Switch1' incorporates:
-     *  DataTypeConversion: '<S11>/Data Type Conversion2'
+     *  Sum: '<S11>/Add2'
      */
-    APP_rFlt_mp = (Percent)q0;
+    APP_rFlt_mp = (Percent)tmp_0;
   } else {
     /* Switch: '<S5>/Switch1' incorporates:
      *  Switch: '<S4>/Switch'
@@ -491,10 +537,25 @@ void APP_VD_Step(void)
   /* Update for Delay: '<S4>/Delay' incorporates:
    *  Switch: '<S6>/Switch'
    */
-  APP_VD_DW.Delay_DSTATE_ob = APP_rUnFlt_mp;
+  APP_VD_DW.Delay_DSTATE_o = APP_rUnFlt_mp;
 
-  /* Update for Delay: '<S11>/Delay' */
+  /* Update for Delay: '<S11>/Delay2' incorporates:
+   *  Switch: '<S4>/Switch'
+   */
   APP_VD_DW.icLoad = 0U;
+  APP_VD_DW.Delay2_DSTATE_l = APP_rUnFlt;
+
+  /* Update for Delay: '<S11>/Delay1' incorporates:
+   *  Sum: '<S11>/Add4'
+   */
+  APP_VD_DW.icLoad_g = 0U;
+  APP_VD_DW.Delay1_DSTATE_b = (uint16_T)tmp;
+
+  /* Update for Delay: '<S11>/Delay' incorporates:
+   *  Sum: '<S11>/Add2'
+   */
+  APP_VD_DW.icLoad_d = 0U;
+  APP_VD_DW.Delay_DSTATE_l = (Percent)tmp_0;
 
   /* End of Outputs for RootInportFunctionCallGenerator generated from: '<Root>/APP_VD_Step' */
 }
@@ -510,23 +571,31 @@ void APP_VD_initialize(void)
   /* block I/O */
 
   /* exported global signals */
-  APP_drUnFlt = 0;
   APP_rLinAPP_mp = 0;
   APP_rUnFlt_mp = 0;
   APP_rUnFlt = 0;
-  APP_rFlt_mp = 0;
   APP_facPT1 = 0;
+  APP_rFlt_mp = 0;
+  APP_drUnFlt = 0;
   APP_uUnJit_mp = 0;
 
   /* states (dwork) */
   (void) memset((void *)&APP_VD_DW, 0,
                 sizeof(DW_APP_VD_T));
+  APP_VD_PrevZCX.Delay1_Reset_ZCE = UNINITIALIZED_ZCSIG;
+  APP_VD_PrevZCX.Delay_Reset_ZCE = UNINITIALIZED_ZCSIG;
 
   /* SystemInitialize for RootInportFunctionCallGenerator generated from: '<Root>/APP_VD_Step' incorporates:
    *  SubSystem: '<S1>/APP_VD'
    */
-  /* InitializeConditions for Delay: '<S11>/Delay' */
+  /* InitializeConditions for Delay: '<S11>/Delay2' */
   APP_VD_DW.icLoad = 1U;
+
+  /* InitializeConditions for Delay: '<S11>/Delay1' */
+  APP_VD_DW.icLoad_g = 1U;
+
+  /* InitializeConditions for Delay: '<S11>/Delay' */
+  APP_VD_DW.icLoad_d = 1U;
 
   /* End of SystemInitialize for RootInportFunctionCallGenerator generated from: '<Root>/APP_VD_Step' */
 }

@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_VD'.
  *
- * Model version                  : 1.55
+ * Model version                  : 6.0
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:43:25 2021
+ * C/C++ source code generated on : Fri Apr 23 14:58:09 2021
  */
 
 #ifndef RTW_HEADER_APP_VD_Paras_h_
@@ -54,13 +54,13 @@ extern const volatile Switch APP_swtEnaFlt_C;
 extern const volatile Switch APP_swtEnaUnJit_C;
 
 /* Switch to enable unjittering */
-extern const volatile Volt_mV APP_uJitter_C;
+extern const volatile Volt_mV1 APP_uJitter_C;
 
 /* Threshold for unjittering */
 extern const volatile Percent MoFAPP_rLinAPPCURCalMsgA_CUR[2];
 
 /* the physical value of accpedal */
-extern const volatile Volt_mV MoFAPP_rLinAPPCURCalMsgA_CURX[2];
+extern const volatile Volt_mV1 MoFAPP_rLinAPPCURCalMsgA_CURX[2];
 
 /* accpedal axis */
 extern const volatile Percent SigTst_rAPP_C;

@@ -57,9 +57,13 @@ cd('D:\newEMS\slbuild\ASW_ert_rtw');
 [status, info] = rtw.asap2MergeMdlRefs('ASW','ASW_Merged.a2l');
 
 if ~status
+    cd('D:\newEMS\code\ASW');
+    copyfile('D:\newEMS\slbuild\ASW_ert_rtw\ASW_Merged.a2l',pwd);
     disp( 'Merge A2l files Successfully Finished.');
 end
 
 myCacheFolder = fullfile(projectRoot, 'cache');
 Simulink.fileGenControl('set', 'CacheFolder', myCacheFolder, ...
    'CodeGenFolder', myCacheFolder);
+
+

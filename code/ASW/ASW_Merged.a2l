@@ -1132,6 +1132,3137 @@ ASAP2_VERSION  1 31   /* Version 1.31 */
       AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
     /end   RECORD_LAYOUT
 
+    /begin CHARACTERISTIC      
+      /* Name                   */      CEngDsT_tTransf_CUR
+      /* Long Identifier        */      "Transformation curve to convert the voltage value to temperature value"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tTransf_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      CEngDsT_DD_CM_Temp_C_deg
+      /* Lower Limit            */      -50.0
+      /* Upper Limit            */      150.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      CEngDsT_uRaw
+        /* Conversion Method    */      CEngDsT_DD_CM_Volt_mV2_mv
+        /* Number of Axis Pts   */      26
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      5000.0
+        AXIS_PTS_REF                    CEngDsT_tTransf_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMaxDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMax"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMaxDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMaxOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMax"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMaxOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMinDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMin"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMinDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiMinOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTSRCMin"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiMinOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngHiDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngHi"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngHiDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngHiOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngHi"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngHiOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngLoDefDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngLo"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngLoDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tiPhysRngLoOKDeb_C  
+      /* Long Identifier        */      "Debounc time for checking heal of DFC_CEngDsTPhysRngLo"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tiPhysRngLoOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      FM_CEngDsT_SRC_FG_CA  
+      /* Long Identifier        */      "故障组，元素为故障ID"
+      /* Type                   */      VAL_BLK 
+      /* ECU Address            */      0x0000 /* @ECU_Address@FM_CEngDsT_SRC_FG_CA@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Fault_ID_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      65535.0
+      /* Array Size             */
+      NUMBER                            10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_MaxCoolTemp  
+      /* Long Identifier        */      "Maxmium Coolant Temperature"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_MaxCoolTemp@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Temp_C_deg 
+      /* Lower Limit            */      -2048.0 
+      /* Upper Limit            */      2047.9375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_MinCoolTemp  
+      /* Long Identifier        */      "Minmium Coolant Temperature"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_MinCoolTemp@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Temp_C_deg 
+      /* Lower Limit            */      -2048.0 
+      /* Upper Limit            */      2047.9375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_uSRCMax_C  
+      /* Long Identifier        */      "Signal Range Check / Threshold for SRC -Max detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_uSRCMax_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Volt_mV2_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_uSRCMin_C  
+      /* Long Identifier        */      "Signal Range Check / Threshold for SRC -Min detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_uSRCMin_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_DD_CM_Volt_mV2_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      CEngDsT_tTransf_CURX
+      /* Long Identifier        */      "Transformation aixs to convert the voltage value to temperature value"
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tTransf_CURX@ */
+      /* Input Quantity         */      CEngDsT_uRaw
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      CEngDsT_DD_CM_Volt_mV2_mv
+      /* Number of Axis Pts     */      26
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      5000.0
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtCEngDsT_C  
+      /* Long Identifier        */      "Switch for coolent temperature by hand"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtCEngDsT_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_facSerPT1_C  
+      /* Long Identifier        */      "Time constant of PT1 filter for coolent Down streem temperature"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_facSerPT1_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_VD_CM_Fac100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_tDflWarm_C  
+      /* Long Identifier        */      "Default downstream engine coolant temperature value for warm engine conditions"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_tDflWarm_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_VD_CM_Temp_C_deg 
+      /* Lower Limit            */      -200.0 
+      /* Upper Limit            */      200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_tCEngDsT_C  
+      /* Long Identifier        */      "Set coolent temperature by hand"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_tCEngDsT_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_VD_CM_Temp_C_deg 
+      /* Lower Limit            */      -200.0 
+      /* Upper Limit            */      200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_RmpSlpNeg_C  
+      /* Long Identifier        */      "Parameter for Ramp 1 / negative ramp slope"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_RmpSlpNeg_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_VD_CM_uint16_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      CEngDsT_RmpSlpPos_C  
+      /* Long Identifier        */      "Parameter for Ramp 1 / Slope if the ramp has to be increased"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@CEngDsT_RmpSlpPos_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      CEngDsT_VD_CM_uint16_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC      
+      /* Name                   */      PhyMod_trq2qBas_MAP
+      /* Long Identifier        */      "Engine basic map for conversion of torque/quantity"
+      /* Characteristic Type    */      MAP
+      /* ECU Address            */      0x0000 /* @ECU_Address@PhyMod_trq2qBas_MAP@ */
+      /* Record Layout          */      Lookup2D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      CnvSet_Trq2Q_CM_InjMass_mg_hub
+      /* Lower Limit            */      -319.0
+      /* Upper Limit            */      319.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      Epm_nEng
+        /* Conversion Method    */      CnvSet_Trq2Q_CM_ERPM_rpm
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      -12000.0
+        /* Upper Limit          */      12000.0
+        AXIS_PTS_REF                    PhyMod_trq2qBas_MAPX
+      /end AXIS_DESCR
+      /begin AXIS_DESCR                 
+        /* Description of Y-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      PthSet_trqInrSet
+        /* Conversion Method    */      CnvSet_Trq2Q_CM_Torq_Nm
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      -3276.8
+        /* Upper Limit          */      3276.7
+        AXIS_PTS_REF                    PhyMod_trq2qBas_MAPY
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      PhyMod_trq2qBas_MAPY
+      /* Long Identifier        */      "AxisY of the MAP"
+      /* ECU Address            */      0x0000 /* @ECU_Address@PhyMod_trq2qBas_MAPY@ */
+      /* Input Quantity         */      PthSet_trqInrSet
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      CnvSet_Trq2Q_CM_Torq_Nm
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      -3276.8
+      /* Upper Limit            */      3276.7
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+      /* Name                   */      PhyMod_trq2qBas_MAPX
+      /* Long Identifier        */      "AxisX of the MAP"
+      /* ECU Address            */      0x0000 /* @ECU_Address@PhyMod_trq2qBas_MAPX@ */
+      /* Input Quantity         */      Epm_nEng
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      CnvSet_Trq2Q_CM_ERPM_rpm
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      -12000.0
+      /* Upper Limit            */      12000.0
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC      
+      /* Name                   */      RailP_pLin_CUR
+      /* Long Identifier        */      "Linearisation curve for fuel pressure sensor"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_pLin_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      RailP_DD_CM_Press_bar1_bar
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      2000.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      RailP_uRaw
+        /* Conversion Method    */      RailP_DD_CM_Volt_mV1_mv
+        /* Number of Axis Pts   */      4
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      5000.0
+        AXIS_PTS_REF                    RailP_pLin_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_tiSRCMaxDefDeb_C  
+      /* Long Identifier        */      "Debounce time for checking defect of RailP_bSRCMaxDeb"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_tiSRCMaxDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_tiSRCMaxOKDeb_C  
+      /* Long Identifier        */      "Debounce time for checking heal of RailP_bSRCMaxDeb"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_tiSRCMaxOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_tiSRCMinDefDeb_C  
+      /* Long Identifier        */      "Debounce time for checking defect of RailP_bSRCMinDeb"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_tiSRCMinDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_tiSRCMinOKDeb_C  
+      /* Long Identifier        */      "Debounce time for checking heal of RailP_bSRCMinDeb"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_tiSRCMinOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_uSRCMax_C  
+      /* Long Identifier        */      "Threshold for SRC -Max detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_uSRCMax_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_DD_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_uSRCMin_C  
+      /* Long Identifier        */      "Threshold for SRC -Min detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_uSRCMin_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_DD_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      RailP_pLin_CURX
+      /* Long Identifier        */      "RailP_uRaw"
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_pLin_CURX@ */
+      /* Input Quantity         */      RailP_uRaw
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      RailP_DD_CM_Volt_mV1_mv
+      /* Number of Axis Pts     */      4
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      5000.0
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC      
+      /* Name                   */      RailP_pFltWinNeg_CUR
+      /* Long Identifier        */      "Rail pressure decrease from which the system switches to the large signal parameter"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_pFltWinNeg_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      RailP_VD_CM_Press_bar1_bar
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      2000.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      InjCtl_qSetUnBal
+        /* Conversion Method    */      RailP_VD_CM_InjMass_mg_hub
+        /* Number of Axis Pts   */      10
+        /* Lower Limit          */      -300.0
+        /* Upper Limit          */      300.0
+        AXIS_PTS_REF                    RailP_pFltWinNeg_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_facFlt1PT1_C  
+      /* Long Identifier        */      "PT1 filter parameter for increasing rail pressure"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_facFlt1PT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_facFlt2PT1_C  
+      /* Long Identifier        */      "PT1 filter parameter for decreasing rail pressure (small signal behaviour)"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_facFlt2PT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      RailP_facFlt3PT1_C  
+      /* Long Identifier        */      "PT1 filter parameter for severely decreasing rail pressure (large signal behaviour)"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_facFlt3PT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      RailP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      RailP_pFltWinNeg_CURX
+      /* Long Identifier        */      "InjCtl_qSetUnBal"
+      /* ECU Address            */      0x0000 /* @ECU_Address@RailP_pFltWinNeg_CURX@ */
+      /* Input Quantity         */      InjCtl_qSetUnBal
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      RailP_VD_CM_InjMass_mg_hub
+      /* Number of Axis Pts     */      10
+      /* Lower Limit            */      -300.0
+      /* Upper Limit            */      300.0
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC      
+      /* Name                   */      InjVlv_tiET_MAP
+      /* Long Identifier        */      "Map for converting from injection quantity to energizing time,Applies to all injections"
+      /* Characteristic Type    */      MAP
+      /* ECU Address            */      0x0000 /* @ECU_Address@InjVlv_tiET_MAP@ */
+      /* Record Layout          */      Lookup2D_LONG
+      /* Maxdiff                */      0
+      /* Conversion Method      */      InjVlv_CalcET_CM_uSec4_us
+      /* Lower Limit            */      -13107.0
+      /* Upper Limit            */      13106.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      InjCrv_qMI1Des
+        /* Conversion Method    */      InjVlv_CalcET_CM_InjMass_mg_hub
+        /* Number of Axis Pts   */      20
+        /* Lower Limit          */      -319.0
+        /* Upper Limit          */      319.0
+        AXIS_PTS_REF                    InjVlv_tiET_MAPX
+      /end AXIS_DESCR
+      /begin AXIS_DESCR                 
+        /* Description of Y-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      RailP_pFlt
+        /* Conversion Method    */      InjVlv_CalcET_CM_Press_bar1_bar
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      2000.0
+        AXIS_PTS_REF                    InjVlv_tiET_MAPY
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtMI1ET_C  
+      /* Long Identifier        */      "Switch for Set Value of energizing time for MI1"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtMI1ET_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      InjVlv_CalcET_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_tiMI1ET_C  
+      /* Long Identifier        */      "Set Value of energizing time for MI1"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_tiMI1ET_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      InjVlv_CalcET_CM_uSec4_us 
+      /* Lower Limit            */      -13107.0 
+      /* Upper Limit            */      13106.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      InjVlv_tiET_MAPY
+      /* Long Identifier        */      "Map for converting from injection quantity to energizing time,Applies to all injections"
+      /* ECU Address            */      0x0000 /* @ECU_Address@InjVlv_tiET_MAPY@ */
+      /* Input Quantity         */      RailP_pFlt
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      InjVlv_CalcET_CM_Press_bar1_bar
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      2000.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+      /* Name                   */      InjVlv_tiET_MAPX
+      /* Long Identifier        */      "Map for converting from injection quantity to energizing time,Applies to all injections"
+      /* ECU Address            */      0x0000 /* @ECU_Address@InjVlv_tiET_MAPX@ */
+      /* Input Quantity         */      InjCrv_qMI1Des
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      InjVlv_CalcET_CM_InjMass_mg_hub
+      /* Number of Axis Pts     */      20
+      /* Lower Limit            */      -319.0
+      /* Upper Limit            */      319.0
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtMI1Q_C  
+      /* Long Identifier        */      "signal test switch"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtMI1Q_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      InjCrv_MI1_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_qMI1_C  
+      /* Long Identifier        */      "signal test Replacement value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_qMI1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      InjCrv_MI1_CM_InjMass_mg_hub 
+      /* Lower Limit            */      -300.0 
+      /* Upper Limit            */      319.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      T15_tiDebHiLo_C  
+      /* Long Identifier        */      "Debounce time terminal15-signal from low to high"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@T15_tiDebHiLo_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      T15_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      T15_tiDebLoHi_C  
+      /* Long Identifier        */      "Debounce time terminal15-signal from high to low"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@T15_tiDebLoHi_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      T15_DD_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      T15_uThreshold_C  
+      /* Long Identifier        */      "T15 voltage threshold"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@T15_uThreshold_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      T15_DD_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_swtAliveDetEna_C  
+      /* Long Identifier        */      "Switch to enable alive detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_swtAliveDetEna_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_ChkSig_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiAliveDebHiLo_C  
+      /* Long Identifier        */      "Debounce times for alive detection of APP / Time for a High to Low transition"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiAliveDebHiLo_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_ChkSig_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiAliveDebLoHi_C  
+      /* Long Identifier        */      "Debounce times for alive detection of APP / Time for a Low to High transition"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiAliveDebLoHi_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_ChkSig_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThresAliveDet_C  
+      /* Long Identifier        */      "APP threshold for alive detection"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThresAliveDet_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_ChkSig_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCHighDefDeb_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCHighDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCHighOKDeb_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCHighOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCLowDefDeb_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCLowDefDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCLowOKDeb_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCLowOKDeb_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      FM_APP1_SRC_FG_CA  
+      /* Long Identifier        */      "Fault Group"
+      /* Type                   */      VAL_BLK 
+      /* ECU Address            */      0x0000 /* @ECU_Address@FM_APP1_SRC_FG_CA@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Fault_ID_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      65535.0
+      /* Array Size             */
+      NUMBER                            15
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw1Def_C  
+      /* Long Identifier        */      "Substitute value for sensor 1 defect"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw1Def_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw1SRCHigh_C  
+      /* Long Identifier        */      "voltage upper threshold of channel 1"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw1SRCHigh_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw1SRCLow_C  
+      /* Long Identifier        */      "voltage lower threshold of channel 1"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw1SRCLow_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD1_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCHighDefDeb2_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCHighDefDeb2_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCHighOKDeb2_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCHighOKDeb2_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCLowDefDeb2_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCLowDefDeb2_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_tiSRCLowOKDeb2_C  
+      /* Long Identifier        */      "debounce time"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_tiSRCLowOKDeb2_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Debncd_ms_ms 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      FM_APP2_SRC_FG_CA  
+      /* Long Identifier        */      "Fault Group"
+      /* Type                   */      VAL_BLK 
+      /* ECU Address            */      0x0000 /* @ECU_Address@FM_APP2_SRC_FG_CA@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Fault_ID_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      65535.0
+      /* Array Size             */
+      NUMBER                            15
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw2Def_C  
+      /* Long Identifier        */      "Substitute value for sensor 2 defect"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw2Def_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw2SRCHigh_C  
+      /* Long Identifier        */      "voltage upper threshold of channel 2"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw2SRCHigh_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw2SRCLow_C  
+      /* Long Identifier        */      "voltage lower threshold of channel 2"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw2SRCLow_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_DD2_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      MoFAPP_dRawSigFac_C  
+      /* Long Identifier        */      "Factor between the voltage of APP1 and APP2"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFAPP_dRawSigFac_C@ */ 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_SelSig_CM_Fac10_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      8.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uAPPDef_C  
+      /* Long Identifier        */      "Substitute value if both sensors are defect"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uAPPDef_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_SelSig_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uRaw2Offset_C  
+      /* Long Identifier        */      "Offset for sensor signal 2"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uRaw2Offset_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_SelSig_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_duLimErrPos_C  
+      /* Long Identifier        */      "error ramp within the selction of mastersignal /positive ramp slope"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_duLimErrPos_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_SelSig_CM_Volt_mV_s2_mv_s 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC      
+      /* Name                   */      MoFAPP_rLinAPPCURCalMsgA_CUR
+      /* Long Identifier        */      "the physical value of accpedal"
+      /* Characteristic Type    */      CURVE
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFAPP_rLinAPPCURCalMsgA_CUR@ */
+      /* Record Layout          */      Lookup1D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      APP_VD_CM_Percent__
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      100.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      APP_uUnJit_mp
+        /* Conversion Method    */      APP_VD_CM_Volt_mV1_mv
+        /* Number of Axis Pts   */      2
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      5000.0
+        AXIS_PTS_REF                    MoFAPP_rLinAPPCURCalMsgA_CURX
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_swtEnaFlt_C  
+      /* Long Identifier        */      "Switch to enable PT1"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_swtEnaFlt_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_swtEnaUnJit_C  
+      /* Long Identifier        */      "Switch to enable unjittering"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_swtEnaUnJit_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtAPP_C  
+      /* Long Identifier        */      "Switch to set accpedal value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtAPP_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facLowNegPT1_C  
+      /* Long Identifier        */      "Filter parameter falling signal low range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facLowNegPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facLowPosPT1_C  
+      /* Long Identifier        */      "Filter parameter rising signal low range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facLowPosPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facMidNegPT1_C  
+      /* Long Identifier        */      "Filter parameter falling signal mid range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facMidNegPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facMidPosPT1_C  
+      /* Long Identifier        */      "Filter parameter rising signal mid range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facMidPosPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facUppNegPT1_C  
+      /* Long Identifier        */      "Filter parameter falling signal high range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facUppNegPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_facUppPosPT1_C  
+      /* Long Identifier        */      "Filter parameter rising signal high range"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_facUppPosPT1_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Fac_100_NaN 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      99.9985
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltLowNeg_C  
+      /* Long Identifier        */      "Threshold for low/mid-range Filter parameter falling signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltLowNeg_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltLowPos_C  
+      /* Long Identifier        */      "Threshold for low/mid-range Filter parameter rising signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltLowPos_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltMidNeg_C  
+      /* Long Identifier        */      "Threshold for mid/high-range Filter parameter falling signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltMidNeg_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_rThrFltMidPos_C  
+      /* Long Identifier        */      "Threshold for mid/high-range Filter parameter rising signal"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_rThrFltMidPos_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_rAPP_C  
+      /* Long Identifier        */      "set the accpedal value"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_rAPP_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent__ 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_drLinRmp_C  
+      /* Long Identifier        */      "Permissible amount of accpedal value when vehicle quits limp mode"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_drLinRmp_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Percent_s___s 
+      /* Lower Limit            */      -200.0 
+      /* Upper Limit            */      200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      APP_uJitter_C  
+      /* Long Identifier        */      "Threshold for unjittering"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@APP_uJitter_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      APP_VD_CM_Volt_mV1_mv 
+      /* Lower Limit            */      0.0 
+      /* Upper Limit            */      5000.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      MoFAPP_rLinAPPCURCalMsgA_CURX
+      /* Long Identifier        */      "accpedal axis"
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFAPP_rLinAPPCURCalMsgA_CURX@ */
+      /* Input Quantity         */      APP_uUnJit_mp
+      /* Record Layout          */      Lookup1D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      APP_VD_CM_Volt_mV1_mv
+      /* Number of Axis Pts     */      2
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      5000.0
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC      
+      /* Name                   */      MoFDrDem_trqEng_MAP
+      /* Long Identifier        */      "inner torque for disengaged reverse gear calculated from the accelerator pedal angle and the engine speed"
+      /* Characteristic Type    */      MAP
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFDrDem_trqEng_MAP@ */
+      /* Record Layout          */      Lookup2D_WORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Lower Limit            */      -3000.0
+      /* Upper Limit            */      3000.0
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      Epm_nEng
+        /* Conversion Method    */      AccPed_DrvDemDes_CM_ERPM_rpm
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      6000.0
+        AXIS_PTS_REF                    MoFDrDem_trqEng_MAPX
+      /end AXIS_DESCR
+      /begin AXIS_DESCR                 
+        /* Description of Y-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      APP_r
+        /* Conversion Method    */      AccPed_DrvDemDes_CM_Percent__
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      0.0
+        /* Upper Limit          */      120.0
+        AXIS_PTS_REF                    MoFDrDem_trqEng_MAPY
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_swtAccPed_C  
+      /* Long Identifier        */      "switch of torque under test"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_swtAccPed_C@ */ 
+      /* Record Layout          */      Scalar_LONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Switch_NaN 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+      /* Name                   */      SigTst_trqAccPed_C  
+      /* Long Identifier        */      "torque under test"
+      /* Type                   */      VALUE 
+      /* ECU Address            */      0x0000 /* @ECU_Address@SigTst_trqAccPed_C@ */ 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Torq_Nm 
+      /* Lower Limit            */      -3000.0 
+      /* Upper Limit            */      3000.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+      /* Name                   */      MoFDrDem_trqEng_MAPY
+      /* Long Identifier        */      "Standardized accelerator pedal position"
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFDrDem_trqEng_MAPY@ */
+      /* Input Quantity         */      APP_r
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_Percent__
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      120.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+      /* Name                   */      MoFDrDem_trqEng_MAPX
+      /* Long Identifier        */      "Average engine speed of one cylinder segment"
+      /* ECU Address            */      0x0000 /* @ECU_Address@MoFDrDem_trqEng_MAPX@ */
+      /* Input Quantity         */      Epm_nEng
+      /* Record Layout          */      Lookup2D_X_WORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      AccPed_DrvDemDes_CM_ERPM_rpm
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      0.0
+      /* Upper Limit            */      6000.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_uRaw
+      /* Long identifier        */      "Raw ADC value of downstream engine coolant temperature sensor signal"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_DD_CM_Volt_mV2_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_uRaw@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_tSens
+      /* Long identifier        */      "Sensed engine coolant temperature"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_DD_CM_Temp_C_deg
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_tSens@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngHiDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bPhysRngHiDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngHiDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMaxDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bSRCMaxDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMaxDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngLoDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bPhysRngLoDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngLoDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMinDeb_DSM
+      /* Long identifier        */      "status of CEngDsT_bSRCMinDeb"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMinDeb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bFinalDef
+      /* Long identifier        */      "Status Sensor of the coolant temperature finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMax
+      /* Long identifier        */      "coolant temperature voltage signal maximum limit value"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMax@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bSRCMin
+      /* Long identifier        */      "coolant temperature voltage signal minimum limit value"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bSRCMin@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bProvDef
+      /* Long identifier        */      "Status Sensor of the coolant temperature temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngHi
+      /* Long identifier        */      "Status Sensor of the coolant temperature high voltage Signal range"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngHi@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngLo
+      /* Long identifier        */      "Status Sensor of the coolant temperature low voltage Signal range"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngLo@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngFinalDef
+      /* Long identifier        */      "Status Sensor of the CEngDsT physical Signal range check finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngProvDef
+      /* Long identifier        */      "Status Sensor of the CEngDsT physical Signal range check temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      FM_All_Fault_Status_Array
+      /* Long identifier        */      "整个工程所有故障的故障状态数组：数组索引为故障编号，范围为0~65535；数组元素为故障状态，逻辑值，1表示当前故障编号对应故障已确认，0表示无故障或故障已恢复。"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_DD_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      /* Array Size             */
+      ARRAY_SIZE                        100
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@FM_All_Fault_Status_Array@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_tSens
+      /* Long identifier        */      "Sensed engine coolant temperature"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_VD_CM_Temp_C_deg
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_tSens@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bFinalDef
+      /* Long identifier        */      "Status Sensor of the coolant temperature finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_VD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngFinalDef
+      /* Long identifier        */      "Status Sensor of the CEngDsT physical Signal range check finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_VD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bProvDef
+      /* Long identifier        */      "Status Sensor of the coolant temperature temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_VD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_bPhysRngProvDef
+      /* Long identifier        */      "Status Sensor of the CEngDsT physical Signal range check temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      CEngDsT_VD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_bPhysRngProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_tSensFlt
+      /* Long identifier        */      "engine coolant sensor temperature without speed up"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_VD_CM_Temp_C_deg
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_tSensFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CEngDsT_t
+      /* Long identifier        */      "engine coolant temperature after filter"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_VD_CM_Temp_C_deg
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CEngDsT_t@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Epm_nEng
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CEngDsT_VD_CM_ERPM_rpm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@Epm_nEng@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      CoVeh_trqDes
+      /* Long identifier        */      "Setpoint torque order to the drive train (gearbox output torque)"
+      /* Data type              */      SWORD
+      /* Conversion method      */      PthSet_TrqCalc_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CoVeh_trqDes@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqInrSet
+      /* Long identifier        */      "Inner torque set value after monitoring limitation"
+      /* Data type              */      SWORD
+      /* Conversion method      */      PthSet_TrqCalc_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqInrSet@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      PthSet_trqInrSet
+      /* Long identifier        */      "Inner torque set value after monitoring limitation"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CnvSet_Trq2Q_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3276.7
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@PthSet_trqInrSet@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Epm_nEng
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CnvSet_Trq2Q_CM_ERPM_rpm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      6000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@Epm_nEng@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CnvSet_qSet
+      /* Long identifier        */      "Set point injection quantity"
+      /* Data type              */      SWORD
+      /* Conversion method      */      CnvSet_Trq2Q_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CnvSet_qSet@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      RailP_uRaw
+      /* Long identifier        */      "Raw value of rail pressure"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_DD_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_uRaw@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_pLin
+      /* Long identifier        */      "Fuel pressure"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_DD_CM_Press_bar1_bar
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      2000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_pLin@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_bFinalDef
+      /* Long identifier        */      "Status of final default"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      RailP_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_bFinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_bProvDef
+      /* Long identifier        */      "Status of provisional default"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      RailP_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_bProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      FM_All_Fault_Status_Array
+      /* Long identifier        */      "整个工程所有故障的故障状态数组：数组索引为故障编号，范围为0~65535；数组元素为故障状态，逻辑值，1表示当前故障编号对应故障已确认，0表示无故障或故障已恢复。"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      RailP_DD_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      /* Array Size             */
+      ARRAY_SIZE                        100
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@FM_All_Fault_Status_Array@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      RailP_pLin
+      /* Long identifier        */      "Fuel pressure"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_Press_bar1_bar
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      2000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_pLin@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjCtl_qSetUnBal
+      /* Long identifier        */      "Current injection quantity"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCtl_qSetUnBal@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RailP_facFltPT1_mp
+      /* Long identifier        */      "Current filter time for PT1 filter"
+      /* Data type              */      SWORD
+      /* Conversion method      */      RailP_VD_CM_Fac_100_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      99.9985
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_facFltPT1_mp@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      RailP_pFlt
+      /* Long identifier        */      "Maximum rail pressure of the last 10 sampling cycle"
+      /* Data type              */      SWORD
+      /* Conversion method      */      InjVlv_CalcET_CM_Press_bar1_bar
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      2000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@RailP_pFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjCrv_qMI1Des
+      /* Long identifier        */      "desired MI1 injection quantity"
+      /* Data type              */      SWORD
+      /* Conversion method      */      InjVlv_CalcET_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCrv_qMI1Des@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T15_st
+      /* Long identifier        */      "Terminal 15 status after debouncing"
+      /* Data type              */      SLONG
+      /* Conversion method      */      InjVlv_CalcET_CM_Switch_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@T15_st@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjVlv_tiETMI1NoCor_mp
+      /* Long identifier        */      "Start of energizing for MI1 without correction"
+      /* Data type              */      SLONG
+      /* Conversion method      */      InjVlv_CalcET_CM_uSec4_us
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -13107.0
+      /* Upper limit            */      13106.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjVlv_tiETMI1NoCor_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjCrv_tiMI1ET
+      /* Long identifier        */      "Estimated MI1 energizing time"
+      /* Data type              */      SLONG
+      /* Conversion method      */      InjVlv_CalcET_CM_uSec4_us
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -13107.0
+      /* Upper limit            */      13106.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCrv_tiMI1ET@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      InjCtl_qSetUnBal
+      /* Long identifier        */      "Current injection quantity"
+      /* Data type              */      SWORD
+      /* Conversion method      */      InjCrv_MI1_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCtl_qSetUnBal@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjCrv_qMI1Des
+      /* Long identifier        */      "desired MI1 injection quantity"
+      /* Data type              */      SWORD
+      /* Conversion method      */      InjCrv_MI1_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCrv_qMI1Des@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      CnvSet_qSet
+      /* Long identifier        */      "Injection quantity current path"
+      /* Data type              */      SWORD
+      /* Conversion method      */      InjCtl_qCo_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CnvSet_qSet@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      InjCtl_qSetUnBal
+      /* Long identifier        */      "Torque generating engine fuel injection quantity"
+      /* Data type              */      SWORD
+      /* Conversion method      */      InjCtl_qCo_CM_InjMass_mg_hub
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -319.0
+      /* Upper limit            */      319.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@InjCtl_qSetUnBal@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      T15_uRaw
+      /* Long identifier        */      "Raw ADC value of downstream engine coolant temperature sensor signal"
+      /* Data type              */      SWORD
+      /* Conversion method      */      T15_DD_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@T15_uRaw@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T15_st
+      /* Long identifier        */      "Terminal 15 status after debouncing"
+      /* Data type              */      SLONG
+      /* Conversion method      */      T15_DD_CM_Switch_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@T15_st@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      T15_stRaw
+      /* Long identifier        */      "Raw value of Terminal 15 status"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      T15_DD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@T15_stRaw@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      APP_rFlt_mp
+      /* Long identifier        */      "Acceleration pedal position filtered value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_ChkSig_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rFlt_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APP1_BP
+      /* Long identifier        */      "Sensor 1 is the reference variable, Sensor 2 value is defective"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_ChkSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APP1_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APP2_BP
+      /* Long identifier        */      "Sensor 2 is the reference variable,Sensor1 value is defective"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_ChkSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APP2_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_r
+      /* Long identifier        */      "Acceleration pedal sensor 1 value after fault handling"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_ChkSig_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_r@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw1unLim
+      /* Long identifier        */      "Acceleration pedal sensor 1 unlimited raw value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_DD1_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw1unLim@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw1
+      /* Long identifier        */      "Acceleration Pedal Position D"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_DD1_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw1@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bSRCHigh1Deb_DSM
+      /* Long identifier        */      "Status debounced SRC-High error Sensor 1"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bSRCHigh1Deb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bSRCLow1Deb_DSM
+      /* Long identifier        */      "Status debounced SRC-Low error Sensor 1"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bSRCLow1Deb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP1FinalDef
+      /* Long identifier        */      "Status Sensor 1 of the acceleration pedal finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP1FinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bSRCHigh1
+      /* Long identifier        */      "Status temporary SRC-High error Sensor 1"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bSRCHigh1@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bSRCLow1
+      /* Long identifier        */      "Status temporary SRC-Low error Sensor 1"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bSRCLow1@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP1ProvDef
+      /* Long identifier        */      "Status Sensor 1 of the acceleration pedal temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP1ProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      FM_All_Fault_Status_Array
+      /* Long identifier        */      "整个工程所有故障的故障状态数组：数组索引为故障编号，范围为0~65535；数组元素为故障状态，逻辑值，1表示当前故障编号对应故障已确认，0表示无故障或故障已恢复。"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD1_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      /* Array Size             */
+      ARRAY_SIZE                        100
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@FM_All_Fault_Status_Array@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw2unLim
+      /* Long identifier        */      "Acceleration pedal sensor 2 unlimited raw value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_DD2_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw2unLim@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw2
+      /* Long identifier        */      "Acceleration Pedal Position E"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_DD2_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw2@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bSRCHigh2Deb_DSM
+      /* Long identifier        */      "Status debounced SRC-High error Sensor 2"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD2_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bSRCHigh2Deb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bSRCLow2Deb_DSM
+      /* Long identifier        */      "Status debounced SRC-Low error Sensor 2"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD2_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bSRCLow2Deb_DSM@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP2FinalDef
+      /* Long identifier        */      "Status Sensor 2 of the acceleration pedal finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD2_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP2FinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP2ProvDef
+      /* Long identifier        */      "Status Sensor 2 of the acceleration pedal temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD2_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP2ProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      FM_All_Fault_Status_Array
+      /* Long identifier        */      "整个工程所有故障的故障状态数组：数组索引为故障编号，范围为0~65535；数组元素为故障状态，逻辑值，1表示当前故障编号对应故障已确认，0表示无故障或故障已恢复。"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_DD2_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      /* Array Size             */
+      ARRAY_SIZE                        100
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@FM_All_Fault_Status_Array@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP1FinalDef
+      /* Long identifier        */      "Status Sensor 1 of the acceleration pedal finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP1FinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP2FinalDef
+      /* Long identifier        */      "Status Sensor 2 of the acceleration pedal finally defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP2FinalDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP1ProvDef
+      /* Long identifier        */      "Status Sensor 1 of the acceleration pedal temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP1ProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_bAPP2ProvDef
+      /* Long identifier        */      "Status Sensor 2 of the acceleration pedal temporary defect"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_bAPP2ProvDef@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw2
+      /* Long identifier        */      "Acceleration Pedal Position E"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_SelSig_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw2@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw1
+      /* Long identifier        */      "Acceleration Pedal Position D"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_SelSig_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw1@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw_mp
+      /* Long identifier        */      "Acceleration pedal position raw value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_SelSig_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APP1_BP
+      /* Long identifier        */      "Sensor 1 is the reference variable, Sensor 2 value is defective"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APP1_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APP2_BP
+      /* Long identifier        */      "Sensor 2 is the reference variable,Sensor1 value is defective"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APP2_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APPDEF_BP
+      /* Long identifier        */      "both the sensors are defective. Use the default value"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APPDEF_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stTempErr_mp
+      /* Long identifier        */      "Status for temporary errors"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stTempErr_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APPLIMP_BP
+      /* Long identifier        */      "Substitute operation active, accelerator pedal sensor value and accelerator pedal sensor increase are limited"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_SelSig_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APPLIMP_BP@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      APP_uRaw_mp
+      /* Long identifier        */      "Acceleration pedal position raw value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uRaw_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APPLIMP_BP
+      /* Long identifier        */      "Substitute operation active, accelerator pedal sensor value and accelerator pedal sensor increase are limited"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_VD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APPLIMP_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_stSigSrc_APPDEF_BP
+      /* Long identifier        */      "both the sensors are defective. Use the default value"
+      /* Data type              */      UBYTE
+      /* Conversion method      */      APP_VD_CM_boolean_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      1.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_stSigSrc_APPDEF_BP@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rLinAPP_mp
+      /* Long identifier        */      "Linearisation ratio of accelerator pedal"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rLinAPP_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rUnFlt_mp
+      /* Long identifier        */      "Unfiltered APP value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rUnFlt_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rUnFlt
+      /* Long identifier        */      "Unfiltered APP value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rUnFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_facPT1
+      /* Long identifier        */      "Filter time"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Fac_100_NaN
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      99.9985
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_facPT1@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_rFlt_mp
+      /* Long identifier        */      "Acceleration pedal position filtered value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_rFlt_mp@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_drUnFlt
+      /* Long identifier        */      "Acceleration pedal position gradient of unfilterd value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Percent_s___ms
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -200.0
+      /* Upper limit            */      200.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_drUnFlt@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      APP_uUnJit_mp
+      /* Long identifier        */      "Acceleration pedal position unjittered value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      APP_VD_CM_Volt_mV1_mv
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      5000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_uUnJit_mp@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      APP_r
+      /* Long identifier        */      "Acceleration pedal sensor 1 value after fault handling"
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_Percent__
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      100.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@APP_r@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Epm_nEng
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_ERPM_rpm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0.0
+      /* Upper limit            */      6000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@Epm_nEng@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AccPed_trqDesPull
+      /* Long identifier        */      "Application parameter for driver demand in pull mode for desired value"
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@AccPed_trqDesPull@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AccPed_trqDesAct
+      /* Long identifier        */      "driver torque raw of propulsion"
+      /* Data type              */      SWORD
+      /* Conversion method      */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@AccPed_trqDesAct@ */
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      AccPed_trqDesAct
+      /* Long identifier        */      "driver torque raw of propulsion"
+      /* Data type              */      SWORD
+      /* Conversion method      */      VehCo_VehDem_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@AccPed_trqDesAct@ */
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      CoVeh_trqDes
+      /* Long identifier        */      "Setpoint torque order to the drive train (gearbox output torque)"
+      /* Data type              */      SWORD
+      /* Conversion method      */      VehCo_VehDem_CM_Torq_Nm
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3000.0
+      /* Upper limit            */      3000.0
+      ECU_ADDRESS                       0x0000 /* @ECU_Address@CoVeh_trqDes@ */
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Temp_C_deg
+      /* Long identifier        */      "Q = V*16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.4"
+      /* Units                  */      "deg"
+      /* Coefficients           */      COEFFS 0 16.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Volt_mV2_mv
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_Fault_ID_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_DD_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_VD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_CEngDsT_VD_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_VD_CM_Fac100_NaN
+      /* Long identifier        */      "Q = V*512.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%12.9"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 512.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_VD_CM_Temp_C_deg
+      /* Long identifier        */      "Q = V*16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.4"
+      /* Units                  */      "deg"
+      /* Coefficients           */      COEFFS 0 16.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_VD_CM_uint16_ms
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_VD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CEngDsT_VD_CM_ERPM_rpm
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      PthSet_TrqCalc_CM_Torq_Nm
+      /* Long identifier        */      "Q = V*8.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.3"
+      /* Units                  */      "Nm"
+      /* Coefficients           */      COEFFS 0 8.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CnvSet_Trq2Q_CM_InjMass_mg_hub
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "mg/hub"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CnvSet_Trq2Q_CM_ERPM_rpm
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      CnvSet_Trq2Q_CM_Torq_Nm
+      /* Long identifier        */      "Q = V*8.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.3"
+      /* Units                  */      "Nm"
+      /* Coefficients           */      COEFFS 0 8.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_DD_CM_Press_bar1_bar
+      /* Long identifier        */      "Q = V*16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.4"
+      /* Units                  */      "bar"
+      /* Coefficients           */      COEFFS 0 16.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_DD_CM_Volt_mV1_mv
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.2"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_DD_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_DD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_DD_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_Press_bar1_bar
+      /* Long identifier        */      "Q = V*16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.4"
+      /* Units                  */      "bar"
+      /* Coefficients           */      COEFFS 0 16.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_InjMass_mg_hub
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "mg/hub"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      RailP_VD_CM_Fac_100_NaN
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%11.8"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjVlv_CalcET_CM_uSec4_us
+      /* Long identifier        */      "Q = V*16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%13.4"
+      /* Units                  */      "us"
+      /* Coefficients           */      COEFFS 0 16.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjVlv_CalcET_CM_InjMass_mg_hub
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "mg/hub"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjVlv_CalcET_CM_Press_bar1_bar
+      /* Long identifier        */      "Q = V*16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.4"
+      /* Units                  */      "bar"
+      /* Coefficients           */      COEFFS 0 16.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjVlv_CalcET_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_InjVlv_CalcET_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjCrv_MI1_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_InjCrv_MI1_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjCrv_MI1_CM_InjMass_mg_hub
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "mg/hub"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      InjCtl_qCo_CM_InjMass_mg_hub
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "mg/hub"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      T15_DD_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      T15_DD_CM_Volt_mV1_mv
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.2"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      T15_DD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_T15_DD_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      T15_DD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_ChkSig_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_APP_ChkSig_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_ChkSig_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_ChkSig_CM_Percent__
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%11.8"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_ChkSig_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD1_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD1_CM_Fault_ID_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD1_CM_Volt_mV1_mv
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.2"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD1_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD1_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD2_CM_Debncd_ms_ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD2_CM_Fault_ID_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD2_CM_Volt_mV1_mv
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.2"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD2_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_DD2_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_SelSig_CM_Fac10_NaN
+      /* Long identifier        */      "Q = V*1024.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%12.10"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1024.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_SelSig_CM_Volt_mV1_mv
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.2"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_SelSig_CM_Volt_mV_s2_mv_s
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      "mv/s"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_SelSig_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Percent__
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%11.8"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Volt_mV1_mv
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.2"
+      /* Units                  */      "mv"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_APP_VD_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Fac_100_NaN
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%11.8"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Percent_s___s
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "%/s"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_boolean_NaN
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      "NaN"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      APP_VD_CM_Percent_s___ms
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%10.6"
+      /* Units                  */      "%/ms"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Torq_Nm
+      /* Long identifier        */      "Q = V*8.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.3"
+      /* Units                  */      "Nm"
+      /* Coefficients           */      COEFFS 0 8.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_ERPM_rpm
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%6.1"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Percent__
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%11.8"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      AccPed_DrvDemDes_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Format                 */      "%0.6"
+      /* Units                  */      "NaN"
+      /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_AccPed_DrvDemDes_CM_Switch_NaN
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      VehCo_VehDem_CM_Torq_Nm
+      /* Long identifier        */      "Q = V*8.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%7.3"
+      /* Units                  */      "Nm"
+      /* Coefficients           */      COEFFS 0 8.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_CEngDsT_VD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_InjVlv_CalcET_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_InjCrv_MI1_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_T15_DD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_APP_ChkSig_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_APP_VD_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+      /* Name of Table          */      VTAB_FOR_AccPed_DrvDemDes_CM_Switch_NaN
+      /* Long identifier        */      "Enumerated data type: Switch"
+      /* Conversion Type        */      TAB_VERB
+      /* Number of Elements     */      2
+      /* Table Element          */      0 "Switch_OFF"
+      /* Table Element          */      1 "Switch_ON"
+    /end COMPU_VTAB
+
     /begin GROUP 
       /* Name                   */       ASW
       /* Long identifier        */       "ASW"
@@ -1139,6 +4270,869 @@ ASAP2_VERSION  1 31   /* Version 1.31 */
       /begin SUB_GROUP
         /*Root_Overview*/
       /end SUB_GROUP
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       CEngDsT_DD
+      /* Long identifier        */       "CEngDsT_DD"
+      /begin SUB_GROUP
+        Root_Overview
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CEngDsT_uRaw
+        FM_All_Fault_Status_Array
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview
+      /* Long identifier        */       "CEngDsT_DD/Overview"
+      /begin SUB_GROUP
+        S1_CEngDsT_DD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_CEngDsT_DD
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD"
+      /begin SUB_GROUP
+        S2_PRC_Debounce
+        S2_SRC_Debounce
+        S2_U2T_Cnv
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_PRC_Debounce
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/PRC_Debounce"
+      /begin SUB_GROUP
+        S3_FM_T
+        S3_FM_T1
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        CEngDsT_MaxCoolTemp
+        CEngDsT_MinCoolTemp
+        CEngDsT_tiPhysRngHiDefDeb_C
+        CEngDsT_tiPhysRngHiOKDeb_C
+        CEngDsT_tiPhysRngLoDefDeb_C
+        CEngDsT_tiPhysRngLoOKDeb_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_bPhysRngFinalDef
+        CEngDsT_bPhysRngHi
+        CEngDsT_bPhysRngLo
+        CEngDsT_bPhysRngProvDef
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_SRC_Debounce
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/SRC_Debounce"
+      /begin SUB_GROUP
+        S4_FM_frz_T
+        S4_FM_frz_T1
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        CEngDsT_tiMaxDefDeb_C
+        CEngDsT_tiMaxOKDeb_C
+        CEngDsT_tiMinDefDeb_C
+        CEngDsT_tiMinOKDeb_C
+        CEngDsT_uSRCMax_C
+        CEngDsT_uSRCMin_C
+        FM_CEngDsT_SRC_FG_CA
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_bFinalDef
+        CEngDsT_bProvDef
+        CEngDsT_bSRCMax
+        CEngDsT_bSRCMin
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_U2T_Cnv
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/U2T_Cnv"
+      /begin REF_CHARACTERISTIC
+        CEngDsT_tTransf_CUR
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_tSens
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_FM_T
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/PRC_Debounce/FM_T"
+      /begin REF_MEASUREMENT
+        CEngDsT_bPhysRngHiDeb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_FM_T1
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/PRC_Debounce/FM_T1"
+      /begin REF_MEASUREMENT
+        CEngDsT_bPhysRngLoDeb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_FM_frz_T
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/SRC_Debounce/FM_frz_T"
+      /begin REF_MEASUREMENT
+        CEngDsT_bSRCMaxDeb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_FM_frz_T1
+      /* Long identifier        */       "CEngDsT_DD/Overview/CEngDsT_DD/SRC_Debounce/FM_frz_T1"
+      /begin REF_MEASUREMENT
+        CEngDsT_bSRCMinDeb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       CEngDsT_VD
+      /* Long identifier        */       "CEngDsT_VD"
+      /begin SUB_GROUP
+        Root_Overview1
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CEngDsT_bFinalDef
+        CEngDsT_bPhysRngFinalDef
+        CEngDsT_bPhysRngProvDef
+        CEngDsT_bProvDef
+        CEngDsT_tSens
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview1
+      /* Long identifier        */       "CEngDsT_VD/Overview"
+      /begin SUB_GROUP
+        S1_CEngDsT_VD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_CEngDsT_VD
+      /* Long identifier        */       "CEngDsT_VD/Overview/CEngDsT_VD"
+      /begin SUB_GROUP
+        S2_LowPassK_R
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        CEngDsT_RmpSlpNeg_C
+        CEngDsT_RmpSlpPos_C
+        CEngDsT_facSerPT1_C
+        CEngDsT_tDflWarm_C
+        SigTst_swtCEngDsT_C
+        SigTst_tCEngDsT_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CEngDsT_t
+        Epm_nEng
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_LowPassK_R
+      /* Long identifier        */       "CEngDsT_VD/Overview/CEngDsT_VD/LowPassK_R"
+      /begin REF_MEASUREMENT
+        CEngDsT_tSensFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       PthSet_TrqCalc
+      /* Long identifier        */       "PthSet_TrqCalc"
+      /begin SUB_GROUP
+        Root_Overview2
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CoVeh_trqDes
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview2
+      /* Long identifier        */       "PthSet_TrqCalc/Overview"
+      /begin SUB_GROUP
+        S1_PthSet_TrqCalc
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_PthSet_TrqCalc
+      /* Long identifier        */       "PthSet_TrqCalc/Overview/PthSet_TrqCalc"
+      /begin REF_MEASUREMENT
+        PthSet_trqInrSet
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       CnvSet_Trq2Q
+      /* Long identifier        */       "CnvSet_Trq2Q"
+      /begin SUB_GROUP
+        Root_Overview3
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        Epm_nEng
+        PthSet_trqInrSet
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview3
+      /* Long identifier        */       "CnvSet_Trq2Q/Overview"
+      /begin SUB_GROUP
+        S1_CnvSet_Trq2Q
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_CnvSet_Trq2Q
+      /* Long identifier        */       "CnvSet_Trq2Q/Overview/CnvSet_Trq2Q"
+      /begin REF_CHARACTERISTIC
+        PhyMod_trq2qBas_MAP
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        CnvSet_qSet
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       RailP_DD
+      /* Long identifier        */       "RailP_DD"
+      /begin SUB_GROUP
+        Root_Overview4
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        FM_All_Fault_Status_Array
+        RailP_uRaw
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview4
+      /* Long identifier        */       "RailP_DD/Overview"
+      /begin SUB_GROUP
+        S1_RailP_DD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_RailP_DD
+      /* Long identifier        */       "RailP_DD/Overview/RailP_DD"
+      /begin REF_CHARACTERISTIC
+        RailP_pLin_CUR
+        RailP_tiSRCMaxDefDeb_C
+        RailP_tiSRCMaxOKDeb_C
+        RailP_tiSRCMinDefDeb_C
+        RailP_tiSRCMinOKDeb_C
+        RailP_uSRCMax_C
+        RailP_uSRCMin_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        RailP_bFinalDef
+        RailP_bProvDef
+        RailP_pLin
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       RailP_VD
+      /* Long identifier        */       "RailP_VD"
+      /begin SUB_GROUP
+        Root_Overview5
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        InjCtl_qSetUnBal
+        RailP_pLin
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview5
+      /* Long identifier        */       "RailP_VD/Overview"
+      /begin SUB_GROUP
+        S1_RailP_VD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_RailP_VD
+      /* Long identifier        */       "RailP_VD/Overview/RailP_VD"
+      /begin REF_CHARACTERISTIC
+        RailP_facFlt1PT1_C
+        RailP_facFlt2PT1_C
+        RailP_facFlt3PT1_C
+        RailP_pFltWinNeg_CUR
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        RailP_facFltPT1_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       InjVlv_CalcET
+      /* Long identifier        */       "InjVlv_CalcET"
+      /begin SUB_GROUP
+        Root_Overview6
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        InjCrv_qMI1Des
+        RailP_pFlt
+        T15_st
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview6
+      /* Long identifier        */       "InjVlv_CalcET/Overview"
+      /begin SUB_GROUP
+        S1_InjVlv_CalcET
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_InjVlv_CalcET
+      /* Long identifier        */       "InjVlv_CalcET/Overview/InjVlv_CalcET"
+      /begin REF_CHARACTERISTIC
+        InjVlv_tiET_MAP
+        SigTst_swtMI1ET_C
+        SigTst_tiMI1ET_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        InjCrv_tiMI1ET
+        InjVlv_tiETMI1NoCor_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       InjCrv_MI1
+      /* Long identifier        */       "InjCrv_MI1"
+      /begin SUB_GROUP
+        Root_Overview7
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        InjCtl_qSetUnBal
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview7
+      /* Long identifier        */       "InjCrv_MI1/Overview"
+      /begin SUB_GROUP
+        S1_InjCrv_MI1
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_InjCrv_MI1
+      /* Long identifier        */       "InjCrv_MI1/Overview/InjCrv_MI1"
+      /begin REF_CHARACTERISTIC
+        SigTst_qMI1_C
+        SigTst_swtMI1Q_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        InjCrv_qMI1Des
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       InjCtl_qCo
+      /* Long identifier        */       "InjCtl_qCo"
+      /begin SUB_GROUP
+        Root_Overview8
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        CnvSet_qSet
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview8
+      /* Long identifier        */       "InjCtl_qCo/Overview"
+      /begin SUB_GROUP
+        S1_InjCtl_qCo
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_InjCtl_qCo
+      /* Long identifier        */       "InjCtl_qCo/Overview/InjCtl_qCo"
+      /begin REF_MEASUREMENT
+        InjCtl_qSetUnBal
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       T15_DD
+      /* Long identifier        */       "T15_DD"
+      /begin SUB_GROUP
+        Root_Overview9
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        T15_uRaw
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview9
+      /* Long identifier        */       "T15_DD/Overview"
+      /begin SUB_GROUP
+        S1_T15_DD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_T15_DD
+      /* Long identifier        */       "T15_DD/Overview/T15_DD"
+      /begin REF_CHARACTERISTIC
+        T15_tiDebHiLo_C
+        T15_tiDebLoHi_C
+        T15_uThreshold_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        T15_st
+        T15_stRaw
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       APP_ChkSig
+      /* Long identifier        */       "APP_ChkSig"
+      /begin SUB_GROUP
+        Root_Overview10
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_rFlt_mp
+        APP_stSigSrc_APP1_BP
+        APP_stSigSrc_APP2_BP
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview10
+      /* Long identifier        */       "APP_ChkSig/Overview"
+      /begin SUB_GROUP
+        S1_APP_ChkSig
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_APP_ChkSig
+      /* Long identifier        */       "APP_ChkSig/Overview/APP_ChkSig"
+      /begin SUB_GROUP
+        S2_Live_Detection
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Live_Detection
+      /* Long identifier        */       "APP_ChkSig/Overview/APP_ChkSig/Live_Detection"
+      /begin REF_CHARACTERISTIC
+        APP_rThresAliveDet_C
+        APP_swtAliveDetEna_C
+        APP_tiAliveDebHiLo_C
+        APP_tiAliveDebLoHi_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_r
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       APP_DD1
+      /* Long identifier        */       "APP_DD1"
+      /begin SUB_GROUP
+        Root_Overview11
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_uRaw1unLim
+        FM_All_Fault_Status_Array
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview11
+      /* Long identifier        */       "APP_DD1/Overview"
+      /begin SUB_GROUP
+        S1_APP_DD1
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_APP_DD1
+      /* Long identifier        */       "APP_DD1/Overview/APP_DD1"
+      /begin SUB_GROUP
+        S2_DSM_Check
+        S2_Error_Reaction_
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_DSM_Check
+      /* Long identifier        */       "APP_DD1/Overview/APP_DD1/DSM_Check"
+      /begin SUB_GROUP
+        S3_FM_frz_T
+        S3_FM_frz_T1
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        APP_tiSRCHighDefDeb_C
+        APP_tiSRCHighOKDeb_C
+        APP_tiSRCLowDefDeb_C
+        APP_tiSRCLowOKDeb_C
+        APP_uRaw1SRCHigh_C
+        APP_uRaw1SRCLow_C
+        FM_APP1_SRC_FG_CA
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_bAPP1FinalDef
+        APP_bSRCHigh1
+        APP_bSRCLow1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Error_Reaction_
+      /* Long identifier        */       "APP_DD1/Overview/APP_DD1/Error_Reaction "
+      /begin REF_CHARACTERISTIC
+        APP_uRaw1Def_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_bAPP1ProvDef
+        APP_uRaw1
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_FM_frz_T
+      /* Long identifier        */       "APP_DD1/Overview/APP_DD1/DSM_Check/FM_frz_T"
+      /begin REF_MEASUREMENT
+        APP_bSRCHigh1Deb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_FM_frz_T1
+      /* Long identifier        */       "APP_DD1/Overview/APP_DD1/DSM_Check/FM_frz_T1"
+      /begin REF_MEASUREMENT
+        APP_bSRCLow1Deb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       APP_DD2
+      /* Long identifier        */       "APP_DD2"
+      /begin SUB_GROUP
+        Root_Overview12
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_uRaw2unLim
+        FM_All_Fault_Status_Array
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview12
+      /* Long identifier        */       "APP_DD2/Overview"
+      /begin SUB_GROUP
+        S1_APP_DD2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_APP_DD2
+      /* Long identifier        */       "APP_DD2/Overview/APP_DD2"
+      /begin SUB_GROUP
+        S2_DSM_Check1
+        S2_Error_Reaction
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_DSM_Check1
+      /* Long identifier        */       "APP_DD2/Overview/APP_DD2/DSM_Check"
+      /begin SUB_GROUP
+        S3_FM_frz_T2
+        S3_FM_frz_T11
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        APP_tiSRCHighDefDeb2_C
+        APP_tiSRCHighOKDeb2_C
+        APP_tiSRCLowDefDeb2_C
+        APP_tiSRCLowOKDeb2_C
+        APP_uRaw2SRCHigh_C
+        APP_uRaw2SRCLow_C
+        FM_APP2_SRC_FG_CA
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_bAPP2FinalDef
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Error_Reaction
+      /* Long identifier        */       "APP_DD2/Overview/APP_DD2/Error_Reaction"
+      /begin REF_CHARACTERISTIC
+        APP_uRaw2Def_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_bAPP2ProvDef
+        APP_uRaw2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_FM_frz_T2
+      /* Long identifier        */       "APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T"
+      /begin REF_MEASUREMENT
+        APP_bSRCHigh2Deb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_FM_frz_T11
+      /* Long identifier        */       "APP_DD2/Overview/APP_DD2/DSM_Check/FM_frz_T1"
+      /begin REF_MEASUREMENT
+        APP_bSRCLow2Deb_DSM
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       APP_SelSig
+      /* Long identifier        */       "APP_SelSig"
+      /begin SUB_GROUP
+        Root_Overview13
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_bAPP1FinalDef
+        APP_bAPP1ProvDef
+        APP_bAPP2FinalDef
+        APP_bAPP2ProvDef
+        APP_uRaw1
+        APP_uRaw2
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview13
+      /* Long identifier        */       "APP_SelSig/Overview"
+      /begin SUB_GROUP
+        S1_APP_SelSig
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_APP_SelSig
+      /* Long identifier        */       "APP_SelSig/Overview/APP_SelSig"
+      /begin SUB_GROUP
+        S2_Estimate_Reference_Mode
+        S2_Signal_Selection
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Estimate_Reference_Mode
+      /* Long identifier        */       "APP_SelSig/Overview/APP_SelSig/Estimate_Reference_Mode"
+      /begin REF_MEASUREMENT
+        APP_stSigSrc_APP1_BP
+        APP_stSigSrc_APP2_BP
+        APP_stSigSrc_APPDEF_BP
+        APP_stSigSrc_APPLIMP_BP
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Signal_Selection
+      /* Long identifier        */       "APP_SelSig/Overview/APP_SelSig/Signal_Selection"
+      /begin REF_CHARACTERISTIC
+        APP_duLimErrPos_C
+        APP_uAPPDef_C
+        APP_uRaw2Offset_C
+        MoFAPP_dRawSigFac_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_stTempErr_mp
+        APP_uRaw_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       APP_VD
+      /* Long identifier        */       "APP_VD"
+      /begin SUB_GROUP
+        Root_Overview14
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_stSigSrc_APPDEF_BP
+        APP_stSigSrc_APPLIMP_BP
+        APP_uRaw_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview14
+      /* Long identifier        */       "APP_VD/Overview"
+      /begin SUB_GROUP
+        S1_APP_VD
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_APP_VD
+      /* Long identifier        */       "APP_VD/Overview/APP_VD"
+      /begin SUB_GROUP
+        S2_APP_UnJit
+        S2_Linearisation
+        S2_Signal_Filter
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_APP_UnJit
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/APP_UnJit"
+      /begin REF_CHARACTERISTIC
+        APP_swtEnaUnJit_C
+        APP_uJitter_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_uUnJit_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Linearisation
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Linearisation"
+      /begin SUB_GROUP
+        S4_APP_rUnFlt_inl
+        S4_dt2s
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        MoFAPP_rLinAPPCURCalMsgA_CUR
+        SigTst_rAPP_C
+        SigTst_swtAPP_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_rLinAPP_mp
+        APP_rUnFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_Signal_Filter
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Signal_Filter"
+      /begin SUB_GROUP
+        S5_Filter_parameter_selection
+      /end SUB_GROUP
+      /begin REF_CHARACTERISTIC
+        APP_swtEnaFlt_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_rFlt_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_APP_rUnFlt_inl
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Linearisation/APP_rUnFlt_inl"
+      /begin REF_CHARACTERISTIC
+        APP_drLinRmp_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_rUnFlt_mp
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_dt2s
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Linearisation/dt2s"
+      /begin REF_MEASUREMENT
+        APP_drUnFlt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S5_Filter_parameter_selection
+      /* Long identifier        */       "APP_VD/Overview/APP_VD/Signal_Filter/Filter_parameter_selection"
+      /begin REF_CHARACTERISTIC
+        APP_facLowNegPT1_C
+        APP_facLowPosPT1_C
+        APP_facMidNegPT1_C
+        APP_facMidPosPT1_C
+        APP_facUppNegPT1_C
+        APP_facUppPosPT1_C
+        APP_rThrFltLowNeg_C
+        APP_rThrFltLowPos_C
+        APP_rThrFltMidNeg_C
+        APP_rThrFltMidPos_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        APP_facPT1
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       AccPed_DrvDemDes
+      /* Long identifier        */       "AccPed_DrvDemDes"
+      /begin SUB_GROUP
+        Root_Overview15
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        APP_r
+        Epm_nEng
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview15
+      /* Long identifier        */       "AccPed_DrvDemDes/Overview"
+      /begin SUB_GROUP
+        S1_AccPed_DrvDemDes
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_AccPed_DrvDemDes
+      /* Long identifier        */       "AccPed_DrvDemDes/Overview/AccPed_DrvDemDes"
+      /begin REF_CHARACTERISTIC
+        MoFDrDem_trqEng_MAP
+        SigTst_swtAccPed_C
+        SigTst_trqAccPed_C
+      /end REF_CHARACTERISTIC
+      /begin REF_MEASUREMENT
+        AccPed_trqDesAct
+        AccPed_trqDesPull
+      /end REF_MEASUREMENT
+    /end GROUP
+
+    /begin GROUP 
+      /* Name                   */       VehCo_VehDem
+      /* Long identifier        */       "VehCo_VehDem"
+      /begin SUB_GROUP
+        Root_Overview16
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        AccPed_trqDesAct
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Overview16
+      /* Long identifier        */       "VehCo_VehDem/Overview"
+      /begin SUB_GROUP
+        S1_VehCo_VehDem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_VehCo_VehDem
+      /* Long identifier        */       "VehCo_VehDem/Overview/VehCo_VehDem"
+      /begin REF_MEASUREMENT
+        CoVeh_trqDes
+      /end REF_MEASUREMENT
     /end GROUP
 
 /end MODULE

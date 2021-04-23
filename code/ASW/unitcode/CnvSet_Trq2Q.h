@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.66
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:40:32 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:27 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -45,8 +45,12 @@ struct tag_RTM_CnvSet_Trq2Q_T {
 };
 
 /* Imported (extern) block signals */
-extern Torq PthSet_trqInrSet;          /* '<Root>/PthSet_trqInrSet' */
-extern ERPM Epm_nEng;                  /* '<Root>/Epm_nEng' */
+extern Torq PthSet_trqInrSet;          /* '<Root>/PthSet_trqInrSet'
+                                        * Inner torque set value after monitoring limitation
+                                        */
+extern ERPM Epm_nEng;                  /* '<Root>/Epm_nEng'
+                                        * Engine speed
+                                        */
 
 /*
  * Exported Global Signals

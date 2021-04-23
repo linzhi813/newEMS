@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'T15_DD'.
  *
- * Model version                  : 1.54
+ * Model version                  : 6.2
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:42:22 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:27 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -85,8 +85,8 @@ void T15_DD_Step(void)
 {
   int32_T tmp;
   uint32_T tmp_0;
+  Debncd_ms rtb_Delay;
   Debncd_ms tmp_1;
-  boolean_T Delay2_DSTATE_tmp;
 
   /* RootInportFunctionCallGenerator generated from: '<Root>/T15_DD_Step' incorporates:
    *  SubSystem: '<S1>/T15_DD'
@@ -101,6 +101,7 @@ void T15_DD_Step(void)
   }
 
   T15_DD_PrevZCX.Delay_Reset_ZCE = T15_DD_DW.Delay2_DSTATE;
+  rtb_Delay = T15_DD_DW.Delay_DSTATE;
 
   /* RelationalOperator: '<S2>/Relational Operator' incorporates:
    *  Constant: '<S2>/Constant3'
@@ -123,13 +124,13 @@ void T15_DD_Step(void)
    *  MinMax: '<S3>/Min'
    *  RelationalOperator: '<S3>/Relational Operator1'
    */
-  if (T15_stRaw == T15_DD_DW.Delay1_DSTATE) {
+  if (T15_stRaw != T15_DD_DW.Delay1_DSTATE) {
     /* Sum: '<S3>/Add' incorporates:
      *  Constant: '<S2>/Constant'
      *  Delay: '<S3>/Delay'
      */
-    tmp_0 = T15_DD_DW.Delay_DSTATE + 100U;
-    if (T15_DD_DW.Delay_DSTATE + 100U > 65535U) {
+    tmp_0 = T15_DD_DW.Delay_DSTATE + 640U;
+    if (T15_DD_DW.Delay_DSTATE + 640U > 65535U) {
       tmp_0 = 65535U;
     }
 
@@ -140,7 +141,7 @@ void T15_DD_Step(void)
      */
     T15_DD_DW.Delay_DSTATE = (Debncd_ms)tmp_0;
   } else {
-    if (T15_DD_DW.Delay_DSTATE > 100) {
+    if (T15_DD_DW.Delay_DSTATE > 640) {
       /* MinMax: '<S3>/Min' incorporates:
        *  Delay: '<S3>/Delay'
        */
@@ -149,26 +150,26 @@ void T15_DD_Step(void)
       /* MinMax: '<S3>/Min' incorporates:
        *  Constant: '<S2>/Constant'
        */
-      tmp_1 = 100U;
+      tmp_1 = 640U;
     }
 
     /* Sum: '<S3>/Subtract' incorporates:
      *  Constant: '<S2>/Constant'
      */
-    tmp = tmp_1 - 100;
+    tmp = tmp_1 - 640;
 
     /* MinMax: '<S3>/Min' incorporates:
      *  Constant: '<S2>/Constant'
      *  Delay: '<S3>/Delay'
      */
-    if (T15_DD_DW.Delay_DSTATE <= 100) {
-      T15_DD_DW.Delay_DSTATE = 100U;
+    if (T15_DD_DW.Delay_DSTATE <= 640) {
+      T15_DD_DW.Delay_DSTATE = 640U;
     }
 
     /* Sum: '<S3>/Subtract' incorporates:
      *  Constant: '<S2>/Constant'
      */
-    if (T15_DD_DW.Delay_DSTATE - 100 < 0) {
+    if (T15_DD_DW.Delay_DSTATE - 640 < 0) {
       tmp = 0;
     }
 
@@ -182,13 +183,6 @@ void T15_DD_Step(void)
 
   /* End of Switch: '<S3>/Switch2' */
 
-  /* Logic: '<S3>/Logical Operator5' incorporates:
-   *  Delay: '<S3>/Delay1'
-   *  Logic: '<S3>/Logical Operator1'
-   *  Switch: '<S3>/Switch1'
-   */
-  Delay2_DSTATE_tmp = !T15_DD_DW.Delay1_DSTATE;
-
   /* Logic: '<S3>/Logical Operator' incorporates:
    *  Constant: '<S2>/Constant10'
    *  Constant: '<S2>/Constant12'
@@ -200,10 +194,9 @@ void T15_DD_Step(void)
    *  Logic: '<S3>/Logical Operator5'
    *  RelationalOperator: '<S3>/Relational Operator2'
    *  RelationalOperator: '<S3>/Relational Operator3'
-   *  Switch: '<S3>/Switch2'
    */
-  T15_DD_DW.Delay2_DSTATE = ((Delay2_DSTATE_tmp && (T15_DD_DW.Delay_DSTATE >=
-    T15_tiDebLoHi_C)) || (T15_DD_DW.Delay1_DSTATE && (T15_DD_DW.Delay_DSTATE >=
+  T15_DD_DW.Delay2_DSTATE = (((!T15_DD_DW.Delay1_DSTATE) && (rtb_Delay >=
+    T15_tiDebLoHi_C)) || (T15_DD_DW.Delay1_DSTATE && (rtb_Delay >=
     T15_tiDebHiLo_C)));
 
   /* Switch: '<S3>/Switch1' incorporates:
@@ -211,8 +204,10 @@ void T15_DD_Step(void)
    */
   if (T15_DD_DW.Delay2_DSTATE) {
     /* Switch: '<S3>/Switch1' */
-    T15_DD_DW.Delay1_DSTATE = Delay2_DSTATE_tmp;
+    T15_DD_DW.Delay1_DSTATE = T15_stRaw;
   }
+
+  /* End of Switch: '<S3>/Switch1' */
 
   /* DataTypeConversion: '<S2>/Data Type Conversion' incorporates:
    *  DataTypeConversion: '<S2>/Data Type Conversion1'

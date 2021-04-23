@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.61
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:40:20 2021
+ * C/C++ source code generated on : Fri Apr 23 14:56:15 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -45,7 +45,9 @@ struct tag_RTM_PthSet_TrqCalc_T {
 };
 
 /* Imported (extern) block signals */
-extern Torq CoVeh_trqDes;              /* '<Root>/CoVeh_trqDes' */
+extern Torq CoVeh_trqDes;              /* '<Root>/CoVeh_trqDes'
+                                        * Setpoint torque order to the drive train (gearbox output torque)
+                                        */
 
 /*
  * Exported Global Signals

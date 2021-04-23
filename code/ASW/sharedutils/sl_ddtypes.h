@@ -1,99 +1,61 @@
-/*
- * File: sl_ddtypes.h
- *
- * Code generated for Simulink model 'CEngDsT_DD'.
- *
- * Model version                  : 1.108
- * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 10:09:05 2021
+/* 
+ * File: sl_ddtypes.h 
+ *   
+ * Code generated for Simulink model ''. 
+ *  
+ * Model version                  :  
+ * Simulink Coder version         :  
+ * C/C++ source code generated on : Fri Apr 23 15:43:19 2021 
+ * Embedded hardware selection: 
  */
 
 #ifndef RTW_HEADER_sl_ddtypes_h_
 #define RTW_HEADER_sl_ddtypes_h_
 #include "rtwtypes.h"
 
-/* µçÑ¹£¬mV */
-typedef int16_T Volt_mV;
-
-/* ÎÂ¶È£¬ÉãÊÏ¶È */
+/* æ¸©åº¦ï¼Œæ‘„æ°åº¦ */
 typedef int16_T Temp_C;
-
-/* È¥¶¶Ê±¼ä£¬ºÁÃë */
+/* æ•…éšœå· */
+typedef uint16_T Fault_ID;
+/* å»æŠ–æ—¶é—´ï¼Œæ¯«ç§’ */
 typedef uint16_T Debncd_ms;
-typedef enum {
-  Switch_OFF = 0,                      /* Default value */
-  Switch_ON
+/* ç”µå‹ï¼ŒmVï¼Œç¨å¤§èŒƒå›´ */
+typedef int16_T Volt_mV2;
+
+typedef enum
+{
+    Switch_OFF = 0, /* Default value */ 
+    Switch_ON
 } Switch;
-
-/* ÎŞ·ûºÅÏµÊı£¬´óÖÂ·¶Î§0~100 */
-typedef uint16_T Fac100;
-typedef enum {
-  EngState_STOPPED = 0,                /* Default value */
-  EngState_CRANKING,
-  EngState_RUNNING,
-  EngState_STOPPING
-} EngState;
-
-/* Ê±¼ä£¬Ãë */
-typedef int16_T Seconds;
-
-/* Õ¼¿Õ±È£¬0~100, % */
-typedef int16_T DutyCycle;
-typedef enum {
-  ECUPowerState_PowerOFF = 0,          /* Default value */
-  ECUPowerState_PowerON = 2,
-  ECUPowerState_PowerLatch = 3
-} ECUPowerState;
-
-/* ×´Ì¬£¬Ã¿Ò»Î»Î»´ú±í²»Í¬µÄº¬Òå */
-typedef uint16_T State2;
-
-/* µçÁ÷£¬ºÁ°² */
-typedef int16_T Current_mA;
-
-/* ÓĞ·ûºÅÏµÊı£¬´óÖÂ·¶Î§-100~100 */
-typedef int16_T Fac_100;
-
-/* ·¢¶¯»ú×ªËÙ£¬×ªÃ¿·ÖÖÓ */
+/* å‘åŠ¨æœºè½¬é€Ÿï¼Œè½¬æ¯åˆ†é’Ÿ */
 typedef int16_T ERPM;
-
-/* ×´Ì¬£¬Ã¿Ò»Î»Î»´ú±í²»Í¬µÄº¬Òå */
-typedef uint8_T State;
-
-/* ÖÜÆÚ£¬Î¢Ãë */
-typedef uint16_T Period_us;
-
-/* Ê±¼ä£¬Ãë£¬·Ö±æÂÊ0.1 */
-typedef int16_T Seconds1;
-
-/* Å¤¾Ø£¬NM */
+/* æ— ç¬¦å·ç³»æ•°ï¼Œå¤§è‡´èŒƒå›´0~100 */
+typedef uint16_T Fac100;
+/* æ‰­çŸ©ï¼ŒNM */
 typedef int16_T Torq;
-
-/* ÖÊÁ¿£¬ºÁ¿Ë/³å³Ì»òÃ¿´ÎÅçÉä */
+/* è´¨é‡ï¼Œæ¯«å…‹/å†²ç¨‹æˆ–æ¯æ¬¡å–·å°„ï¼Œé«˜ç²¾åº¦ */
 typedef int16_T InjMass;
-
-/* Ñ¹Ç¿£¬bar */
+/* ç”µå‹ï¼ŒmV */
+typedef int16_T Volt_mV1;
+/* å‹å¼ºï¼Œbar */
 typedef int16_T Press_bar1;
-
-/* Ê±¼ä£¬Î¢Ãë£¬·Ö±æÂÊ0.1 */
-typedef int16_T uSec1;
-
-/* °Ù·Ö±È£¬0~100, % */
+/* æœ‰ç¬¦å·ç³»æ•°ï¼Œå¤§è‡´èŒƒå›´-100~100 */
+typedef int16_T Fac_100;
+/* æ—¶é—´ï¼Œå¾®ç§’ï¼Œå¤§èŒƒå›´ */
+typedef int32_T uSec4;
+/* ç™¾åˆ†æ¯”ï¼Œ0~100, % */
 typedef int16_T Percent;
-
-/* µçÑ¹±ä»¯ÂÊ£¬mV/s */
-typedef int16_T Volt_mV_s;
-
-/* ÎŞ·ûºÅÏµÊı£¬´óÖÂ·¶Î§0~50 */
+/* æ— ç¬¦å·ç³»æ•°ï¼Œå¤§è‡´èŒƒå›´0~60 */
 typedef uint16_T Fac10;
-
-/* °Ù·Ö±È±ä»¯ÂÊ£¬0~100, %/s */
+/* ç”µå‹å˜åŒ–ç‡ï¼ŒmV/s */
+typedef int16_T Volt_mV_s2;
+/* ç™¾åˆ†æ¯”å˜åŒ–ç‡ï¼Œ0~100, %/s */
 typedef int16_T Percent_s;
 
-#endif                                 /* RTW_HEADER_sl_ddtypes_h_ */
-
-/*
- * File trailer for generated code.
- *
- * [EOF]
+#endif                     /* RTW_HEADER_sl_ddtypes_h_ */
+/* 
+ * File trailer for generated code. 
+ *  
+ * [EOF] 
  */
+

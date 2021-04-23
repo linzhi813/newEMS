@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'InjCrv_MI1'.
  *
- * Model version                  : 1.54
+ * Model version                  : 6.0
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:41:56 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:12 2021
  */
 
 #ifndef RTW_HEADER_InjCrv_MI1_Paras_h_

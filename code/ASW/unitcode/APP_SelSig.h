@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'APP_SelSig'.
  *
- * Model version                  : 1.53
+ * Model version                  : 6.1
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Thu Feb  4 09:43:10 2021
+ * C/C++ source code generated on : Fri Apr 23 14:57:59 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -51,14 +51,24 @@ struct tag_RTM_APP_SelSig_T {
 };
 
 /* Imported (extern) block signals */
-extern boolean_T APP_bAPP1FinalDef;    /* '<Root>/APP_bAPP1FinalDef' */
-extern boolean_T APP_bAPP2FinalDef;    /* '<Root>/APP_bAPP2FinalDef' */
-extern boolean_T APP_bSyncDeb;         /* '<Root>/APP_bSyncDeb' */
-extern boolean_T APP_bAPP1ProvDef;     /* '<Root>/APP_bAPP1ProvDef' */
-extern boolean_T APP_bAPP2ProvDef;     /* '<Root>/APP_bAPP2ProvDef' */
-extern boolean_T APP_bSync;            /* '<Root>/APP_bSync' */
-extern Volt_mV APP_uRaw2;              /* '<Root>/APP_uRaw2' */
-extern Volt_mV APP_uRaw1;              /* '<Root>/APP_uRaw1' */
+extern boolean_T APP_bAPP1FinalDef;    /* '<Root>/APP_bAPP1FinalDef'
+                                        * Status Sensor 1 of the acceleration pedal finally defect
+                                        */
+extern boolean_T APP_bAPP2FinalDef;    /* '<Root>/APP_bAPP2FinalDef'
+                                        * Status Sensor 2 of the acceleration pedal finally defect
+                                        */
+extern boolean_T APP_bAPP1ProvDef;     /* '<Root>/APP_bAPP1ProvDef'
+                                        * Status Sensor 1 of the acceleration pedal temporary defect
+                                        */
+extern boolean_T APP_bAPP2ProvDef;     /* '<Root>/APP_bAPP2ProvDef'
+                                        * Status Sensor 2 of the acceleration pedal temporary defect
+                                        */
+extern Volt_mV1 APP_uRaw2;             /* '<Root>/APP_uRaw2'
+                                        * Acceleration Pedal Position E
+                                        */
+extern Volt_mV1 APP_uRaw1;             /* '<Root>/APP_uRaw1'
+                                        * Acceleration Pedal Position D
+                                        */
 
 /* Block states (default storage) */
 extern DW_APP_SelSig_T APP_SelSig_DW;
@@ -71,7 +81,7 @@ extern DW_APP_SelSig_T APP_SelSig_DW;
  * these signals and export their symbols.
  *
  */
-extern Volt_mV APP_uRaw_mp;            /* '<S4>/Switch4'
+extern Volt_mV1 APP_uRaw_mp;           /* '<S4>/Switch4'
                                         * Acceleration pedal position raw value
                                         */
 extern boolean_T APP_stSigSrc_APP1_BP; /* '<S3>/Logical Operator5'
@@ -103,11 +113,7 @@ extern RT_MODEL_APP_SelSig_T *const APP_SelSig_M;
 /*-
  * These blocks were eliminated from the model due to optimizations:
  *
- * Block '<S6>/Constant2' : Unused code path elimination
- * Block '<S6>/Constant3' : Unused code path elimination
  * Block '<S6>/Logical Operator' : Unused code path elimination
- * Block '<S6>/Switch2' : Unused code path elimination
- * Block '<S6>/Switch3' : Unused code path elimination
  */
 
 /*-
@@ -130,7 +136,7 @@ extern RT_MODEL_APP_SelSig_T *const APP_SelSig_M;
  * '<S3>'   : 'APP_SelSig/Overview/APP_SelSig/Estimate_Reference_Mode'
  * '<S4>'   : 'APP_SelSig/Overview/APP_SelSig/Signal_Selection'
  * '<S5>'   : 'APP_SelSig/Overview/APP_SelSig/Signal_Selection/Detect Decrease'
- * '<S6>'   : 'APP_SelSig/Overview/APP_SelSig/Signal_Selection/RSFilpFlop'
+ * '<S6>'   : 'APP_SelSig/Overview/APP_SelSig/Signal_Selection/RSFilpFlop_Sp'
  */
 #endif                                 /* RTW_HEADER_APP_SelSig_h_ */
 
