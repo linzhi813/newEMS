@@ -1,5 +1,5 @@
 %% File : AD_Read.tlc
-%% Created : Wed Jun 09 10:02:30 2021
+%% Created : Thu Jun 10 09:27:09 2021
 %%
 %% Description: 
 %%   Simulink Coder wrapper functions interface generated for 
@@ -22,25 +22,7 @@
 %%      generated code.
 %%
 %function BlockTypeSetup(block, system) Output
-  %openfile externs
-
-    #ifdef __cplusplus
-    extern "C" {
-    #endif
-
-    extern void AD_Read_Start_wrapper(const uint8_T *DriverName, const int_T p_width0);
-
-    extern void AD_Read_Outputs_wrapper(const uint8_T *Index,
-			uint16_T *Cnts,
-			const uint8_T *DriverName, const int_T p_width0);
-
-    extern void AD_Read_Terminate_wrapper(const uint8_T *DriverName, const int_T p_width0);
-
-    #ifdef __cplusplus
-    }
-    #endif
-  %closefile externs
-  %<LibCacheExtern(externs)>
+  
   %%
 %endfunction
 
@@ -52,23 +34,16 @@
 %%
 %function Outputs(block, system) Output
   %%
-  %% %assign pu0 = LibBlockInputSignalAddr(0, "", "", 0)  
+  %% %assign pu0 = LibBlockInputSignalAddr(0, "", "", 0)
   %% %assign py0 = LibBlockOutputSignalAddr(0, "", "", 0)
-
+  
   %assign py0 = LibBlockOutputSignal(0, "", "", 0)
 
-  %assign nelements1 = LibBlockParameterSize(P1)
-  %assign param_width1 = nelements1[0] * nelements1[1]
-  %if (param_width1) > 1
-    %assign pp1 = LibBlockMatrixParameterBaseAddr(P1)
-  %else
-    %assign pp1 = LibBlockParameterAddr(P1, "", "", 0)
-  %endif
-  %% AD_Read_Outputs_wrapper(%<pu0>, %<py0>, %<pp1>, %<param_width1>);
-
-  %assign strDriverName = LibBlockParameterString(P1)
-    %<py0>=%<strDriverName>();
+  %% AD_Read_Outputs_wrapper(%<pu0>, %<py0>, %<pp1>, %<param_width1>, %<pp2>, %<param_width2>);
     
+    %assign strDriverName = LibBlockParameterString(P1)
+    %<py0>=%<strDriverName>();
+
   %%
 %endfunction
 

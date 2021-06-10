@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  ------------------------------------------------------------------------- 
  *
- * Created: Wed Jun 09 10:02:30 2021
+ * Created: Thu Jun 10 09:27:09 2021
  */
 
 #define S_FUNCTION_LEVEL 2
@@ -70,11 +70,15 @@
 #define OUT_0_BIAS            0
 #define OUT_0_SLOPE           0.125
 
-#define NPARAMS               1
+#define NPARAMS               2
 /* Parameter 0 */
 #define PARAMETER_0_NAME      DriverName
 #define PARAMETER_0_DTYPE     uint8_T
 #define PARAMETER_0_COMPLEX   COMPLEX_NO
+/* Parameter 1 */
+#define PARAMETER_1_NAME      num_bits
+#define PARAMETER_1_DTYPE     uint8_T
+#define PARAMETER_1_COMPLEX   COMPLEX_NO
 
 #define SAMPLE_TIME_0         INHERITED_SAMPLE_TIME
 #define NUM_DISC_STATES       0
@@ -84,7 +88,7 @@
 
 #define SFUNWIZ_GENERATE_TLC  1
 #define SOURCEFILES           "__SFB__"
-#define PANELINDEX            8
+#define PANELINDEX            0
 #define USE_SIMSTRUCT         0
 #define SHOW_COMPILE_STEPS    1
 #define CREATE_DEBUG_MEXFILE  0
@@ -94,13 +98,15 @@
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 #include "simstruc.h"
 #define PARAM_DEF0(S) ssGetSFcnParam(S, 0)
+#define PARAM_DEF1(S) ssGetSFcnParam(S, 1)
 
 #define IS_PARAM_UINT8(pVal) (mxIsNumeric(pVal) && !mxIsLogical(pVal) &&\
 !mxIsEmpty(pVal) && !mxIsSparse(pVal) && !mxIsComplex(pVal) && mxIsUint8(pVal))
 
 extern void AD_Read_Outputs_wrapper(const uint8_T *Index,
 			uint16_T *Cnts,
-			const uint8_T *DriverName, const int_T p_width0);
+			const uint8_T *DriverName, const int_T p_width0,
+			const uint8_T *num_bits, const int_T p_width1);
 /*====================*
  * S-function methods *
  *====================*/
@@ -121,6 +127,15 @@ static void mdlCheckParameters(SimStruct *S)
         if (!IS_PARAM_UINT8(pVal0)) {
             invalidParam = true;
             paramIndex = 0;
+            goto EXIT_POINT;
+        }
+    }
+
+    {
+        const mxArray *pVal1 = ssGetSFcnParam(S, 1);
+        if (!IS_PARAM_UINT8(pVal1)) {
+            invalidParam = true;
+            paramIndex = 1;
             goto EXIT_POINT;
         }
     }
@@ -229,7 +244,7 @@ static void mdlSetDefaultPortDataTypes(SimStruct *S)
 static void mdlSetWorkWidths(SimStruct *S)
 {
 
-    const char_T *rtParamNames[] = {"P1"};
+    const char_T *rtParamNames[] = {"P1","P2"};
     ssRegAllTunableParamsAsRunTimeParams(S, rtParamNames);
 
 }
@@ -257,9 +272,11 @@ static void mdlOutputs(SimStruct *S, int_T tid)
     const uint8_T *Index = (uint8_T *) ssGetInputPortRealSignal(S, 0);
     uint16_T *Cnts = (uint16_T *) ssGetOutputPortRealSignal(S, 0);
     const int_T   p_width0  = mxGetNumberOfElements(PARAM_DEF0(S));
+    const int_T   p_width1  = mxGetNumberOfElements(PARAM_DEF1(S));
     const uint8_T *DriverName = (const uint8_T *) mxGetData(PARAM_DEF0(S));
+    const uint8_T *num_bits = (const uint8_T *) mxGetData(PARAM_DEF1(S));
     
-    AD_Read_Outputs_wrapper(Index, Cnts, DriverName, p_width0);
+    AD_Read_Outputs_wrapper(Index, Cnts, DriverName, p_width0, num_bits, p_width1);
 
 }
 
